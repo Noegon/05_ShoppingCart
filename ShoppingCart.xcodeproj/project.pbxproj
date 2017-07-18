@@ -14,9 +14,13 @@
 		EF3480BA1F1E8D5100733E86 /* ShoppingCart.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EF3480B81F1E8D5100733E86 /* ShoppingCart.xcdatamodeld */; };
 		EF3480BC1F1E8D5100733E86 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF3480BB1F1E8D5100733E86 /* Assets.xcassets */; };
 		EF3480BF1F1E8D5100733E86 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF3480BD1F1E8D5100733E86 /* LaunchScreen.storyboard */; };
+		FF6B16C1067F7B7D7428F051 /* libPods-ShoppingCart.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00B188B7F3C5BD001AAF0543 /* libPods-ShoppingCart.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		00B188B7F3C5BD001AAF0543 /* libPods-ShoppingCart.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ShoppingCart.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		198F57675726B8D120206506 /* Pods-ShoppingCart.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShoppingCart.release.xcconfig"; path = "Pods/Target Support Files/Pods-ShoppingCart/Pods-ShoppingCart.release.xcconfig"; sourceTree = "<group>"; };
+		7AF396158AE15C14B79EAC98 /* Pods-ShoppingCart.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShoppingCart.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ShoppingCart/Pods-ShoppingCart.debug.xcconfig"; sourceTree = "<group>"; };
 		EF3480A91F1E8D5100733E86 /* ShoppingCart.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShoppingCart.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF3480AD1F1E8D5100733E86 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		EF3480AF1F1E8D5100733E86 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -35,17 +39,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF6B16C1067F7B7D7428F051 /* libPods-ShoppingCart.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2941B8B1E215F181D726AAFF /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7AF396158AE15C14B79EAC98 /* Pods-ShoppingCart.debug.xcconfig */,
+				198F57675726B8D120206506 /* Pods-ShoppingCart.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		BBCA730B5FFA8F55993DB0BA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				00B188B7F3C5BD001AAF0543 /* libPods-ShoppingCart.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		EF3480A01F1E8D5100733E86 = {
 			isa = PBXGroup;
 			children = (
 				EF3480AB1F1E8D5100733E86 /* ShoppingCart */,
 				EF3480AA1F1E8D5100733E86 /* Products */,
+				2941B8B1E215F181D726AAFF /* Pods */,
+				BBCA730B5FFA8F55993DB0BA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -89,9 +113,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EF3480C31F1E8D5100733E86 /* Build configuration list for PBXNativeTarget "ShoppingCart" */;
 			buildPhases = (
+				F4FE0BEA518FB09883F0ECDF /* [CP] Check Pods Manifest.lock */,
 				EF3480A51F1E8D5100733E86 /* Sources */,
 				EF3480A61F1E8D5100733E86 /* Frameworks */,
 				EF3480A71F1E8D5100733E86 /* Resources */,
+				13F1E7B69B62AFBCE1D8603C /* [CP] Embed Pods Frameworks */,
+				15BEFFF424810161467B38FB /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -149,6 +176,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		13F1E7B69B62AFBCE1D8603C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ShoppingCart/Pods-ShoppingCart-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		15BEFFF424810161467B38FB /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ShoppingCart/Pods-ShoppingCart-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F4FE0BEA518FB09883F0ECDF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		EF3480A51F1E8D5100733E86 /* Sources */ = {
@@ -276,6 +351,7 @@
 		};
 		EF3480C41F1E8D5100733E86 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7AF396158AE15C14B79EAC98 /* Pods-ShoppingCart.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 9M22BH66EU;
@@ -289,6 +365,7 @@
 		};
 		EF3480C51F1E8D5100733E86 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 198F57675726B8D120206506 /* Pods-ShoppingCart.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 9M22BH66EU;
