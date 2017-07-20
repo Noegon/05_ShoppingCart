@@ -9,11 +9,25 @@
 /* Begin PBXBuildFile section */
 		EF3480AE1F1E8D5100733E86 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EF3480AD1F1E8D5100733E86 /* main.m */; };
 		EF3480B11F1E8D5100733E86 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EF3480B01F1E8D5100733E86 /* AppDelegate.m */; };
-		EF3480B41F1E8D5100733E86 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF3480B31F1E8D5100733E86 /* ViewController.m */; };
 		EF3480B71F1E8D5100733E86 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF3480B51F1E8D5100733E86 /* Main.storyboard */; };
 		EF3480BA1F1E8D5100733E86 /* ShoppingCart.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EF3480B81F1E8D5100733E86 /* ShoppingCart.xcdatamodeld */; };
 		EF3480BC1F1E8D5100733E86 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF3480BB1F1E8D5100733E86 /* Assets.xcassets */; };
 		EF3480BF1F1E8D5100733E86 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF3480BD1F1E8D5100733E86 /* LaunchScreen.storyboard */; };
+		EF3480D31F1F4BA300733E86 /* NGNDataBaseRuler.m in Sources */ = {isa = PBXBuildFile; fileRef = EF3480D21F1F4BA300733E86 /* NGNDataBaseRuler.m */; };
+		EF3480FC1F1F776600733E86 /* Good+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = EF3480ED1F1F776600733E86 /* Good+CoreDataClass.m */; };
+		EF3480FD1F1F776600733E86 /* Good+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = EF3480EF1F1F776600733E86 /* Good+CoreDataProperties.m */; };
+		EF3480FE1F1F776600733E86 /* GoodsOrder+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = EF3480F11F1F776600733E86 /* GoodsOrder+CoreDataClass.m */; };
+		EF3480FF1F1F776600733E86 /* GoodsOrder+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = EF3480F31F1F776600733E86 /* GoodsOrder+CoreDataProperties.m */; };
+		EF3481001F1F776600733E86 /* Order+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = EF3480F51F1F776600733E86 /* Order+CoreDataClass.m */; };
+		EF3481011F1F776600733E86 /* Order+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = EF3480F71F1F776600733E86 /* Order+CoreDataProperties.m */; };
+		EF3481021F1F776600733E86 /* User+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = EF3480F91F1F776600733E86 /* User+CoreDataClass.m */; };
+		EF3481031F1F776600733E86 /* User+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = EF3480FB1F1F776600733E86 /* User+CoreDataProperties.m */; };
+		EF34810B1F1F78D500733E86 /* NGNRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF34810A1F1F78D500733E86 /* NGNRootViewController.m */; };
+		EF34810E1F1FA0D600733E86 /* NGNMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF34810D1F1FA0D600733E86 /* NGNMenuViewController.m */; };
+		EF3481111F1FA10E00733E86 /* NGNContentNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF3481101F1FA10E00733E86 /* NGNContentNavigationController.m */; };
+		EF3481141F1FA1D600733E86 /* NGNGoodsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF3481131F1FA1D600733E86 /* NGNGoodsListViewController.m */; };
+		EF3481171F1FA20700733E86 /* NGNCartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF3481161F1FA20700733E86 /* NGNCartViewController.m */; };
+		EF34811A1F1FC44200733E86 /* avatar@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EF3481191F1FC44200733E86 /* avatar@2x.jpg */; };
 		FF6B16C1067F7B7D7428F051 /* libPods-ShoppingCart.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00B188B7F3C5BD001AAF0543 /* libPods-ShoppingCart.a */; };
 /* End PBXBuildFile section */
 
@@ -25,13 +39,40 @@
 		EF3480AD1F1E8D5100733E86 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		EF3480AF1F1E8D5100733E86 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		EF3480B01F1E8D5100733E86 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		EF3480B21F1E8D5100733E86 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		EF3480B31F1E8D5100733E86 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		EF3480B61F1E8D5100733E86 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EF3480B91F1E8D5100733E86 /* ShoppingCart.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ShoppingCart.xcdatamodel; sourceTree = "<group>"; };
 		EF3480BB1F1E8D5100733E86 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EF3480BE1F1E8D5100733E86 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EF3480C01F1E8D5100733E86 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EF3480D11F1F4BA300733E86 /* NGNDataBaseRuler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NGNDataBaseRuler.h; path = Model/StorageLayer/Core/NGNDataBaseRuler.h; sourceTree = "<group>"; };
+		EF3480D21F1F4BA300733E86 /* NGNDataBaseRuler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NGNDataBaseRuler.m; path = Model/StorageLayer/Core/NGNDataBaseRuler.m; sourceTree = "<group>"; };
+		EF3480EC1F1F776600733E86 /* Good+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Good+CoreDataClass.h"; path = "Model/StorageLayer/Model/Good+CoreDataClass.h"; sourceTree = "<group>"; };
+		EF3480ED1F1F776600733E86 /* Good+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Good+CoreDataClass.m"; path = "Model/StorageLayer/Model/Good+CoreDataClass.m"; sourceTree = "<group>"; };
+		EF3480EE1F1F776600733E86 /* Good+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Good+CoreDataProperties.h"; path = "Model/StorageLayer/Model/Good+CoreDataProperties.h"; sourceTree = "<group>"; };
+		EF3480EF1F1F776600733E86 /* Good+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Good+CoreDataProperties.m"; path = "Model/StorageLayer/Model/Good+CoreDataProperties.m"; sourceTree = "<group>"; };
+		EF3480F01F1F776600733E86 /* GoodsOrder+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "GoodsOrder+CoreDataClass.h"; path = "Model/StorageLayer/Model/GoodsOrder+CoreDataClass.h"; sourceTree = "<group>"; };
+		EF3480F11F1F776600733E86 /* GoodsOrder+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "GoodsOrder+CoreDataClass.m"; path = "Model/StorageLayer/Model/GoodsOrder+CoreDataClass.m"; sourceTree = "<group>"; };
+		EF3480F21F1F776600733E86 /* GoodsOrder+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "GoodsOrder+CoreDataProperties.h"; path = "Model/StorageLayer/Model/GoodsOrder+CoreDataProperties.h"; sourceTree = "<group>"; };
+		EF3480F31F1F776600733E86 /* GoodsOrder+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "GoodsOrder+CoreDataProperties.m"; path = "Model/StorageLayer/Model/GoodsOrder+CoreDataProperties.m"; sourceTree = "<group>"; };
+		EF3480F41F1F776600733E86 /* Order+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Order+CoreDataClass.h"; path = "Model/StorageLayer/Model/Order+CoreDataClass.h"; sourceTree = "<group>"; };
+		EF3480F51F1F776600733E86 /* Order+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Order+CoreDataClass.m"; path = "Model/StorageLayer/Model/Order+CoreDataClass.m"; sourceTree = "<group>"; };
+		EF3480F61F1F776600733E86 /* Order+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Order+CoreDataProperties.h"; path = "Model/StorageLayer/Model/Order+CoreDataProperties.h"; sourceTree = "<group>"; };
+		EF3480F71F1F776600733E86 /* Order+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Order+CoreDataProperties.m"; path = "Model/StorageLayer/Model/Order+CoreDataProperties.m"; sourceTree = "<group>"; };
+		EF3480F81F1F776600733E86 /* User+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "User+CoreDataClass.h"; path = "Model/StorageLayer/Model/User+CoreDataClass.h"; sourceTree = "<group>"; };
+		EF3480F91F1F776600733E86 /* User+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "User+CoreDataClass.m"; path = "Model/StorageLayer/Model/User+CoreDataClass.m"; sourceTree = "<group>"; };
+		EF3480FA1F1F776600733E86 /* User+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "User+CoreDataProperties.h"; path = "Model/StorageLayer/Model/User+CoreDataProperties.h"; sourceTree = "<group>"; };
+		EF3480FB1F1F776600733E86 /* User+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "User+CoreDataProperties.m"; path = "Model/StorageLayer/Model/User+CoreDataProperties.m"; sourceTree = "<group>"; };
+		EF3481091F1F78D500733E86 /* NGNRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NGNRootViewController.h; path = Controller/AdditionalControllers/NGNRootViewController.h; sourceTree = "<group>"; };
+		EF34810A1F1F78D500733E86 /* NGNRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NGNRootViewController.m; path = Controller/AdditionalControllers/NGNRootViewController.m; sourceTree = "<group>"; };
+		EF34810C1F1FA0D600733E86 /* NGNMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NGNMenuViewController.h; path = Controller/AdditionalControllers/NGNMenuViewController.h; sourceTree = "<group>"; };
+		EF34810D1F1FA0D600733E86 /* NGNMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NGNMenuViewController.m; path = Controller/AdditionalControllers/NGNMenuViewController.m; sourceTree = "<group>"; };
+		EF34810F1F1FA10E00733E86 /* NGNContentNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NGNContentNavigationController.h; path = Controller/AdditionalControllers/NGNContentNavigationController.h; sourceTree = "<group>"; };
+		EF3481101F1FA10E00733E86 /* NGNContentNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NGNContentNavigationController.m; path = Controller/AdditionalControllers/NGNContentNavigationController.m; sourceTree = "<group>"; };
+		EF3481121F1FA1D600733E86 /* NGNGoodsListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NGNGoodsListViewController.h; path = Controller/BaseControllers/NGNGoodsListViewController.h; sourceTree = "<group>"; };
+		EF3481131F1FA1D600733E86 /* NGNGoodsListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NGNGoodsListViewController.m; path = Controller/BaseControllers/NGNGoodsListViewController.m; sourceTree = "<group>"; };
+		EF3481151F1FA20700733E86 /* NGNCartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NGNCartViewController.h; path = Controller/BaseControllers/NGNCartViewController.h; sourceTree = "<group>"; };
+		EF3481161F1FA20700733E86 /* NGNCartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NGNCartViewController.m; path = Controller/BaseControllers/NGNCartViewController.m; sourceTree = "<group>"; };
+		EF3481191F1FC44200733E86 /* avatar@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "avatar@2x.jpg"; path = "Resources/avatar@2x.jpg"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +108,7 @@
 			isa = PBXGroup;
 			children = (
 				EF3480AB1F1E8D5100733E86 /* ShoppingCart */,
+				EF3481181F1FC43300733E86 /* Resources */,
 				EF3480AA1F1E8D5100733E86 /* Products */,
 				2941B8B1E215F181D726AAFF /* Pods */,
 				BBCA730B5FFA8F55993DB0BA /* Frameworks */,
@@ -84,26 +126,141 @@
 		EF3480AB1F1E8D5100733E86 /* ShoppingCart */ = {
 			isa = PBXGroup;
 			children = (
-				EF3480AF1F1E8D5100733E86 /* AppDelegate.h */,
-				EF3480B01F1E8D5100733E86 /* AppDelegate.m */,
-				EF3480B21F1E8D5100733E86 /* ViewController.h */,
-				EF3480B31F1E8D5100733E86 /* ViewController.m */,
-				EF3480B51F1E8D5100733E86 /* Main.storyboard */,
-				EF3480BB1F1E8D5100733E86 /* Assets.xcassets */,
-				EF3480BD1F1E8D5100733E86 /* LaunchScreen.storyboard */,
-				EF3480C01F1E8D5100733E86 /* Info.plist */,
-				EF3480B81F1E8D5100733E86 /* ShoppingCart.xcdatamodeld */,
-				EF3480AC1F1E8D5100733E86 /* Supporting Files */,
+				EF3480C71F1EBF1100733E86 /* View */,
+				EF3480C81F1EBF2F00733E86 /* Controller */,
+				EF3480C61F1EBF0400733E86 /* Model */,
+				EF3480AC1F1E8D5100733E86 /* SupportingFiles */,
 			);
 			path = ShoppingCart;
 			sourceTree = "<group>";
 		};
-		EF3480AC1F1E8D5100733E86 /* Supporting Files */ = {
+		EF3480AC1F1E8D5100733E86 /* SupportingFiles */ = {
 			isa = PBXGroup;
 			children = (
+				EF3480AF1F1E8D5100733E86 /* AppDelegate.h */,
+				EF3480B01F1E8D5100733E86 /* AppDelegate.m */,
+				EF3480B51F1E8D5100733E86 /* Main.storyboard */,
+				EF3480BB1F1E8D5100733E86 /* Assets.xcassets */,
+				EF3480BD1F1E8D5100733E86 /* LaunchScreen.storyboard */,
+				EF3480C01F1E8D5100733E86 /* Info.plist */,
 				EF3480AD1F1E8D5100733E86 /* main.m */,
 			);
-			name = "Supporting Files";
+			name = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		EF3480C61F1EBF0400733E86 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				EF3480CD1F1EC0FB00733E86 /* StorageLayer */,
+				EF3480CC1F1EC0F200733E86 /* ServerSideLayer */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		EF3480C71F1EBF1100733E86 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		EF3480C81F1EBF2F00733E86 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				EF3481081F1F788C00733E86 /* AdditionalControllers */,
+				EF3481071F1F77F900733E86 /* BaseControllers */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		EF3480CC1F1EC0F200733E86 /* ServerSideLayer */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = ServerSideLayer;
+			sourceTree = "<group>";
+		};
+		EF3480CD1F1EC0FB00733E86 /* StorageLayer */ = {
+			isa = PBXGroup;
+			children = (
+				EF3480D01F1F4B6B00733E86 /* Core */,
+				EF3480CF1F1F4B6100733E86 /* Services */,
+				EF3480CE1F1F4B4F00733E86 /* Model */,
+			);
+			name = StorageLayer;
+			sourceTree = "<group>";
+		};
+		EF3480CE1F1F4B4F00733E86 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				EF3480EC1F1F776600733E86 /* Good+CoreDataClass.h */,
+				EF3480ED1F1F776600733E86 /* Good+CoreDataClass.m */,
+				EF3480EE1F1F776600733E86 /* Good+CoreDataProperties.h */,
+				EF3480EF1F1F776600733E86 /* Good+CoreDataProperties.m */,
+				EF3480F01F1F776600733E86 /* GoodsOrder+CoreDataClass.h */,
+				EF3480F11F1F776600733E86 /* GoodsOrder+CoreDataClass.m */,
+				EF3480F21F1F776600733E86 /* GoodsOrder+CoreDataProperties.h */,
+				EF3480F31F1F776600733E86 /* GoodsOrder+CoreDataProperties.m */,
+				EF3480F41F1F776600733E86 /* Order+CoreDataClass.h */,
+				EF3480F51F1F776600733E86 /* Order+CoreDataClass.m */,
+				EF3480F61F1F776600733E86 /* Order+CoreDataProperties.h */,
+				EF3480F71F1F776600733E86 /* Order+CoreDataProperties.m */,
+				EF3480F81F1F776600733E86 /* User+CoreDataClass.h */,
+				EF3480F91F1F776600733E86 /* User+CoreDataClass.m */,
+				EF3480FA1F1F776600733E86 /* User+CoreDataProperties.h */,
+				EF3480FB1F1F776600733E86 /* User+CoreDataProperties.m */,
+				EF3480B81F1E8D5100733E86 /* ShoppingCart.xcdatamodeld */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		EF3480CF1F1F4B6100733E86 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Services;
+			sourceTree = "<group>";
+		};
+		EF3480D01F1F4B6B00733E86 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				EF3480D11F1F4BA300733E86 /* NGNDataBaseRuler.h */,
+				EF3480D21F1F4BA300733E86 /* NGNDataBaseRuler.m */,
+			);
+			name = Core;
+			sourceTree = "<group>";
+		};
+		EF3481071F1F77F900733E86 /* BaseControllers */ = {
+			isa = PBXGroup;
+			children = (
+				EF3481121F1FA1D600733E86 /* NGNGoodsListViewController.h */,
+				EF3481131F1FA1D600733E86 /* NGNGoodsListViewController.m */,
+				EF3481151F1FA20700733E86 /* NGNCartViewController.h */,
+				EF3481161F1FA20700733E86 /* NGNCartViewController.m */,
+			);
+			name = BaseControllers;
+			sourceTree = "<group>";
+		};
+		EF3481081F1F788C00733E86 /* AdditionalControllers */ = {
+			isa = PBXGroup;
+			children = (
+				EF3481091F1F78D500733E86 /* NGNRootViewController.h */,
+				EF34810A1F1F78D500733E86 /* NGNRootViewController.m */,
+				EF34810C1F1FA0D600733E86 /* NGNMenuViewController.h */,
+				EF34810D1F1FA0D600733E86 /* NGNMenuViewController.m */,
+				EF34810F1F1FA10E00733E86 /* NGNContentNavigationController.h */,
+				EF3481101F1FA10E00733E86 /* NGNContentNavigationController.m */,
+			);
+			name = AdditionalControllers;
+			sourceTree = "<group>";
+		};
+		EF3481181F1FC43300733E86 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				EF3481191F1FC44200733E86 /* avatar@2x.jpg */,
+			);
+			name = Resources;
+			path = ShoppingCart;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -170,6 +327,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EF3480BF1F1E8D5100733E86 /* LaunchScreen.storyboard in Resources */,
+				EF34811A1F1FC44200733E86 /* avatar@2x.jpg in Resources */,
 				EF3480BC1F1E8D5100733E86 /* Assets.xcassets in Resources */,
 				EF3480B71F1E8D5100733E86 /* Main.storyboard in Resources */,
 			);
@@ -230,10 +388,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EF3480B41F1E8D5100733E86 /* ViewController.m in Sources */,
 				EF3480B11F1E8D5100733E86 /* AppDelegate.m in Sources */,
+				EF3481141F1FA1D600733E86 /* NGNGoodsListViewController.m in Sources */,
+				EF3480FE1F1F776600733E86 /* GoodsOrder+CoreDataClass.m in Sources */,
+				EF3480FD1F1F776600733E86 /* Good+CoreDataProperties.m in Sources */,
+				EF3480FF1F1F776600733E86 /* GoodsOrder+CoreDataProperties.m in Sources */,
+				EF3481001F1F776600733E86 /* Order+CoreDataClass.m in Sources */,
+				EF3481111F1FA10E00733E86 /* NGNContentNavigationController.m in Sources */,
+				EF3481031F1F776600733E86 /* User+CoreDataProperties.m in Sources */,
+				EF34810B1F1F78D500733E86 /* NGNRootViewController.m in Sources */,
 				EF3480AE1F1E8D5100733E86 /* main.m in Sources */,
+				EF3481171F1FA20700733E86 /* NGNCartViewController.m in Sources */,
+				EF3481021F1F776600733E86 /* User+CoreDataClass.m in Sources */,
+				EF3480D31F1F4BA300733E86 /* NGNDataBaseRuler.m in Sources */,
 				EF3480BA1F1E8D5100733E86 /* ShoppingCart.xcdatamodeld in Sources */,
+				EF3481011F1F776600733E86 /* Order+CoreDataProperties.m in Sources */,
+				EF3480FC1F1F776600733E86 /* Good+CoreDataClass.m in Sources */,
+				EF34810E1F1FA0D600733E86 /* NGNMenuViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -396,6 +567,7 @@
 				EF3480C51F1E8D5100733E86 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
