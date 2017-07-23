@@ -8,8 +8,10 @@
 
 #import "NGNGoodsListViewController.h"
 #import <REFrostedViewController.h>
+#import "NGNCommonConstants.h"
 
 @interface NGNGoodsListViewController ()
+@property (strong, nonatomic) IBOutlet UIButton *TestShadowButton;
 
 #pragma mark - additional methods
 - (IBAction)profileBarButtonTapped:(UIBarButtonItem *)sender;
@@ -27,6 +29,9 @@
                                                                 action:nil];
     
     [self.navigationItem setBackBarButtonItem:backItem];
+//    self.TestShadowButton.layer.shadowOffset = CGSizeMake(5, 5);
+//    self.TestShadowButton.layer.shadowColor = [[UIColor blackColor] CGColor];
+//    self.TestShadowButton.layer.shadowOpacity = 0.5;
 }
 
 - (void)didReceiveMemoryWarning {

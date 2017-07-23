@@ -7,7 +7,21 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <CoreData/CoreData.h>
 
 @interface NGNDataBaseRuler : NSObject
+
++ (NSManagedObjectContext *) managedObjectContext;
++ (void)setupCoreDataStackWithStorageName:(NSString *)storageName;
++ (void)saveContext;
+
+@end
+
+@interface NSManagedObject (NGNCreateUpdateDelete)
+
++ (NSManagedObject *)ngn_createEntityInManagedObjectContext:(NSManagedObjectContext *)context;
++ (void)ngn_deleteEntityInManagedObjectContext:(NSManagedObjectContext *)context
+                                 managedObject:(NSManagedObject *)object;
++ (NSArray *)ngn_allEntitiesInManagedObjectContext:(NSManagedObjectContext *)context;
 
 @end

@@ -7,6 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		25BF77511F226A5000FFCF42 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25BF77501F226A5000FFCF42 /* QuartzCore.framework */; };
+		25BF775B1F23BBB400FFCF42 /* NGNCommonConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 25BF775A1F23BBB400FFCF42 /* NGNCommonConstants.m */; };
+		25BF775D1F23BBF900FFCF42 /* NGNCoreDataEntitiesNames.m in Sources */ = {isa = PBXBuildFile; fileRef = 25BF775C1F23BBF900FFCF42 /* NGNCoreDataEntitiesNames.m */; };
+		25BF776E1F23ED1300FFCF42 /* NGNUser+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 25BF775F1F23ED1300FFCF42 /* NGNUser+CoreDataClass.m */; };
+		25BF776F1F23ED1300FFCF42 /* NGNUser+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 25BF77611F23ED1300FFCF42 /* NGNUser+CoreDataProperties.m */; };
+		25BF77701F23ED1300FFCF42 /* NGNGood+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 25BF77631F23ED1300FFCF42 /* NGNGood+CoreDataClass.m */; };
+		25BF77711F23ED1300FFCF42 /* NGNGood+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 25BF77651F23ED1300FFCF42 /* NGNGood+CoreDataProperties.m */; };
+		25BF77721F23ED1300FFCF42 /* NGNOrder+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 25BF77671F23ED1300FFCF42 /* NGNOrder+CoreDataClass.m */; };
+		25BF77731F23ED1300FFCF42 /* NGNOrder+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 25BF77691F23ED1300FFCF42 /* NGNOrder+CoreDataProperties.m */; };
+		25BF77741F23ED1300FFCF42 /* NGNGoodsOrder+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 25BF776B1F23ED1300FFCF42 /* NGNGoodsOrder+CoreDataClass.m */; };
+		25BF77751F23ED1300FFCF42 /* NGNGoodsOrder+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 25BF776D1F23ED1300FFCF42 /* NGNGoodsOrder+CoreDataProperties.m */; };
 		EF3480AE1F1E8D5100733E86 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EF3480AD1F1E8D5100733E86 /* main.m */; };
 		EF3480B11F1E8D5100733E86 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EF3480B01F1E8D5100733E86 /* AppDelegate.m */; };
 		EF3480B71F1E8D5100733E86 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF3480B51F1E8D5100733E86 /* Main.storyboard */; };
@@ -14,14 +25,6 @@
 		EF3480BC1F1E8D5100733E86 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF3480BB1F1E8D5100733E86 /* Assets.xcassets */; };
 		EF3480BF1F1E8D5100733E86 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF3480BD1F1E8D5100733E86 /* LaunchScreen.storyboard */; };
 		EF3480D31F1F4BA300733E86 /* NGNDataBaseRuler.m in Sources */ = {isa = PBXBuildFile; fileRef = EF3480D21F1F4BA300733E86 /* NGNDataBaseRuler.m */; };
-		EF3480FC1F1F776600733E86 /* Good+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = EF3480ED1F1F776600733E86 /* Good+CoreDataClass.m */; };
-		EF3480FD1F1F776600733E86 /* Good+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = EF3480EF1F1F776600733E86 /* Good+CoreDataProperties.m */; };
-		EF3480FE1F1F776600733E86 /* GoodsOrder+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = EF3480F11F1F776600733E86 /* GoodsOrder+CoreDataClass.m */; };
-		EF3480FF1F1F776600733E86 /* GoodsOrder+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = EF3480F31F1F776600733E86 /* GoodsOrder+CoreDataProperties.m */; };
-		EF3481001F1F776600733E86 /* Order+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = EF3480F51F1F776600733E86 /* Order+CoreDataClass.m */; };
-		EF3481011F1F776600733E86 /* Order+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = EF3480F71F1F776600733E86 /* Order+CoreDataProperties.m */; };
-		EF3481021F1F776600733E86 /* User+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = EF3480F91F1F776600733E86 /* User+CoreDataClass.m */; };
-		EF3481031F1F776600733E86 /* User+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = EF3480FB1F1F776600733E86 /* User+CoreDataProperties.m */; };
 		EF34810B1F1F78D500733E86 /* NGNRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF34810A1F1F78D500733E86 /* NGNRootViewController.m */; };
 		EF34810E1F1FA0D600733E86 /* NGNMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF34810D1F1FA0D600733E86 /* NGNMenuViewController.m */; };
 		EF3481111F1FA10E00733E86 /* NGNContentNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF3481101F1FA10E00733E86 /* NGNContentNavigationController.m */; };
@@ -34,6 +37,27 @@
 /* Begin PBXFileReference section */
 		00B188B7F3C5BD001AAF0543 /* libPods-ShoppingCart.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ShoppingCart.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		198F57675726B8D120206506 /* Pods-ShoppingCart.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShoppingCart.release.xcconfig"; path = "Pods/Target Support Files/Pods-ShoppingCart/Pods-ShoppingCart.release.xcconfig"; sourceTree = "<group>"; };
+		25BF77501F226A5000FFCF42 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		25BF77531F22803B00FFCF42 /* NGNCommonConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NGNCommonConstants.h; path = Constants/NGNCommonConstants.h; sourceTree = "<group>"; };
+		25BF77591F23BB0B00FFCF42 /* NGNCoreDataEntitiesNames.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = NGNCoreDataEntitiesNames.h; path = Constants/NGNCoreDataEntitiesNames.h; sourceTree = "<group>"; };
+		25BF775A1F23BBB400FFCF42 /* NGNCommonConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NGNCommonConstants.m; path = Constants/NGNCommonConstants.m; sourceTree = "<group>"; };
+		25BF775C1F23BBF900FFCF42 /* NGNCoreDataEntitiesNames.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NGNCoreDataEntitiesNames.m; path = Constants/NGNCoreDataEntitiesNames.m; sourceTree = "<group>"; };
+		25BF775E1F23ED1300FFCF42 /* NGNUser+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NGNUser+CoreDataClass.h"; path = "Model/StorageLayer/Model/NGNUser+CoreDataClass.h"; sourceTree = "<group>"; };
+		25BF775F1F23ED1300FFCF42 /* NGNUser+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NGNUser+CoreDataClass.m"; path = "Model/StorageLayer/Model/NGNUser+CoreDataClass.m"; sourceTree = "<group>"; };
+		25BF77601F23ED1300FFCF42 /* NGNUser+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NGNUser+CoreDataProperties.h"; path = "Model/StorageLayer/Model/NGNUser+CoreDataProperties.h"; sourceTree = "<group>"; };
+		25BF77611F23ED1300FFCF42 /* NGNUser+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NGNUser+CoreDataProperties.m"; path = "Model/StorageLayer/Model/NGNUser+CoreDataProperties.m"; sourceTree = "<group>"; };
+		25BF77621F23ED1300FFCF42 /* NGNGood+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NGNGood+CoreDataClass.h"; path = "Model/StorageLayer/Model/NGNGood+CoreDataClass.h"; sourceTree = "<group>"; };
+		25BF77631F23ED1300FFCF42 /* NGNGood+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NGNGood+CoreDataClass.m"; path = "Model/StorageLayer/Model/NGNGood+CoreDataClass.m"; sourceTree = "<group>"; };
+		25BF77641F23ED1300FFCF42 /* NGNGood+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NGNGood+CoreDataProperties.h"; path = "Model/StorageLayer/Model/NGNGood+CoreDataProperties.h"; sourceTree = "<group>"; };
+		25BF77651F23ED1300FFCF42 /* NGNGood+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NGNGood+CoreDataProperties.m"; path = "Model/StorageLayer/Model/NGNGood+CoreDataProperties.m"; sourceTree = "<group>"; };
+		25BF77661F23ED1300FFCF42 /* NGNOrder+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NGNOrder+CoreDataClass.h"; path = "Model/StorageLayer/Model/NGNOrder+CoreDataClass.h"; sourceTree = "<group>"; };
+		25BF77671F23ED1300FFCF42 /* NGNOrder+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NGNOrder+CoreDataClass.m"; path = "Model/StorageLayer/Model/NGNOrder+CoreDataClass.m"; sourceTree = "<group>"; };
+		25BF77681F23ED1300FFCF42 /* NGNOrder+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NGNOrder+CoreDataProperties.h"; path = "Model/StorageLayer/Model/NGNOrder+CoreDataProperties.h"; sourceTree = "<group>"; };
+		25BF77691F23ED1300FFCF42 /* NGNOrder+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NGNOrder+CoreDataProperties.m"; path = "Model/StorageLayer/Model/NGNOrder+CoreDataProperties.m"; sourceTree = "<group>"; };
+		25BF776A1F23ED1300FFCF42 /* NGNGoodsOrder+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NGNGoodsOrder+CoreDataClass.h"; path = "Model/StorageLayer/Model/NGNGoodsOrder+CoreDataClass.h"; sourceTree = "<group>"; };
+		25BF776B1F23ED1300FFCF42 /* NGNGoodsOrder+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NGNGoodsOrder+CoreDataClass.m"; path = "Model/StorageLayer/Model/NGNGoodsOrder+CoreDataClass.m"; sourceTree = "<group>"; };
+		25BF776C1F23ED1300FFCF42 /* NGNGoodsOrder+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NGNGoodsOrder+CoreDataProperties.h"; path = "Model/StorageLayer/Model/NGNGoodsOrder+CoreDataProperties.h"; sourceTree = "<group>"; };
+		25BF776D1F23ED1300FFCF42 /* NGNGoodsOrder+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NGNGoodsOrder+CoreDataProperties.m"; path = "Model/StorageLayer/Model/NGNGoodsOrder+CoreDataProperties.m"; sourceTree = "<group>"; };
 		7AF396158AE15C14B79EAC98 /* Pods-ShoppingCart.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShoppingCart.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ShoppingCart/Pods-ShoppingCart.debug.xcconfig"; sourceTree = "<group>"; };
 		EF3480A91F1E8D5100733E86 /* ShoppingCart.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShoppingCart.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF3480AD1F1E8D5100733E86 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -46,22 +70,6 @@
 		EF3480C01F1E8D5100733E86 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EF3480D11F1F4BA300733E86 /* NGNDataBaseRuler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NGNDataBaseRuler.h; path = Model/StorageLayer/Core/NGNDataBaseRuler.h; sourceTree = "<group>"; };
 		EF3480D21F1F4BA300733E86 /* NGNDataBaseRuler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NGNDataBaseRuler.m; path = Model/StorageLayer/Core/NGNDataBaseRuler.m; sourceTree = "<group>"; };
-		EF3480EC1F1F776600733E86 /* Good+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Good+CoreDataClass.h"; path = "Model/StorageLayer/Model/Good+CoreDataClass.h"; sourceTree = "<group>"; };
-		EF3480ED1F1F776600733E86 /* Good+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Good+CoreDataClass.m"; path = "Model/StorageLayer/Model/Good+CoreDataClass.m"; sourceTree = "<group>"; };
-		EF3480EE1F1F776600733E86 /* Good+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Good+CoreDataProperties.h"; path = "Model/StorageLayer/Model/Good+CoreDataProperties.h"; sourceTree = "<group>"; };
-		EF3480EF1F1F776600733E86 /* Good+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Good+CoreDataProperties.m"; path = "Model/StorageLayer/Model/Good+CoreDataProperties.m"; sourceTree = "<group>"; };
-		EF3480F01F1F776600733E86 /* GoodsOrder+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "GoodsOrder+CoreDataClass.h"; path = "Model/StorageLayer/Model/GoodsOrder+CoreDataClass.h"; sourceTree = "<group>"; };
-		EF3480F11F1F776600733E86 /* GoodsOrder+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "GoodsOrder+CoreDataClass.m"; path = "Model/StorageLayer/Model/GoodsOrder+CoreDataClass.m"; sourceTree = "<group>"; };
-		EF3480F21F1F776600733E86 /* GoodsOrder+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "GoodsOrder+CoreDataProperties.h"; path = "Model/StorageLayer/Model/GoodsOrder+CoreDataProperties.h"; sourceTree = "<group>"; };
-		EF3480F31F1F776600733E86 /* GoodsOrder+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "GoodsOrder+CoreDataProperties.m"; path = "Model/StorageLayer/Model/GoodsOrder+CoreDataProperties.m"; sourceTree = "<group>"; };
-		EF3480F41F1F776600733E86 /* Order+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Order+CoreDataClass.h"; path = "Model/StorageLayer/Model/Order+CoreDataClass.h"; sourceTree = "<group>"; };
-		EF3480F51F1F776600733E86 /* Order+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Order+CoreDataClass.m"; path = "Model/StorageLayer/Model/Order+CoreDataClass.m"; sourceTree = "<group>"; };
-		EF3480F61F1F776600733E86 /* Order+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Order+CoreDataProperties.h"; path = "Model/StorageLayer/Model/Order+CoreDataProperties.h"; sourceTree = "<group>"; };
-		EF3480F71F1F776600733E86 /* Order+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Order+CoreDataProperties.m"; path = "Model/StorageLayer/Model/Order+CoreDataProperties.m"; sourceTree = "<group>"; };
-		EF3480F81F1F776600733E86 /* User+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "User+CoreDataClass.h"; path = "Model/StorageLayer/Model/User+CoreDataClass.h"; sourceTree = "<group>"; };
-		EF3480F91F1F776600733E86 /* User+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "User+CoreDataClass.m"; path = "Model/StorageLayer/Model/User+CoreDataClass.m"; sourceTree = "<group>"; };
-		EF3480FA1F1F776600733E86 /* User+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "User+CoreDataProperties.h"; path = "Model/StorageLayer/Model/User+CoreDataProperties.h"; sourceTree = "<group>"; };
-		EF3480FB1F1F776600733E86 /* User+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "User+CoreDataProperties.m"; path = "Model/StorageLayer/Model/User+CoreDataProperties.m"; sourceTree = "<group>"; };
 		EF3481091F1F78D500733E86 /* NGNRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NGNRootViewController.h; path = Controller/AdditionalControllers/NGNRootViewController.h; sourceTree = "<group>"; };
 		EF34810A1F1F78D500733E86 /* NGNRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NGNRootViewController.m; path = Controller/AdditionalControllers/NGNRootViewController.m; sourceTree = "<group>"; };
 		EF34810C1F1FA0D600733E86 /* NGNMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NGNMenuViewController.h; path = Controller/AdditionalControllers/NGNMenuViewController.h; sourceTree = "<group>"; };
@@ -80,6 +88,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				25BF77511F226A5000FFCF42 /* QuartzCore.framework in Frameworks */,
 				FF6B16C1067F7B7D7428F051 /* libPods-ShoppingCart.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -87,6 +96,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		25BF77521F22800D00FFCF42 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				25BF77531F22803B00FFCF42 /* NGNCommonConstants.h */,
+				25BF775A1F23BBB400FFCF42 /* NGNCommonConstants.m */,
+				25BF77591F23BB0B00FFCF42 /* NGNCoreDataEntitiesNames.h */,
+				25BF775C1F23BBF900FFCF42 /* NGNCoreDataEntitiesNames.m */,
+			);
+			name = Constants;
+			sourceTree = "<group>";
+		};
 		2941B8B1E215F181D726AAFF /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -99,6 +119,7 @@
 		BBCA730B5FFA8F55993DB0BA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				25BF77501F226A5000FFCF42 /* QuartzCore.framework */,
 				00B188B7F3C5BD001AAF0543 /* libPods-ShoppingCart.a */,
 			);
 			name = Frameworks;
@@ -126,6 +147,7 @@
 		EF3480AB1F1E8D5100733E86 /* ShoppingCart */ = {
 			isa = PBXGroup;
 			children = (
+				25BF77521F22800D00FFCF42 /* Constants */,
 				EF3480C71F1EBF1100733E86 /* View */,
 				EF3480C81F1EBF2F00733E86 /* Controller */,
 				EF3480C61F1EBF0400733E86 /* Model */,
@@ -137,8 +159,6 @@
 		EF3480AC1F1E8D5100733E86 /* SupportingFiles */ = {
 			isa = PBXGroup;
 			children = (
-				EF3480AF1F1E8D5100733E86 /* AppDelegate.h */,
-				EF3480B01F1E8D5100733E86 /* AppDelegate.m */,
 				EF3480B51F1E8D5100733E86 /* Main.storyboard */,
 				EF3480BB1F1E8D5100733E86 /* Assets.xcassets */,
 				EF3480BD1F1E8D5100733E86 /* LaunchScreen.storyboard */,
@@ -167,6 +187,8 @@
 		EF3480C81F1EBF2F00733E86 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				EF3480AF1F1E8D5100733E86 /* AppDelegate.h */,
+				EF3480B01F1E8D5100733E86 /* AppDelegate.m */,
 				EF3481081F1F788C00733E86 /* AdditionalControllers */,
 				EF3481071F1F77F900733E86 /* BaseControllers */,
 			);
@@ -193,22 +215,22 @@
 		EF3480CE1F1F4B4F00733E86 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				EF3480EC1F1F776600733E86 /* Good+CoreDataClass.h */,
-				EF3480ED1F1F776600733E86 /* Good+CoreDataClass.m */,
-				EF3480EE1F1F776600733E86 /* Good+CoreDataProperties.h */,
-				EF3480EF1F1F776600733E86 /* Good+CoreDataProperties.m */,
-				EF3480F01F1F776600733E86 /* GoodsOrder+CoreDataClass.h */,
-				EF3480F11F1F776600733E86 /* GoodsOrder+CoreDataClass.m */,
-				EF3480F21F1F776600733E86 /* GoodsOrder+CoreDataProperties.h */,
-				EF3480F31F1F776600733E86 /* GoodsOrder+CoreDataProperties.m */,
-				EF3480F41F1F776600733E86 /* Order+CoreDataClass.h */,
-				EF3480F51F1F776600733E86 /* Order+CoreDataClass.m */,
-				EF3480F61F1F776600733E86 /* Order+CoreDataProperties.h */,
-				EF3480F71F1F776600733E86 /* Order+CoreDataProperties.m */,
-				EF3480F81F1F776600733E86 /* User+CoreDataClass.h */,
-				EF3480F91F1F776600733E86 /* User+CoreDataClass.m */,
-				EF3480FA1F1F776600733E86 /* User+CoreDataProperties.h */,
-				EF3480FB1F1F776600733E86 /* User+CoreDataProperties.m */,
+				25BF775E1F23ED1300FFCF42 /* NGNUser+CoreDataClass.h */,
+				25BF775F1F23ED1300FFCF42 /* NGNUser+CoreDataClass.m */,
+				25BF77601F23ED1300FFCF42 /* NGNUser+CoreDataProperties.h */,
+				25BF77611F23ED1300FFCF42 /* NGNUser+CoreDataProperties.m */,
+				25BF77621F23ED1300FFCF42 /* NGNGood+CoreDataClass.h */,
+				25BF77631F23ED1300FFCF42 /* NGNGood+CoreDataClass.m */,
+				25BF77641F23ED1300FFCF42 /* NGNGood+CoreDataProperties.h */,
+				25BF77651F23ED1300FFCF42 /* NGNGood+CoreDataProperties.m */,
+				25BF77661F23ED1300FFCF42 /* NGNOrder+CoreDataClass.h */,
+				25BF77671F23ED1300FFCF42 /* NGNOrder+CoreDataClass.m */,
+				25BF77681F23ED1300FFCF42 /* NGNOrder+CoreDataProperties.h */,
+				25BF77691F23ED1300FFCF42 /* NGNOrder+CoreDataProperties.m */,
+				25BF776A1F23ED1300FFCF42 /* NGNGoodsOrder+CoreDataClass.h */,
+				25BF776B1F23ED1300FFCF42 /* NGNGoodsOrder+CoreDataClass.m */,
+				25BF776C1F23ED1300FFCF42 /* NGNGoodsOrder+CoreDataProperties.h */,
+				25BF776D1F23ED1300FFCF42 /* NGNGoodsOrder+CoreDataProperties.m */,
 				EF3480B81F1E8D5100733E86 /* ShoppingCart.xcdatamodeld */,
 			);
 			name = Model;
@@ -388,23 +410,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				25BF77701F23ED1300FFCF42 /* NGNGood+CoreDataClass.m in Sources */,
+				25BF77731F23ED1300FFCF42 /* NGNOrder+CoreDataProperties.m in Sources */,
 				EF3480B11F1E8D5100733E86 /* AppDelegate.m in Sources */,
 				EF3481141F1FA1D600733E86 /* NGNGoodsListViewController.m in Sources */,
-				EF3480FE1F1F776600733E86 /* GoodsOrder+CoreDataClass.m in Sources */,
-				EF3480FD1F1F776600733E86 /* Good+CoreDataProperties.m in Sources */,
-				EF3480FF1F1F776600733E86 /* GoodsOrder+CoreDataProperties.m in Sources */,
-				EF3481001F1F776600733E86 /* Order+CoreDataClass.m in Sources */,
 				EF3481111F1FA10E00733E86 /* NGNContentNavigationController.m in Sources */,
-				EF3481031F1F776600733E86 /* User+CoreDataProperties.m in Sources */,
+				25BF77751F23ED1300FFCF42 /* NGNGoodsOrder+CoreDataProperties.m in Sources */,
 				EF34810B1F1F78D500733E86 /* NGNRootViewController.m in Sources */,
 				EF3480AE1F1E8D5100733E86 /* main.m in Sources */,
+				25BF77721F23ED1300FFCF42 /* NGNOrder+CoreDataClass.m in Sources */,
 				EF3481171F1FA20700733E86 /* NGNCartViewController.m in Sources */,
-				EF3481021F1F776600733E86 /* User+CoreDataClass.m in Sources */,
 				EF3480D31F1F4BA300733E86 /* NGNDataBaseRuler.m in Sources */,
 				EF3480BA1F1E8D5100733E86 /* ShoppingCart.xcdatamodeld in Sources */,
-				EF3481011F1F776600733E86 /* Order+CoreDataProperties.m in Sources */,
-				EF3480FC1F1F776600733E86 /* Good+CoreDataClass.m in Sources */,
+				25BF776E1F23ED1300FFCF42 /* NGNUser+CoreDataClass.m in Sources */,
+				25BF775D1F23BBF900FFCF42 /* NGNCoreDataEntitiesNames.m in Sources */,
+				25BF77741F23ED1300FFCF42 /* NGNGoodsOrder+CoreDataClass.m in Sources */,
+				25BF77711F23ED1300FFCF42 /* NGNGood+CoreDataProperties.m in Sources */,
+				25BF776F1F23ED1300FFCF42 /* NGNUser+CoreDataProperties.m in Sources */,
 				EF34810E1F1FA0D600733E86 /* NGNMenuViewController.m in Sources */,
+				25BF775B1F23BBB400FFCF42 /* NGNCommonConstants.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -471,7 +495,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -513,7 +537,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;

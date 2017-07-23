@@ -7,8 +7,10 @@
 //
 
 #import "NGNCartViewController.h"
+#import "NGNCommonConstants.h"
 
 @interface NGNCartViewController ()
+@property (strong, nonatomic) IBOutletCollection(UITableViewCell) NSArray *NotAvialableGoodsCells;
 
 @end
 
@@ -23,6 +25,14 @@
                                                                 action:nil];
     
     [self.navigationItem setBackBarButtonItem:backItem];
+    
+    [self.NotAvialableGoodsCells enumerateObjectsUsingBlock:
+     ^(id _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+         UIView *rotatedView = ((UIView *)obj).subviews[0].subviews[1];
+         double rads = DEGREES_TO_RADIANS(5);
+         CGAffineTransform transform = CGAffineTransformRotate(CGAffineTransformIdentity, rads);
+         rotatedView.transform = transform;
+     }];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -34,12 +44,12 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
 #warning Incomplete implementation, return the number of sections
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 #warning Incomplete implementation, return the number of rows
-    return 0;
+    return 3;
 }
 
 /*

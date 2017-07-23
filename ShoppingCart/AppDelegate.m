@@ -7,6 +7,13 @@
 //
 
 #import "AppDelegate.h"
+#import "NGNCommonConstants.h"
+#import "NGNCoreDataEntitiesNames.h"
+#import "NGNDataBaseRuler.h"
+#import "NGNUser+CoreDataProperties.h"
+#import "NGNGood+CoreDataProperties.h"
+#import "NGNGoodsOrder+CoreDataProperties.h"
+#import "NGNOrder+CoreDataProperties.h"
 
 @interface AppDelegate ()
 
@@ -16,7 +23,34 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+#warning delete datasource for debug
+    NSURL *applicationDocumentsDirectory = [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory
+                                                                                   inDomains:NSUserDomainMask] lastObject];
+    NSFileManager *manager = [NSFileManager defaultManager];
+    NSURL *storeURL = [applicationDocumentsDirectory URLByAppendingPathComponent:@"ShoppingCart.sqlite"];
+    [manager removeItemAtURL:storeURL error:nil];
+    
+    [NGNDataBaseRuler setupCoreDataStackWithStorageName:NGNModelAppName];
+    NSManagedObjectContext *context = [NGNDataBaseRuler managedObjectContext];
+    NGNUser *user1 = (NGNUser *)[NGNUser ngn_createEntityInManagedObjectContext:context];
+    user1.name = @"Alex";
+    [NGNDataBaseRuler saveContext];
+    NSLog(@"%@", user1.name);
+    NGNUser *user2 = (NGNUser *)[NGNUser ngn_createEntityInManagedObjectContext:context];
+    user2.name = @"Tanya";
+    [NGNDataBaseRuler saveContext];
+    NSLog(@"%@", user2.name);
+    NSArray *allUsers = [NGNUser ngn_allEntitiesInManagedObjectContext:context];
+    NSLog(@"%@", ((NGNUser *)allUsers[0]).name);
+    NSLog(@"%@", ((NGNUser *)allUsers[1]).name);
+    NGNUser *testUser = ((NGNUser *)allUsers[0]);
+    testUser.name = @"Beckket";
+    [NGNDataBaseRuler saveContext];
+    allUsers = [NGNUser ngn_allEntitiesInManagedObjectContext:context];
+    NSLog(@"%@", ((NGNUser *)allUsers[0]).name);
+    [NGNUser ngn_deleteEntityInManagedObjectContext:context managedObject:testUser];
+    allUsers = [NGNUser ngn_allEntitiesInManagedObjectContext:context];
+    NSLog(@"%ld", allUsers.count);
     return YES;
 }
 
