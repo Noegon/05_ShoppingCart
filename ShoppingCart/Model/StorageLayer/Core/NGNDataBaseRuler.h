@@ -19,9 +19,16 @@
 
 @interface NSManagedObject (NGNCreateUpdateDelete)
 
-+ (NSManagedObject *)ngn_createEntityInManagedObjectContext:(NSManagedObjectContext *)context;
++ (NSManagedObject *)ngn_createEntityInManagedObjectContext:(NSManagedObjectContext *)context
+                                    fieldsCompletitionBlock:(void(^)(NSManagedObject *object))fieldsCompletitionBlock;
 + (void)ngn_deleteEntityInManagedObjectContext:(NSManagedObjectContext *)context
                                  managedObject:(NSManagedObject *)object;
 + (NSArray *)ngn_allEntitiesInManagedObjectContext:(NSManagedObjectContext *)context;
+
+@end
+
+@interface NSJSONSerialization (NGNDifferentObjectsSerializationFromJSON)
+
++ (NSManagedObject *)ngn_serializeSingleObjectWithJSONData:(NSData *)data;
 
 @end

@@ -15,7 +15,7 @@
 }
 
 @dynamic avialable;
-@dynamic code;
+@dynamic goodId;
 @dynamic discount;
 @dynamic image;
 @dynamic name;

@@ -18,6 +18,11 @@
 		25BF77731F23ED1300FFCF42 /* NGNOrder+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 25BF77691F23ED1300FFCF42 /* NGNOrder+CoreDataProperties.m */; };
 		25BF77741F23ED1300FFCF42 /* NGNGoodsOrder+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 25BF776B1F23ED1300FFCF42 /* NGNGoodsOrder+CoreDataClass.m */; };
 		25BF77751F23ED1300FFCF42 /* NGNGoodsOrder+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 25BF776D1F23ED1300FFCF42 /* NGNGoodsOrder+CoreDataProperties.m */; };
+		25BF77781F267AE900FFCF42 /* NGNCatalogService.m in Sources */ = {isa = PBXBuildFile; fileRef = 25BF77771F267AE900FFCF42 /* NGNCatalogService.m */; };
+		25BF777B1F267CA300FFCF42 /* NGNBasicService.m in Sources */ = {isa = PBXBuildFile; fileRef = 25BF777A1F267CA300FFCF42 /* NGNBasicService.m */; };
+		25BF777E1F26866F00FFCF42 /* NGNServerSideLayerConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 25BF777D1F26866F00FFCF42 /* NGNServerSideLayerConstants.m */; };
+		25BF77811F27542700FFCF42 /* NGNOrderService.m in Sources */ = {isa = PBXBuildFile; fileRef = 25BF77801F27542700FFCF42 /* NGNOrderService.m */; };
+		25BF77831F27543A00FFCF42 /* db.json in Resources */ = {isa = PBXBuildFile; fileRef = 25BF77821F27543A00FFCF42 /* db.json */; };
 		EF3480AE1F1E8D5100733E86 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EF3480AD1F1E8D5100733E86 /* main.m */; };
 		EF3480B11F1E8D5100733E86 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EF3480B01F1E8D5100733E86 /* AppDelegate.m */; };
 		EF3480B71F1E8D5100733E86 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF3480B51F1E8D5100733E86 /* Main.storyboard */; };
@@ -58,6 +63,15 @@
 		25BF776B1F23ED1300FFCF42 /* NGNGoodsOrder+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NGNGoodsOrder+CoreDataClass.m"; path = "Model/StorageLayer/Model/NGNGoodsOrder+CoreDataClass.m"; sourceTree = "<group>"; };
 		25BF776C1F23ED1300FFCF42 /* NGNGoodsOrder+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NGNGoodsOrder+CoreDataProperties.h"; path = "Model/StorageLayer/Model/NGNGoodsOrder+CoreDataProperties.h"; sourceTree = "<group>"; };
 		25BF776D1F23ED1300FFCF42 /* NGNGoodsOrder+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NGNGoodsOrder+CoreDataProperties.m"; path = "Model/StorageLayer/Model/NGNGoodsOrder+CoreDataProperties.m"; sourceTree = "<group>"; };
+		25BF77761F267AE900FFCF42 /* NGNCatalogService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NGNCatalogService.h; path = Model/ServerSideLayer/NGNCatalogService.h; sourceTree = "<group>"; };
+		25BF77771F267AE900FFCF42 /* NGNCatalogService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NGNCatalogService.m; path = Model/ServerSideLayer/NGNCatalogService.m; sourceTree = "<group>"; };
+		25BF77791F267CA300FFCF42 /* NGNBasicService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NGNBasicService.h; path = Model/ServerSideLayer/NGNBasicService.h; sourceTree = "<group>"; };
+		25BF777A1F267CA300FFCF42 /* NGNBasicService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NGNBasicService.m; path = Model/ServerSideLayer/NGNBasicService.m; sourceTree = "<group>"; };
+		25BF777C1F26866F00FFCF42 /* NGNServerSideLayerConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NGNServerSideLayerConstants.h; path = Constants/NGNServerSideLayerConstants.h; sourceTree = "<group>"; };
+		25BF777D1F26866F00FFCF42 /* NGNServerSideLayerConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NGNServerSideLayerConstants.m; path = Constants/NGNServerSideLayerConstants.m; sourceTree = "<group>"; };
+		25BF777F1F27542700FFCF42 /* NGNOrderService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NGNOrderService.h; path = Model/ServerSideLayer/NGNOrderService.h; sourceTree = "<group>"; };
+		25BF77801F27542700FFCF42 /* NGNOrderService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NGNOrderService.m; path = Model/ServerSideLayer/NGNOrderService.m; sourceTree = "<group>"; };
+		25BF77821F27543A00FFCF42 /* db.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = db.json; path = Model/ServerSideLayer/db.json; sourceTree = "<group>"; };
 		7AF396158AE15C14B79EAC98 /* Pods-ShoppingCart.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShoppingCart.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ShoppingCart/Pods-ShoppingCart.debug.xcconfig"; sourceTree = "<group>"; };
 		EF3480A91F1E8D5100733E86 /* ShoppingCart.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShoppingCart.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF3480AD1F1E8D5100733E86 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -103,6 +117,8 @@
 				25BF775A1F23BBB400FFCF42 /* NGNCommonConstants.m */,
 				25BF77591F23BB0B00FFCF42 /* NGNCoreDataEntitiesNames.h */,
 				25BF775C1F23BBF900FFCF42 /* NGNCoreDataEntitiesNames.m */,
+				25BF777C1F26866F00FFCF42 /* NGNServerSideLayerConstants.h */,
+				25BF777D1F26866F00FFCF42 /* NGNServerSideLayerConstants.m */,
 			);
 			name = Constants;
 			sourceTree = "<group>";
@@ -198,6 +214,13 @@
 		EF3480CC1F1EC0F200733E86 /* ServerSideLayer */ = {
 			isa = PBXGroup;
 			children = (
+				25BF77821F27543A00FFCF42 /* db.json */,
+				25BF77761F267AE900FFCF42 /* NGNCatalogService.h */,
+				25BF77771F267AE900FFCF42 /* NGNCatalogService.m */,
+				25BF777F1F27542700FFCF42 /* NGNOrderService.h */,
+				25BF77801F27542700FFCF42 /* NGNOrderService.m */,
+				25BF77791F267CA300FFCF42 /* NGNBasicService.h */,
+				25BF777A1F267CA300FFCF42 /* NGNBasicService.m */,
 			);
 			name = ServerSideLayer;
 			sourceTree = "<group>";
@@ -351,6 +374,7 @@
 				EF3480BF1F1E8D5100733E86 /* LaunchScreen.storyboard in Resources */,
 				EF34811A1F1FC44200733E86 /* avatar@2x.jpg in Resources */,
 				EF3480BC1F1E8D5100733E86 /* Assets.xcassets in Resources */,
+				25BF77831F27543A00FFCF42 /* db.json in Resources */,
 				EF3480B71F1E8D5100733E86 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -423,10 +447,14 @@
 				EF3480D31F1F4BA300733E86 /* NGNDataBaseRuler.m in Sources */,
 				EF3480BA1F1E8D5100733E86 /* ShoppingCart.xcdatamodeld in Sources */,
 				25BF776E1F23ED1300FFCF42 /* NGNUser+CoreDataClass.m in Sources */,
+				25BF77781F267AE900FFCF42 /* NGNCatalogService.m in Sources */,
 				25BF775D1F23BBF900FFCF42 /* NGNCoreDataEntitiesNames.m in Sources */,
 				25BF77741F23ED1300FFCF42 /* NGNGoodsOrder+CoreDataClass.m in Sources */,
 				25BF77711F23ED1300FFCF42 /* NGNGood+CoreDataProperties.m in Sources */,
 				25BF776F1F23ED1300FFCF42 /* NGNUser+CoreDataProperties.m in Sources */,
+				25BF777B1F267CA300FFCF42 /* NGNBasicService.m in Sources */,
+				25BF777E1F26866F00FFCF42 /* NGNServerSideLayerConstants.m in Sources */,
+				25BF77811F27542700FFCF42 /* NGNOrderService.m in Sources */,
 				EF34810E1F1FA0D600733E86 /* NGNMenuViewController.m in Sources */,
 				25BF775B1F23BBB400FFCF42 /* NGNCommonConstants.m in Sources */,
 			);

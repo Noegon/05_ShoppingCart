@@ -16,7 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 + (NSFetchRequest<NGNGood *> *)fetchRequest;
 
 @property (nonatomic) BOOL avialable;
-@property (nonatomic) int32_t code;
+@property (nonatomic) int32_t goodId;
 @property (nonatomic) double discount;
 @property (nullable, nonatomic, retain) NSObject *image;
 @property (nullable, nonatomic, copy) NSString *name;

@@ -9,9 +9,13 @@
 #import "NGNGoodsListViewController.h"
 #import <REFrostedViewController.h>
 #import "NGNCommonConstants.h"
+#import "NGNCatalogService.h"
 
 @interface NGNGoodsListViewController ()
+
 @property (strong, nonatomic) IBOutlet UIButton *TestShadowButton;
+
+@property (strong, nonatomic) NGNCatalogService *catalogService;
 
 #pragma mark - additional methods
 - (IBAction)profileBarButtonTapped:(UIBarButtonItem *)sender;
@@ -32,6 +36,14 @@
 //    self.TestShadowButton.layer.shadowOffset = CGSizeMake(5, 5);
 //    self.TestShadowButton.layer.shadowColor = [[UIColor blackColor] CGColor];
 //    self.TestShadowButton.layer.shadowOpacity = 0.5;
+    
+    self.catalogService = [[NGNCatalogService alloc] init];
+    [self.catalogService fetchPhones:^(NSArray *phones){
+        NSLog(@"%@", phones);
+    }];
+    [self.catalogService fetchPhoneById:@"1" completitionHandler:^(NSDictionary *phone){
+        NSLog(@"%@", phone);
+    }];
 }
 
 - (void)didReceiveMemoryWarning {
