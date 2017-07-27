@@ -12,6 +12,7 @@
 #define foo4random() (arc4random() % ((unsigned)RAND_MAX + 1))
 
 static NSString *const NGNModelAppName = @"ShoppingCart";
+static NSString *const NGNModelDateFormat = @"dd.MM.yyyy";
 
 @interface NGNCommonConstants : NSObject
 

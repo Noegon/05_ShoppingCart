@@ -12,6 +12,22 @@ static NSString *const NGNOrderEndpoint = @"order/";
 static NSString *const NGNCatalogEndpoint = @"catalog/";
 static NSString *const NGNServerURL = @"http://localhost:3000/";
 
+#pragma mark - HTTP methods
+
+static NSString *const NGNHTTPMethodGET = @"GET";
+static NSString *const NGNHTTPMethodPOST = @"POST";
+static NSString *const NGNHTTPMethodPUT = @"PUT";
+static NSString *const NGNHTTPMethodDELETE = @"DELETE";
+
+#pragma mark - HTTP headers
+
+static NSString *const NGNHTTPHeaderAccept = @"Accept";
+static NSString *const NGNHTTPHeaderContentType = @"Content-type";
+
+#pragma mark - HTTP data types
+
+static NSString *const NGNHTTPDataTypeJSON = @"application/json";
+
 @interface NGNServerSideLayerConstants : NSObject
 
 @end

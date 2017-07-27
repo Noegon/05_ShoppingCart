@@ -8,35 +8,32 @@
 
 #import "NGNCatalogService.h"
 #import "NGNServerSideLayerConstants.h"
+#import "NGNBasicService.h"
+
+@interface NGNCatalogService()
+
+@property (strong, nonatomic) NGNBasicService *basicService;
+
+@end
 
 @implementation NGNCatalogService
 
-- (void)executeCompletitionBlock:(void(^)(id object))completitionBlock object:(id)object{
-    dispatch_async(dispatch_get_main_queue(), ^() {
-        if (completitionBlock) {
-            completitionBlock(object);
-        }
-    });
+- (instancetype)init {
+    if (self = [super init]) {
+        _basicService = [[NGNBasicService alloc] init];
+    }
+    return self;
 }
 
 - (void)fetchPhones:(void(^)(NSArray *phones))completitionBlock {
-    NSURL *url = [self makeResourceURLWithServerUrl:NGNServerURL
-                               resourcePathElements:@[NGNCatalogEndpoint]];
-    [[[self createUrlSession] dataTaskWithRequest:[NSURLRequest requestWithURL:url] completionHandler:
-     ^(NSData *data, NSURLResponse *response, NSError *error) {
-         NSArray *phones = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&error];
-         [self executeCompletitionBlock:completitionBlock object:phones];
-    }] resume];
+    [self.basicService fetchEntitiesWithEntityPathElements:@[NGNCatalogEndpoint]
+                                         completitionBlock:completitionBlock];
 }
 
-- (void)fetchPhoneById:(NSString *)phoneId completitionHandler:(void(^)(NSDictionary *phone))completitionBlock {
-    NSURL *url = [self makeResourceURLWithServerUrl:NGNServerURL
-                               resourcePathElements:@[NGNCatalogEndpoint, phoneId]];
-    [[[self createUrlSession] dataTaskWithRequest:[NSURLRequest requestWithURL:url] completionHandler:
-      ^(NSData *data, NSURLResponse *response, NSError *error) {
-          NSDictionary *phone = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&error];
-          [self executeCompletitionBlock:completitionBlock object:phone];
-      }] resume];
+- (void)fetchPhoneById:(NSString *)phoneId
+     completitionBlock:(void(^)(NSDictionary *phone))completitionBlock {
+    [self.basicService fetchSingleEntityWithEntityPathElements:@[NGNCatalogEndpoint, phoneId]
+                                             completitionBlock:completitionBlock];
 }
 
 @end

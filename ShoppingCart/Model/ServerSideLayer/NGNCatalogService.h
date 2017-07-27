@@ -7,11 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "NGNBasicService.h"
 
-@interface NGNCatalogService : NGNBasicService
+@interface NGNCatalogService : NSObject
 
 - (void)fetchPhones:(void(^)(NSArray *phones))completitionBlock;
-- (void)fetchPhoneById:(NSString *)phoneId completitionHandler:(void(^)(NSDictionary *phone))completitionBlock;
+- (void)fetchPhoneById:(NSString *)phoneId completitionBlock:(void(^)(NSDictionary *phone))completitionBlock;
 
 @end

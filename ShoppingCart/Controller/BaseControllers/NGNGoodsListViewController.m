@@ -10,12 +10,15 @@
 #import <REFrostedViewController.h>
 #import "NGNCommonConstants.h"
 #import "NGNCatalogService.h"
+#import "NGNOrderService.h"
+#import "NSDate+NGNformattedDate.h"
 
 @interface NGNGoodsListViewController ()
 
 @property (strong, nonatomic) IBOutlet UIButton *TestShadowButton;
 
 @property (strong, nonatomic) NGNCatalogService *catalogService;
+@property (strong, nonatomic) NGNOrderService *orderService;
 
 #pragma mark - additional methods
 - (IBAction)profileBarButtonTapped:(UIBarButtonItem *)sender;
@@ -38,12 +41,40 @@
 //    self.TestShadowButton.layer.shadowOpacity = 0.5;
     
     self.catalogService = [[NGNCatalogService alloc] init];
+    self.orderService = [[NGNOrderService alloc] init];
+    
     [self.catalogService fetchPhones:^(NSArray *phones){
         NSLog(@"%@", phones);
     }];
-    [self.catalogService fetchPhoneById:@"1" completitionHandler:^(NSDictionary *phone){
+    [self.catalogService fetchPhoneById:@"1" completitionBlock:^(NSDictionary *phone) {
         NSLog(@"%@", phone);
     }];
+    
+    NSMutableDictionary *testOrder =
+        [@{@"date": [NSDate ngn_formattedStringfiedDate:[NSDate date]],@"catalog": @[@{@"id": @2}], @"id": @2} mutableCopy];
+    
+//    [self.orderService addOrder:testOrder completitionBlock:
+//     ^(NSDictionary *order){
+//        NSLog(@"%@", order);
+//    }];
+    
+    testOrder[@"date"] = @"29.07.2017";
+
+//    [self.orderService updateOrder:testOrder completitionBlock:
+//     ^(NSDictionary *order){
+//        NSLog(@"%@", order);
+//    }];
+    
+    [self.orderService deleteOrder:testOrder completitionBlock:
+     ^(NSDictionary *order){
+        NSLog(@"%@", order);
+    }];
+    
+//    [self.orderService deleteOrderById:@"2" completitionBlock:
+//     ^(NSDictionary *order){
+////         NSLog(@"%@", order);
+//     }];
+
 }
 
 - (void)didReceiveMemoryWarning {

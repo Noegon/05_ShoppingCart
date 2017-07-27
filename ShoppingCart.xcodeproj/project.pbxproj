@@ -23,6 +23,7 @@
 		25BF777E1F26866F00FFCF42 /* NGNServerSideLayerConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 25BF777D1F26866F00FFCF42 /* NGNServerSideLayerConstants.m */; };
 		25BF77811F27542700FFCF42 /* NGNOrderService.m in Sources */ = {isa = PBXBuildFile; fileRef = 25BF77801F27542700FFCF42 /* NGNOrderService.m */; };
 		25BF77831F27543A00FFCF42 /* db.json in Resources */ = {isa = PBXBuildFile; fileRef = 25BF77821F27543A00FFCF42 /* db.json */; };
+		40DCFC481F291FFE0047052F /* NSDate+NGNformattedDate.m in Sources */ = {isa = PBXBuildFile; fileRef = 40DCFC471F291FFE0047052F /* NSDate+NGNformattedDate.m */; };
 		EF3480AE1F1E8D5100733E86 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EF3480AD1F1E8D5100733E86 /* main.m */; };
 		EF3480B11F1E8D5100733E86 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EF3480B01F1E8D5100733E86 /* AppDelegate.m */; };
 		EF3480B71F1E8D5100733E86 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF3480B51F1E8D5100733E86 /* Main.storyboard */; };
@@ -72,6 +73,8 @@
 		25BF777F1F27542700FFCF42 /* NGNOrderService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NGNOrderService.h; path = Model/ServerSideLayer/NGNOrderService.h; sourceTree = "<group>"; };
 		25BF77801F27542700FFCF42 /* NGNOrderService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NGNOrderService.m; path = Model/ServerSideLayer/NGNOrderService.m; sourceTree = "<group>"; };
 		25BF77821F27543A00FFCF42 /* db.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = db.json; path = Model/ServerSideLayer/db.json; sourceTree = "<group>"; };
+		40DCFC461F291FFE0047052F /* NSDate+NGNformattedDate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSDate+NGNformattedDate.h"; path = "Model/Categories/NSDate+NGNformattedDate.h"; sourceTree = "<group>"; };
+		40DCFC471F291FFE0047052F /* NSDate+NGNformattedDate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSDate+NGNformattedDate.m"; path = "Model/Categories/NSDate+NGNformattedDate.m"; sourceTree = "<group>"; };
 		7AF396158AE15C14B79EAC98 /* Pods-ShoppingCart.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShoppingCart.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ShoppingCart/Pods-ShoppingCart.debug.xcconfig"; sourceTree = "<group>"; };
 		EF3480A91F1E8D5100733E86 /* ShoppingCart.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShoppingCart.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF3480AD1F1E8D5100733E86 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -132,6 +135,15 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		40DCFC451F291FB30047052F /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				40DCFC461F291FFE0047052F /* NSDate+NGNformattedDate.h */,
+				40DCFC471F291FFE0047052F /* NSDate+NGNformattedDate.m */,
+			);
+			name = Categories;
+			sourceTree = "<group>";
+		};
 		BBCA730B5FFA8F55993DB0BA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -187,6 +199,7 @@
 		EF3480C61F1EBF0400733E86 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				40DCFC451F291FB30047052F /* Categories */,
 				EF3480CD1F1EC0FB00733E86 /* StorageLayer */,
 				EF3480CC1F1EC0F200733E86 /* ServerSideLayer */,
 			);
@@ -455,6 +468,7 @@
 				25BF777B1F267CA300FFCF42 /* NGNBasicService.m in Sources */,
 				25BF777E1F26866F00FFCF42 /* NGNServerSideLayerConstants.m in Sources */,
 				25BF77811F27542700FFCF42 /* NGNOrderService.m in Sources */,
+				40DCFC481F291FFE0047052F /* NSDate+NGNformattedDate.m in Sources */,
 				EF34810E1F1FA0D600733E86 /* NGNMenuViewController.m in Sources */,
 				25BF775B1F23BBB400FFCF42 /* NGNCommonConstants.m in Sources */,
 			);
