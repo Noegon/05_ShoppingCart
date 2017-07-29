@@ -10,6 +10,8 @@
 
 static NSString *const NGNOrderEndpoint = @"order/";
 static NSString *const NGNCatalogEndpoint = @"catalog/";
+static NSString *const NGNGoodsOrderEndpoint = @"goodsOrder/";
+static NSString *const NGNProfileEndpoint = @"profile/";
 static NSString *const NGNServerURL = @"http://localhost:3000/";
 
 #pragma mark - HTTP methods

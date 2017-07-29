@@ -7,8 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "NGNAbstractService.h"
 
-@interface NGNOrderService : NSObject
+@interface NGNOrderService : NGNAbstractService
 
 - (void)fetchOrders:(void(^)(NSArray *orders))completitionBlock;
 - (void)fetchOrderById:(NSString *)orderId

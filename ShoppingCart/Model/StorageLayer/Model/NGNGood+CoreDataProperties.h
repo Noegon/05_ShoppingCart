@@ -2,11 +2,12 @@
 //  NGNGood+CoreDataProperties.h
 //  
 //
-//  Created by Alexey Stafeyev on 22.07.17.
+//  Created by Alexey Stafeyev on 27.07.17.
 //
 //
 
 #import "NGNGood+CoreDataClass.h"
+#import <FastEasyMapping/FastEasyMapping.h>
 
 
 NS_ASSUME_NONNULL_BEGIN
@@ -15,12 +16,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (NSFetchRequest<NGNGood *> *)fetchRequest;
 
-@property (nonatomic) BOOL avialable;
-@property (nonatomic) int32_t goodId;
-@property (nonatomic) double discount;
+@property (nullable, nonatomic, copy) NSNumber *avialable;
+@property (nullable, nonatomic, copy) NSNumber *discount;
+@property (nullable, nonatomic, copy) NSNumber *goodId;
 @property (nullable, nonatomic, retain) NSObject *image;
 @property (nullable, nonatomic, copy) NSString *name;
-@property (nonatomic) double price;
+@property (nullable, nonatomic, copy) NSNumber *price;
 @property (nullable, nonatomic, retain) NSSet<NGNGoodsOrder *> *goodsOrders;
 
 @end
@@ -31,6 +32,12 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)removeGoodsOrdersObject:(NGNGoodsOrder *)value;
 - (void)addGoodsOrders:(NSSet<NGNGoodsOrder *> *)values;
 - (void)removeGoodsOrders:(NSSet<NGNGoodsOrder *> *)values;
+
+@end
+
+@interface NGNGood (Mapping)
+
++ (FEMMapping *)defaultMapping;
 
 @end
 

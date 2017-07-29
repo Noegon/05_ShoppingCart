@@ -2,11 +2,12 @@
 //  NGNGoodsOrder+CoreDataProperties.h
 //  
 //
-//  Created by Alexey Stafeyev on 22.07.17.
+//  Created by Alexey Stafeyev on 27.07.17.
 //
 //
 
 #import "NGNGoodsOrder+CoreDataClass.h"
+#import <FastEasyMapping/FastEasyMapping.h>
 
 
 NS_ASSUME_NONNULL_BEGIN
@@ -15,9 +16,15 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (NSFetchRequest<NGNGoodsOrder *> *)fetchRequest;
 
-@property (nonatomic) int32_t goodsOrderId;
+@property (nullable, nonatomic, copy) NSNumber *goodsOrderId;
 @property (nullable, nonatomic, retain) NGNGood *good;
 @property (nullable, nonatomic, retain) NGNOrder *order;
+
+@end
+
+@interface NGNGoodsOrder (Mapping)
+
++ (FEMMapping *)defaultMapping;
 
 @end
 

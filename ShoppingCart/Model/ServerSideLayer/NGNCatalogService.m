@@ -7,23 +7,8 @@
 //
 
 #import "NGNCatalogService.h"
-#import "NGNServerSideLayerConstants.h"
-#import "NGNBasicService.h"
-
-@interface NGNCatalogService()
-
-@property (strong, nonatomic) NGNBasicService *basicService;
-
-@end
 
 @implementation NGNCatalogService
-
-- (instancetype)init {
-    if (self = [super init]) {
-        _basicService = [[NGNBasicService alloc] init];
-    }
-    return self;
-}
 
 - (void)fetchPhones:(void(^)(NSArray *phones))completitionBlock {
     [self.basicService fetchEntitiesWithEntityPathElements:@[NGNCatalogEndpoint]

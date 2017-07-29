@@ -18,11 +18,13 @@ typedef void (^BasicCompletitionHandler)(NSData *data, NSURLResponse *response, 
 }
 
 - (NSURL *)makeResourceURLWithServerUrl:(NSString *)servrerURL
-                   resourcePathElements:(NSArray<NSString *>*)resourcePathElements {
+                   resourcePathElements:(NSArray *)resourcePathElements {
     NSMutableString *finalPath = [[NSString stringWithFormat:@"%@", servrerURL] mutableCopy];
-    for (NSString *element in resourcePathElements) {
-        [finalPath appendString:element];
-        if (![element containsString:@"/"]) {
+    for (id element in resourcePathElements) {
+        NSString *stringfiedElement = nil;
+        stringfiedElement = ![element isKindOfClass:NSString.class] ? [element stringValue] : element;
+        [finalPath appendString:stringfiedElement];
+        if (![stringfiedElement containsString:@"/"]) {
             [finalPath appendString:@"/"];
         }
     }

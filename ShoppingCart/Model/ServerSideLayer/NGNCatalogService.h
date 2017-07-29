@@ -7,8 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "NGNAbstractService.h"
 
-@interface NGNCatalogService : NSObject
+@interface NGNCatalogService : NGNAbstractService
 
 - (void)fetchPhones:(void(^)(NSArray *phones))completitionBlock;
 - (void)fetchPhoneById:(NSString *)phoneId completitionBlock:(void(^)(NSDictionary *phone))completitionBlock;

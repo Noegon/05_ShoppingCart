@@ -1,35 +1,37 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="12141" systemVersion="16G29" minimumToolsVersion="Automatic" sourceLanguage="Objective-C" userDefinedModelVersionIdentifier="">
     <entity name="NGNGood" representedClassName="NGNGood" syncable="YES">
-        <attribute name="avialable" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="discount" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="goodId" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="avialable" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="discount" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="goodId" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="image" optional="YES" attributeType="Transformable" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="price" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="price" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="NO" syncable="YES"/>
         <relationship name="goodsOrders" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="NGNGoodsOrder" inverseName="good" inverseEntity="NGNGoodsOrder" syncable="YES"/>
     </entity>
     <entity name="NGNGoodsOrder" representedClassName="NGNGoodsOrder" syncable="YES">
-        <attribute name="goodsOrderId" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="goodsOrderId" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
         <relationship name="good" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="NGNGood" inverseName="goodsOrders" inverseEntity="NGNGood" syncable="YES"/>
         <relationship name="order" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="NGNOrder" inverseName="goodsOrders" inverseEntity="NGNOrder" syncable="YES"/>
     </entity>
     <entity name="NGNOrder" representedClassName="NGNOrder" syncable="YES">
-        <attribute name="orderId" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="orderId" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="orderingDate" attributeType="Date" defaultDateTimeInterval="522443580" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="state" attributeType="Integer 16" minValueString="0" maxValueString="3" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <relationship name="goodsOrders" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="NGNGoodsOrder" inverseName="order" inverseEntity="NGNGoodsOrder" syncable="YES"/>
         <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="NGNUser" inverseName="orders" inverseEntity="NGNUser" syncable="YES"/>
     </entity>
     <entity name="NGNUser" representedClassName="NGNUser" syncable="YES">
         <attribute name="address" attributeType="String" defaultValueString="none" syncable="YES"/>
         <attribute name="name" attributeType="String" defaultValueString="Jhon Doe" syncable="YES"/>
-        <attribute name="phone" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="phone" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="userId" attributeType="Integer 32" usesScalarValueType="NO" syncable="YES"/>
         <relationship name="orders" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="NGNOrder" inverseName="user" inverseEntity="NGNOrder" syncable="YES"/>
     </entity>
     <elements>
-        <element name="NGNGood" positionX="-612" positionY="45" width="128" height="148"/>
+        <element name="NGNGood" positionX="-612" positionY="45" width="128" height="150"/>
         <element name="NGNGoodsOrder" positionX="-425" positionY="45" width="128" height="90"/>
-        <element name="NGNOrder" positionX="-245" positionY="45" width="128" height="105"/>
-        <element name="NGNUser" positionX="-56" positionY="45" width="128" height="105"/>
+        <element name="NGNOrder" positionX="-245" positionY="45" width="128" height="118"/>
+        <element name="NGNUser" positionX="-56" positionY="45" width="128" height="118"/>
     </elements>
 </model>

@@ -2,7 +2,7 @@
 //  NGNOrder+CoreDataClass.h
 //  
 //
-//  Created by Alexey Stafeyev on 22.07.17.
+//  Created by Alexey Stafeyev on 27.07.17.
 //
 //
 

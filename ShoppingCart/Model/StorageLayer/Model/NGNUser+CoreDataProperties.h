@@ -2,12 +2,12 @@
 //  NGNUser+CoreDataProperties.h
 //  
 //
-//  Created by Alexey Stafeyev on 22.07.17.
+//  Created by Alexey Stafeyev on 27.07.17.
 //
 //
 
 #import "NGNUser+CoreDataClass.h"
-
+#import <FastEasyMapping/FastEasyMapping.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -15,9 +15,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (NSFetchRequest<NGNUser *> *)fetchRequest;
 
+@property (nullable, nonatomic, copy) NSNumber *userId;
 @property (nullable, nonatomic, copy) NSString *address;
 @property (nullable, nonatomic, copy) NSString *name;
-@property (nonatomic) int32_t phone;
+@property (nullable, nonatomic, copy) NSNumber *phone;
 @property (nullable, nonatomic, retain) NSSet<NGNOrder *> *orders;
 
 @end
@@ -28,6 +29,12 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)removeOrdersObject:(NGNOrder *)value;
 - (void)addOrders:(NSSet<NGNOrder *> *)values;
 - (void)removeOrders:(NSSet<NGNOrder *> *)values;
+
+@end
+
+@interface NGNUser (Mapping)
+
++ (FEMMapping *)defaultMapping;
 
 @end
 

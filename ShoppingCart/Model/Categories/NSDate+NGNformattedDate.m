@@ -14,6 +14,7 @@
 + (NSString *)ngn_formattedStringfiedDate:(NSDate *)date {
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     formatter.locale = [[NSLocale alloc] initWithLocaleIdentifier:@"en"];
+    [formatter setTimeZone:[NSTimeZone localTimeZone]];
     formatter.dateFormat = NGNModelDateFormat;
     return [formatter stringFromDate:date];
 }

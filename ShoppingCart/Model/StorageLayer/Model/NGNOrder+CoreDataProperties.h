@@ -2,12 +2,12 @@
 //  NGNOrder+CoreDataProperties.h
 //  
 //
-//  Created by Alexey Stafeyev on 22.07.17.
+//  Created by Alexey Stafeyev on 27.07.17.
 //
 //
 
 #import "NGNOrder+CoreDataClass.h"
-
+#import <FastEasyMapping/FastEasyMapping.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -15,8 +15,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (NSFetchRequest<NGNOrder *> *)fetchRequest;
 
-@property (nonatomic) int32_t orderId;
+@property (nullable, nonatomic, copy) NSNumber *orderId;
 @property (nullable, nonatomic, copy) NSDate *orderingDate;
+@property (nullable, nonatomic, copy) NSNumber *state;
 @property (nullable, nonatomic, retain) NSSet<NGNGoodsOrder *> *goodsOrders;
 @property (nullable, nonatomic, retain) NGNUser *user;
 
@@ -28,6 +29,12 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)removeGoodsOrdersObject:(NGNGoodsOrder *)value;
 - (void)addGoodsOrders:(NSSet<NGNGoodsOrder *> *)values;
 - (void)removeGoodsOrders:(NSSet<NGNGoodsOrder *> *)values;
+
+@end
+
+@interface NGNOrder (Mapping)
+
++ (FEMMapping *)defaultMapping;
 
 @end
 

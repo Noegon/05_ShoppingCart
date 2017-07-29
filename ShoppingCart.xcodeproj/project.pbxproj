@@ -7,23 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		25BF77511F226A5000FFCF42 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25BF77501F226A5000FFCF42 /* QuartzCore.framework */; };
 		25BF775B1F23BBB400FFCF42 /* NGNCommonConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 25BF775A1F23BBB400FFCF42 /* NGNCommonConstants.m */; };
 		25BF775D1F23BBF900FFCF42 /* NGNCoreDataEntitiesNames.m in Sources */ = {isa = PBXBuildFile; fileRef = 25BF775C1F23BBF900FFCF42 /* NGNCoreDataEntitiesNames.m */; };
-		25BF776E1F23ED1300FFCF42 /* NGNUser+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 25BF775F1F23ED1300FFCF42 /* NGNUser+CoreDataClass.m */; };
-		25BF776F1F23ED1300FFCF42 /* NGNUser+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 25BF77611F23ED1300FFCF42 /* NGNUser+CoreDataProperties.m */; };
-		25BF77701F23ED1300FFCF42 /* NGNGood+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 25BF77631F23ED1300FFCF42 /* NGNGood+CoreDataClass.m */; };
-		25BF77711F23ED1300FFCF42 /* NGNGood+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 25BF77651F23ED1300FFCF42 /* NGNGood+CoreDataProperties.m */; };
-		25BF77721F23ED1300FFCF42 /* NGNOrder+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 25BF77671F23ED1300FFCF42 /* NGNOrder+CoreDataClass.m */; };
-		25BF77731F23ED1300FFCF42 /* NGNOrder+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 25BF77691F23ED1300FFCF42 /* NGNOrder+CoreDataProperties.m */; };
-		25BF77741F23ED1300FFCF42 /* NGNGoodsOrder+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 25BF776B1F23ED1300FFCF42 /* NGNGoodsOrder+CoreDataClass.m */; };
-		25BF77751F23ED1300FFCF42 /* NGNGoodsOrder+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 25BF776D1F23ED1300FFCF42 /* NGNGoodsOrder+CoreDataProperties.m */; };
 		25BF77781F267AE900FFCF42 /* NGNCatalogService.m in Sources */ = {isa = PBXBuildFile; fileRef = 25BF77771F267AE900FFCF42 /* NGNCatalogService.m */; };
 		25BF777B1F267CA300FFCF42 /* NGNBasicService.m in Sources */ = {isa = PBXBuildFile; fileRef = 25BF777A1F267CA300FFCF42 /* NGNBasicService.m */; };
 		25BF777E1F26866F00FFCF42 /* NGNServerSideLayerConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 25BF777D1F26866F00FFCF42 /* NGNServerSideLayerConstants.m */; };
 		25BF77811F27542700FFCF42 /* NGNOrderService.m in Sources */ = {isa = PBXBuildFile; fileRef = 25BF77801F27542700FFCF42 /* NGNOrderService.m */; };
 		25BF77831F27543A00FFCF42 /* db.json in Resources */ = {isa = PBXBuildFile; fileRef = 25BF77821F27543A00FFCF42 /* db.json */; };
 		40DCFC481F291FFE0047052F /* NSDate+NGNformattedDate.m in Sources */ = {isa = PBXBuildFile; fileRef = 40DCFC471F291FFE0047052F /* NSDate+NGNformattedDate.m */; };
+		40DCFC591F2A57B20047052F /* NGNOrder+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 40DCFC4A1F2A57B20047052F /* NGNOrder+CoreDataClass.m */; };
+		40DCFC5A1F2A57B20047052F /* NGNOrder+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 40DCFC4C1F2A57B20047052F /* NGNOrder+CoreDataProperties.m */; };
+		40DCFC5B1F2A57B20047052F /* NGNUser+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 40DCFC4E1F2A57B20047052F /* NGNUser+CoreDataClass.m */; };
+		40DCFC5C1F2A57B20047052F /* NGNUser+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 40DCFC501F2A57B20047052F /* NGNUser+CoreDataProperties.m */; };
+		40DCFC5D1F2A57B20047052F /* NGNGood+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 40DCFC521F2A57B20047052F /* NGNGood+CoreDataClass.m */; };
+		40DCFC5E1F2A57B20047052F /* NGNGood+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 40DCFC541F2A57B20047052F /* NGNGood+CoreDataProperties.m */; };
+		40DCFC5F1F2A57B20047052F /* NGNGoodsOrder+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 40DCFC561F2A57B20047052F /* NGNGoodsOrder+CoreDataClass.m */; };
+		40DCFC601F2A57B20047052F /* NGNGoodsOrder+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 40DCFC581F2A57B20047052F /* NGNGoodsOrder+CoreDataProperties.m */; };
+		40DCFC6C1F2BB31E0047052F /* NGNGoodsOrderService.m in Sources */ = {isa = PBXBuildFile; fileRef = 40DCFC6B1F2BB31E0047052F /* NGNGoodsOrderService.m */; };
+		40DCFC6F1F2BB5B00047052F /* NGNAbstractService.m in Sources */ = {isa = PBXBuildFile; fileRef = 40DCFC6E1F2BB5B00047052F /* NGNAbstractService.m */; };
+		40DCFC721F2BB9480047052F /* NGNProfileService.m in Sources */ = {isa = PBXBuildFile; fileRef = 40DCFC711F2BB9480047052F /* NGNProfileService.m */; };
 		EF3480AE1F1E8D5100733E86 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EF3480AD1F1E8D5100733E86 /* main.m */; };
 		EF3480B11F1E8D5100733E86 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EF3480B01F1E8D5100733E86 /* AppDelegate.m */; };
 		EF3480B71F1E8D5100733E86 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF3480B51F1E8D5100733E86 /* Main.storyboard */; };
@@ -37,33 +39,15 @@
 		EF3481141F1FA1D600733E86 /* NGNGoodsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF3481131F1FA1D600733E86 /* NGNGoodsListViewController.m */; };
 		EF3481171F1FA20700733E86 /* NGNCartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF3481161F1FA20700733E86 /* NGNCartViewController.m */; };
 		EF34811A1F1FC44200733E86 /* avatar@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EF3481191F1FC44200733E86 /* avatar@2x.jpg */; };
-		FF6B16C1067F7B7D7428F051 /* libPods-ShoppingCart.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00B188B7F3C5BD001AAF0543 /* libPods-ShoppingCart.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		00B188B7F3C5BD001AAF0543 /* libPods-ShoppingCart.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ShoppingCart.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		198F57675726B8D120206506 /* Pods-ShoppingCart.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShoppingCart.release.xcconfig"; path = "Pods/Target Support Files/Pods-ShoppingCart/Pods-ShoppingCart.release.xcconfig"; sourceTree = "<group>"; };
 		25BF77501F226A5000FFCF42 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		25BF77531F22803B00FFCF42 /* NGNCommonConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NGNCommonConstants.h; path = Constants/NGNCommonConstants.h; sourceTree = "<group>"; };
 		25BF77591F23BB0B00FFCF42 /* NGNCoreDataEntitiesNames.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = NGNCoreDataEntitiesNames.h; path = Constants/NGNCoreDataEntitiesNames.h; sourceTree = "<group>"; };
 		25BF775A1F23BBB400FFCF42 /* NGNCommonConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NGNCommonConstants.m; path = Constants/NGNCommonConstants.m; sourceTree = "<group>"; };
 		25BF775C1F23BBF900FFCF42 /* NGNCoreDataEntitiesNames.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NGNCoreDataEntitiesNames.m; path = Constants/NGNCoreDataEntitiesNames.m; sourceTree = "<group>"; };
-		25BF775E1F23ED1300FFCF42 /* NGNUser+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NGNUser+CoreDataClass.h"; path = "Model/StorageLayer/Model/NGNUser+CoreDataClass.h"; sourceTree = "<group>"; };
-		25BF775F1F23ED1300FFCF42 /* NGNUser+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NGNUser+CoreDataClass.m"; path = "Model/StorageLayer/Model/NGNUser+CoreDataClass.m"; sourceTree = "<group>"; };
-		25BF77601F23ED1300FFCF42 /* NGNUser+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NGNUser+CoreDataProperties.h"; path = "Model/StorageLayer/Model/NGNUser+CoreDataProperties.h"; sourceTree = "<group>"; };
-		25BF77611F23ED1300FFCF42 /* NGNUser+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NGNUser+CoreDataProperties.m"; path = "Model/StorageLayer/Model/NGNUser+CoreDataProperties.m"; sourceTree = "<group>"; };
-		25BF77621F23ED1300FFCF42 /* NGNGood+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NGNGood+CoreDataClass.h"; path = "Model/StorageLayer/Model/NGNGood+CoreDataClass.h"; sourceTree = "<group>"; };
-		25BF77631F23ED1300FFCF42 /* NGNGood+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NGNGood+CoreDataClass.m"; path = "Model/StorageLayer/Model/NGNGood+CoreDataClass.m"; sourceTree = "<group>"; };
-		25BF77641F23ED1300FFCF42 /* NGNGood+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NGNGood+CoreDataProperties.h"; path = "Model/StorageLayer/Model/NGNGood+CoreDataProperties.h"; sourceTree = "<group>"; };
-		25BF77651F23ED1300FFCF42 /* NGNGood+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NGNGood+CoreDataProperties.m"; path = "Model/StorageLayer/Model/NGNGood+CoreDataProperties.m"; sourceTree = "<group>"; };
-		25BF77661F23ED1300FFCF42 /* NGNOrder+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NGNOrder+CoreDataClass.h"; path = "Model/StorageLayer/Model/NGNOrder+CoreDataClass.h"; sourceTree = "<group>"; };
-		25BF77671F23ED1300FFCF42 /* NGNOrder+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NGNOrder+CoreDataClass.m"; path = "Model/StorageLayer/Model/NGNOrder+CoreDataClass.m"; sourceTree = "<group>"; };
-		25BF77681F23ED1300FFCF42 /* NGNOrder+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NGNOrder+CoreDataProperties.h"; path = "Model/StorageLayer/Model/NGNOrder+CoreDataProperties.h"; sourceTree = "<group>"; };
-		25BF77691F23ED1300FFCF42 /* NGNOrder+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NGNOrder+CoreDataProperties.m"; path = "Model/StorageLayer/Model/NGNOrder+CoreDataProperties.m"; sourceTree = "<group>"; };
-		25BF776A1F23ED1300FFCF42 /* NGNGoodsOrder+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NGNGoodsOrder+CoreDataClass.h"; path = "Model/StorageLayer/Model/NGNGoodsOrder+CoreDataClass.h"; sourceTree = "<group>"; };
-		25BF776B1F23ED1300FFCF42 /* NGNGoodsOrder+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NGNGoodsOrder+CoreDataClass.m"; path = "Model/StorageLayer/Model/NGNGoodsOrder+CoreDataClass.m"; sourceTree = "<group>"; };
-		25BF776C1F23ED1300FFCF42 /* NGNGoodsOrder+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NGNGoodsOrder+CoreDataProperties.h"; path = "Model/StorageLayer/Model/NGNGoodsOrder+CoreDataProperties.h"; sourceTree = "<group>"; };
-		25BF776D1F23ED1300FFCF42 /* NGNGoodsOrder+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NGNGoodsOrder+CoreDataProperties.m"; path = "Model/StorageLayer/Model/NGNGoodsOrder+CoreDataProperties.m"; sourceTree = "<group>"; };
 		25BF77761F267AE900FFCF42 /* NGNCatalogService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NGNCatalogService.h; path = Model/ServerSideLayer/NGNCatalogService.h; sourceTree = "<group>"; };
 		25BF77771F267AE900FFCF42 /* NGNCatalogService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NGNCatalogService.m; path = Model/ServerSideLayer/NGNCatalogService.m; sourceTree = "<group>"; };
 		25BF77791F267CA300FFCF42 /* NGNBasicService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NGNBasicService.h; path = Model/ServerSideLayer/NGNBasicService.h; sourceTree = "<group>"; };
@@ -75,6 +59,32 @@
 		25BF77821F27543A00FFCF42 /* db.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = db.json; path = Model/ServerSideLayer/db.json; sourceTree = "<group>"; };
 		40DCFC461F291FFE0047052F /* NSDate+NGNformattedDate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSDate+NGNformattedDate.h"; path = "Model/Categories/NSDate+NGNformattedDate.h"; sourceTree = "<group>"; };
 		40DCFC471F291FFE0047052F /* NSDate+NGNformattedDate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSDate+NGNformattedDate.m"; path = "Model/Categories/NSDate+NGNformattedDate.m"; sourceTree = "<group>"; };
+		40DCFC491F2A57B20047052F /* NGNOrder+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NGNOrder+CoreDataClass.h"; path = "Model/StorageLayer/Model/NGNOrder+CoreDataClass.h"; sourceTree = "<group>"; };
+		40DCFC4A1F2A57B20047052F /* NGNOrder+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NGNOrder+CoreDataClass.m"; path = "Model/StorageLayer/Model/NGNOrder+CoreDataClass.m"; sourceTree = "<group>"; };
+		40DCFC4B1F2A57B20047052F /* NGNOrder+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NGNOrder+CoreDataProperties.h"; path = "Model/StorageLayer/Model/NGNOrder+CoreDataProperties.h"; sourceTree = "<group>"; };
+		40DCFC4C1F2A57B20047052F /* NGNOrder+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NGNOrder+CoreDataProperties.m"; path = "Model/StorageLayer/Model/NGNOrder+CoreDataProperties.m"; sourceTree = "<group>"; };
+		40DCFC4D1F2A57B20047052F /* NGNUser+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NGNUser+CoreDataClass.h"; path = "Model/StorageLayer/Model/NGNUser+CoreDataClass.h"; sourceTree = "<group>"; };
+		40DCFC4E1F2A57B20047052F /* NGNUser+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NGNUser+CoreDataClass.m"; path = "Model/StorageLayer/Model/NGNUser+CoreDataClass.m"; sourceTree = "<group>"; };
+		40DCFC4F1F2A57B20047052F /* NGNUser+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NGNUser+CoreDataProperties.h"; path = "Model/StorageLayer/Model/NGNUser+CoreDataProperties.h"; sourceTree = "<group>"; };
+		40DCFC501F2A57B20047052F /* NGNUser+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NGNUser+CoreDataProperties.m"; path = "Model/StorageLayer/Model/NGNUser+CoreDataProperties.m"; sourceTree = "<group>"; };
+		40DCFC511F2A57B20047052F /* NGNGood+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NGNGood+CoreDataClass.h"; path = "Model/StorageLayer/Model/NGNGood+CoreDataClass.h"; sourceTree = "<group>"; };
+		40DCFC521F2A57B20047052F /* NGNGood+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NGNGood+CoreDataClass.m"; path = "Model/StorageLayer/Model/NGNGood+CoreDataClass.m"; sourceTree = "<group>"; };
+		40DCFC531F2A57B20047052F /* NGNGood+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NGNGood+CoreDataProperties.h"; path = "Model/StorageLayer/Model/NGNGood+CoreDataProperties.h"; sourceTree = "<group>"; };
+		40DCFC541F2A57B20047052F /* NGNGood+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NGNGood+CoreDataProperties.m"; path = "Model/StorageLayer/Model/NGNGood+CoreDataProperties.m"; sourceTree = "<group>"; };
+		40DCFC551F2A57B20047052F /* NGNGoodsOrder+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NGNGoodsOrder+CoreDataClass.h"; path = "Model/StorageLayer/Model/NGNGoodsOrder+CoreDataClass.h"; sourceTree = "<group>"; };
+		40DCFC561F2A57B20047052F /* NGNGoodsOrder+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NGNGoodsOrder+CoreDataClass.m"; path = "Model/StorageLayer/Model/NGNGoodsOrder+CoreDataClass.m"; sourceTree = "<group>"; };
+		40DCFC571F2A57B20047052F /* NGNGoodsOrder+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NGNGoodsOrder+CoreDataProperties.h"; path = "Model/StorageLayer/Model/NGNGoodsOrder+CoreDataProperties.h"; sourceTree = "<group>"; };
+		40DCFC581F2A57B20047052F /* NGNGoodsOrder+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NGNGoodsOrder+CoreDataProperties.m"; path = "Model/StorageLayer/Model/NGNGoodsOrder+CoreDataProperties.m"; sourceTree = "<group>"; };
+		40DCFC611F2A58020047052F /* NGNCoreDataObjects.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = NGNCoreDataObjects.h; path = Model/StorageLayer/Model/NGNCoreDataObjects.h; sourceTree = "<group>"; };
+		40DCFC621F2A5E700047052F /* FastEasyMapping.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FastEasyMapping.framework; path = "Pods/../build/Debug-iphoneos/FastEasyMapping/FastEasyMapping.framework"; sourceTree = "<group>"; };
+		40DCFC641F2A5E780047052F /* REFrostedViewController.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = REFrostedViewController.framework; path = "Pods/../build/Debug-iphoneos/REFrostedViewController/REFrostedViewController.framework"; sourceTree = "<group>"; };
+		40DCFC6A1F2BB31E0047052F /* NGNGoodsOrderService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NGNGoodsOrderService.h; path = Model/ServerSideLayer/NGNGoodsOrderService.h; sourceTree = "<group>"; };
+		40DCFC6B1F2BB31E0047052F /* NGNGoodsOrderService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NGNGoodsOrderService.m; path = Model/ServerSideLayer/NGNGoodsOrderService.m; sourceTree = "<group>"; };
+		40DCFC6D1F2BB5B00047052F /* NGNAbstractService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NGNAbstractService.h; path = Model/ServerSideLayer/NGNAbstractService.h; sourceTree = "<group>"; };
+		40DCFC6E1F2BB5B00047052F /* NGNAbstractService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NGNAbstractService.m; path = Model/ServerSideLayer/NGNAbstractService.m; sourceTree = "<group>"; };
+		40DCFC701F2BB9480047052F /* NGNProfileService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NGNProfileService.h; path = Model/ServerSideLayer/NGNProfileService.h; sourceTree = "<group>"; };
+		40DCFC711F2BB9480047052F /* NGNProfileService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NGNProfileService.m; path = Model/ServerSideLayer/NGNProfileService.m; sourceTree = "<group>"; };
+		40DCFC731F2BB9A60047052F /* NGNServiceProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NGNServiceProtocol.h; path = Model/ServerSideLayer/NGNServiceProtocol.h; sourceTree = "<group>"; };
 		7AF396158AE15C14B79EAC98 /* Pods-ShoppingCart.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShoppingCart.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ShoppingCart/Pods-ShoppingCart.debug.xcconfig"; sourceTree = "<group>"; };
 		EF3480A91F1E8D5100733E86 /* ShoppingCart.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShoppingCart.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF3480AD1F1E8D5100733E86 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -98,6 +108,7 @@
 		EF3481151F1FA20700733E86 /* NGNCartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NGNCartViewController.h; path = Controller/BaseControllers/NGNCartViewController.h; sourceTree = "<group>"; };
 		EF3481161F1FA20700733E86 /* NGNCartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NGNCartViewController.m; path = Controller/BaseControllers/NGNCartViewController.m; sourceTree = "<group>"; };
 		EF3481191F1FC44200733E86 /* avatar@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "avatar@2x.jpg"; path = "Resources/avatar@2x.jpg"; sourceTree = "<group>"; };
+		F04CEFF53B2281A0BCC87DCF /* Pods_ShoppingCart.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ShoppingCart.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,8 +116,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				25BF77511F226A5000FFCF42 /* QuartzCore.framework in Frameworks */,
-				FF6B16C1067F7B7D7428F051 /* libPods-ShoppingCart.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -147,8 +156,10 @@
 		BBCA730B5FFA8F55993DB0BA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				40DCFC641F2A5E780047052F /* REFrostedViewController.framework */,
+				40DCFC621F2A5E700047052F /* FastEasyMapping.framework */,
 				25BF77501F226A5000FFCF42 /* QuartzCore.framework */,
-				00B188B7F3C5BD001AAF0543 /* libPods-ShoppingCart.a */,
+				F04CEFF53B2281A0BCC87DCF /* Pods_ShoppingCart.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -228,12 +239,19 @@
 			isa = PBXGroup;
 			children = (
 				25BF77821F27543A00FFCF42 /* db.json */,
+				40DCFC701F2BB9480047052F /* NGNProfileService.h */,
+				40DCFC711F2BB9480047052F /* NGNProfileService.m */,
 				25BF77761F267AE900FFCF42 /* NGNCatalogService.h */,
 				25BF77771F267AE900FFCF42 /* NGNCatalogService.m */,
 				25BF777F1F27542700FFCF42 /* NGNOrderService.h */,
 				25BF77801F27542700FFCF42 /* NGNOrderService.m */,
+				40DCFC6A1F2BB31E0047052F /* NGNGoodsOrderService.h */,
+				40DCFC6B1F2BB31E0047052F /* NGNGoodsOrderService.m */,
+				40DCFC6D1F2BB5B00047052F /* NGNAbstractService.h */,
+				40DCFC6E1F2BB5B00047052F /* NGNAbstractService.m */,
 				25BF77791F267CA300FFCF42 /* NGNBasicService.h */,
 				25BF777A1F267CA300FFCF42 /* NGNBasicService.m */,
+				40DCFC731F2BB9A60047052F /* NGNServiceProtocol.h */,
 			);
 			name = ServerSideLayer;
 			sourceTree = "<group>";
@@ -251,22 +269,23 @@
 		EF3480CE1F1F4B4F00733E86 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				25BF775E1F23ED1300FFCF42 /* NGNUser+CoreDataClass.h */,
-				25BF775F1F23ED1300FFCF42 /* NGNUser+CoreDataClass.m */,
-				25BF77601F23ED1300FFCF42 /* NGNUser+CoreDataProperties.h */,
-				25BF77611F23ED1300FFCF42 /* NGNUser+CoreDataProperties.m */,
-				25BF77621F23ED1300FFCF42 /* NGNGood+CoreDataClass.h */,
-				25BF77631F23ED1300FFCF42 /* NGNGood+CoreDataClass.m */,
-				25BF77641F23ED1300FFCF42 /* NGNGood+CoreDataProperties.h */,
-				25BF77651F23ED1300FFCF42 /* NGNGood+CoreDataProperties.m */,
-				25BF77661F23ED1300FFCF42 /* NGNOrder+CoreDataClass.h */,
-				25BF77671F23ED1300FFCF42 /* NGNOrder+CoreDataClass.m */,
-				25BF77681F23ED1300FFCF42 /* NGNOrder+CoreDataProperties.h */,
-				25BF77691F23ED1300FFCF42 /* NGNOrder+CoreDataProperties.m */,
-				25BF776A1F23ED1300FFCF42 /* NGNGoodsOrder+CoreDataClass.h */,
-				25BF776B1F23ED1300FFCF42 /* NGNGoodsOrder+CoreDataClass.m */,
-				25BF776C1F23ED1300FFCF42 /* NGNGoodsOrder+CoreDataProperties.h */,
-				25BF776D1F23ED1300FFCF42 /* NGNGoodsOrder+CoreDataProperties.m */,
+				40DCFC611F2A58020047052F /* NGNCoreDataObjects.h */,
+				40DCFC491F2A57B20047052F /* NGNOrder+CoreDataClass.h */,
+				40DCFC4A1F2A57B20047052F /* NGNOrder+CoreDataClass.m */,
+				40DCFC4B1F2A57B20047052F /* NGNOrder+CoreDataProperties.h */,
+				40DCFC4C1F2A57B20047052F /* NGNOrder+CoreDataProperties.m */,
+				40DCFC4D1F2A57B20047052F /* NGNUser+CoreDataClass.h */,
+				40DCFC4E1F2A57B20047052F /* NGNUser+CoreDataClass.m */,
+				40DCFC4F1F2A57B20047052F /* NGNUser+CoreDataProperties.h */,
+				40DCFC501F2A57B20047052F /* NGNUser+CoreDataProperties.m */,
+				40DCFC511F2A57B20047052F /* NGNGood+CoreDataClass.h */,
+				40DCFC521F2A57B20047052F /* NGNGood+CoreDataClass.m */,
+				40DCFC531F2A57B20047052F /* NGNGood+CoreDataProperties.h */,
+				40DCFC541F2A57B20047052F /* NGNGood+CoreDataProperties.m */,
+				40DCFC551F2A57B20047052F /* NGNGoodsOrder+CoreDataClass.h */,
+				40DCFC561F2A57B20047052F /* NGNGoodsOrder+CoreDataClass.m */,
+				40DCFC571F2A57B20047052F /* NGNGoodsOrder+CoreDataProperties.h */,
+				40DCFC581F2A57B20047052F /* NGNGoodsOrder+CoreDataProperties.m */,
 				EF3480B81F1E8D5100733E86 /* ShoppingCart.xcdatamodeld */,
 			);
 			name = Model;
@@ -447,30 +466,33 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				25BF77701F23ED1300FFCF42 /* NGNGood+CoreDataClass.m in Sources */,
-				25BF77731F23ED1300FFCF42 /* NGNOrder+CoreDataProperties.m in Sources */,
+				40DCFC5D1F2A57B20047052F /* NGNGood+CoreDataClass.m in Sources */,
 				EF3480B11F1E8D5100733E86 /* AppDelegate.m in Sources */,
 				EF3481141F1FA1D600733E86 /* NGNGoodsListViewController.m in Sources */,
 				EF3481111F1FA10E00733E86 /* NGNContentNavigationController.m in Sources */,
-				25BF77751F23ED1300FFCF42 /* NGNGoodsOrder+CoreDataProperties.m in Sources */,
 				EF34810B1F1F78D500733E86 /* NGNRootViewController.m in Sources */,
+				40DCFC5C1F2A57B20047052F /* NGNUser+CoreDataProperties.m in Sources */,
+				40DCFC5B1F2A57B20047052F /* NGNUser+CoreDataClass.m in Sources */,
+				40DCFC601F2A57B20047052F /* NGNGoodsOrder+CoreDataProperties.m in Sources */,
+				40DCFC5F1F2A57B20047052F /* NGNGoodsOrder+CoreDataClass.m in Sources */,
 				EF3480AE1F1E8D5100733E86 /* main.m in Sources */,
-				25BF77721F23ED1300FFCF42 /* NGNOrder+CoreDataClass.m in Sources */,
+				40DCFC6C1F2BB31E0047052F /* NGNGoodsOrderService.m in Sources */,
 				EF3481171F1FA20700733E86 /* NGNCartViewController.m in Sources */,
 				EF3480D31F1F4BA300733E86 /* NGNDataBaseRuler.m in Sources */,
+				40DCFC5E1F2A57B20047052F /* NGNGood+CoreDataProperties.m in Sources */,
 				EF3480BA1F1E8D5100733E86 /* ShoppingCart.xcdatamodeld in Sources */,
-				25BF776E1F23ED1300FFCF42 /* NGNUser+CoreDataClass.m in Sources */,
 				25BF77781F267AE900FFCF42 /* NGNCatalogService.m in Sources */,
 				25BF775D1F23BBF900FFCF42 /* NGNCoreDataEntitiesNames.m in Sources */,
-				25BF77741F23ED1300FFCF42 /* NGNGoodsOrder+CoreDataClass.m in Sources */,
-				25BF77711F23ED1300FFCF42 /* NGNGood+CoreDataProperties.m in Sources */,
-				25BF776F1F23ED1300FFCF42 /* NGNUser+CoreDataProperties.m in Sources */,
+				40DCFC721F2BB9480047052F /* NGNProfileService.m in Sources */,
+				40DCFC591F2A57B20047052F /* NGNOrder+CoreDataClass.m in Sources */,
 				25BF777B1F267CA300FFCF42 /* NGNBasicService.m in Sources */,
+				40DCFC5A1F2A57B20047052F /* NGNOrder+CoreDataProperties.m in Sources */,
 				25BF777E1F26866F00FFCF42 /* NGNServerSideLayerConstants.m in Sources */,
 				25BF77811F27542700FFCF42 /* NGNOrderService.m in Sources */,
 				40DCFC481F291FFE0047052F /* NSDate+NGNformattedDate.m in Sources */,
 				EF34810E1F1FA0D600733E86 /* NGNMenuViewController.m in Sources */,
 				25BF775B1F23BBB400FFCF42 /* NGNCommonConstants.m in Sources */,
+				40DCFC6F1F2BB5B00047052F /* NGNAbstractService.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -592,8 +614,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 9M22BH66EU;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/FastEasyMapping",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/REFrostedViewController",
+				);
 				INFOPLIST_FILE = ShoppingCart/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.noegon.ShoppingCart;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -606,8 +633,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 9M22BH66EU;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/FastEasyMapping",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/REFrostedViewController",
+				);
 				INFOPLIST_FILE = ShoppingCart/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.noegon.ShoppingCart;
 				PRODUCT_NAME = "$(TARGET_NAME)";

@@ -105,7 +105,7 @@
 
 @implementation NSManagedObject (NGNCreateUpdateDelete)
 
-+ (NSManagedObject *)ngn_createEntityInManagedObjectContext:(NSManagedObjectContext *)context
++ (instancetype)ngn_createEntityInManagedObjectContext:(NSManagedObjectContext *)context
                                     fieldsCompletitionBlock:(void(^)(NSManagedObject *object))fieldsCompletitionBlock {
     NSManagedObject *object = [NSEntityDescription insertNewObjectForEntityForName:[self entity].name
                                                             inManagedObjectContext:context];
@@ -136,28 +136,6 @@
         abort();
     }
     return resultArray;
-}
-
-@end
-
-@implementation NSJSONSerialization (NGNDifferentObjectsSerializationFromJSON)
-
-+ (NSManagedObject *)ngn_serializeSingleObjectWithJSONData:(NSData *)data {
-    NSError *error = nil;
-    NSDictionary *objectPropertiesDictionary =
-        [NSJSONSerialization JSONObjectWithData:data
-                                        options:NSJSONReadingMutableContainers error:&error];
-    if (!objectPropertiesDictionary) {
-        NSLog(@"%@", error.userInfo);
-#warning dont use abort in release!!! For debug only!
-        abort();
-    }
-    NSManagedObject *object = [NSManagedObject ngn_createEntityInManagedObjectContext:[NGNDataBaseRuler managedObjectContext] fieldsCompletitionBlock:^(NSManagedObject *object){
-        for (NSString *key in objectPropertiesDictionary.allKeys) {
-            [object setValue:objectPropertiesDictionary[key] forKey:key];
-        }
-    }];
-    return object;
 }
 
 @end
