@@ -7,7 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <REFrostedViewController/REFrostedViewController.h>
+#import <CoreData/CoreData.h>
+#import "NGNGood+CoreDataProperties.h"
+#import "NGNBasicController.h"
 
-@interface NGNGoodsListViewController : UITableViewController
+@interface NGNGoodsListViewController : NGNBasicController <REFrostedViewControllerDelegate,
+                                                            NSFetchedResultsControllerDelegate>
+
+@property (strong, nonatomic) NSFetchedResultsController<NGNGood *> *fetchedResultsController;
 
 @end

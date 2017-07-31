@@ -1,8 +1,8 @@
 //
-//  NGNCartViewController.h
+//  NGNBasicController.h
 //  ShoppingCart
 //
-//  Created by Alex on 19.07.17.
+//  Created by Alexey Stafeyev on 31.07.17.
 //  Copyright © 2017 Alex. All rights reserved.
 //
 
@@ -10,11 +10,10 @@
 #import <REFrostedViewController/REFrostedViewController.h>
 #import <CoreData/CoreData.h>
 #import "NGNGood+CoreDataProperties.h"
-#import "NGNBasicController.h"
 
-@interface NGNCartViewController : NGNBasicController <REFrostedViewControllerDelegate,
+@interface NGNBasicController : UITableViewController <REFrostedViewControllerDelegate,
                                                        NSFetchedResultsControllerDelegate>
 
-@property (strong, nonatomic) NSFetchedResultsController<NGNGood *> *fetchedResultsController;
+@property (strong, nonatomic) id<NSObject> dataWasLoadedNotification;
 
 @end

@@ -14,6 +14,19 @@
 static NSString *const NGNModelAppName = @"ShoppingCart";
 static NSString *const NGNModelDateFormat = @"dd.MM.yyyy";
 
+#pragma mark - controllersIds
+
+static NSString *const NGNControllerRootController = @"rootController";
+static NSString *const NGNControllerMenuController = @"menuController";
+static NSString *const NGNControllerContentController = @"contentController";
+static NSString *const NGNControllerGoodsController = @"goodsController";
+static NSString *const NGNControllerCartCapsuleController = @"cartCapsuleController";
+
+#pragma mark - notifications
+
+static NSString *const NGNControllerNotificationDataWasLoaded = @"dataWasLoaded";
+
+
 @interface NGNCommonConstants : NSObject
 
 @end

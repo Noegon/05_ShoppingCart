@@ -26,9 +26,14 @@
 		40DCFC6C1F2BB31E0047052F /* NGNGoodsOrderService.m in Sources */ = {isa = PBXBuildFile; fileRef = 40DCFC6B1F2BB31E0047052F /* NGNGoodsOrderService.m */; };
 		40DCFC6F1F2BB5B00047052F /* NGNAbstractService.m in Sources */ = {isa = PBXBuildFile; fileRef = 40DCFC6E1F2BB5B00047052F /* NGNAbstractService.m */; };
 		40DCFC721F2BB9480047052F /* NGNProfileService.m in Sources */ = {isa = PBXBuildFile; fileRef = 40DCFC711F2BB9480047052F /* NGNProfileService.m */; };
+		40DCFC771F2CEBE00047052F /* NGNServerDataLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 40DCFC761F2CEBE00047052F /* NGNServerDataLoader.m */; };
+		40DCFC7A1F2CF9190047052F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40DCFC781F2CF9190047052F /* Main.storyboard */; };
+		40DCFC7D1F2D5DAF0047052F /* NGNCartCapsuleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 40DCFC7C1F2D5DAF0047052F /* NGNCartCapsuleViewController.m */; };
+		40DCFCCB1F2E8C940047052F /* NGNGoodTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 40DCFCCA1F2E8C940047052F /* NGNGoodTableViewCell.m */; };
+		40DCFCCE1F2EA4350047052F /* NGNFirstGoodTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 40DCFCCD1F2EA4350047052F /* NGNFirstGoodTableViewCell.m */; };
+		40DCFCD11F2EAAB50047052F /* NGNBasicController.m in Sources */ = {isa = PBXBuildFile; fileRef = 40DCFCD01F2EAAB50047052F /* NGNBasicController.m */; };
 		EF3480AE1F1E8D5100733E86 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EF3480AD1F1E8D5100733E86 /* main.m */; };
 		EF3480B11F1E8D5100733E86 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EF3480B01F1E8D5100733E86 /* AppDelegate.m */; };
-		EF3480B71F1E8D5100733E86 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF3480B51F1E8D5100733E86 /* Main.storyboard */; };
 		EF3480BA1F1E8D5100733E86 /* ShoppingCart.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EF3480B81F1E8D5100733E86 /* ShoppingCart.xcdatamodeld */; };
 		EF3480BC1F1E8D5100733E86 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF3480BB1F1E8D5100733E86 /* Assets.xcassets */; };
 		EF3480BF1F1E8D5100733E86 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF3480BD1F1E8D5100733E86 /* LaunchScreen.storyboard */; };
@@ -85,12 +90,22 @@
 		40DCFC701F2BB9480047052F /* NGNProfileService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NGNProfileService.h; path = Model/ServerSideLayer/NGNProfileService.h; sourceTree = "<group>"; };
 		40DCFC711F2BB9480047052F /* NGNProfileService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NGNProfileService.m; path = Model/ServerSideLayer/NGNProfileService.m; sourceTree = "<group>"; };
 		40DCFC731F2BB9A60047052F /* NGNServiceProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NGNServiceProtocol.h; path = Model/ServerSideLayer/NGNServiceProtocol.h; sourceTree = "<group>"; };
+		40DCFC751F2CEBE00047052F /* NGNServerDataLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NGNServerDataLoader.h; path = Model/MiddleLayer/NGNServerDataLoader.h; sourceTree = "<group>"; };
+		40DCFC761F2CEBE00047052F /* NGNServerDataLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NGNServerDataLoader.m; path = Model/MiddleLayer/NGNServerDataLoader.m; sourceTree = "<group>"; };
+		40DCFC791F2CF9190047052F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		40DCFC7B1F2D5DAF0047052F /* NGNCartCapsuleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NGNCartCapsuleViewController.h; path = Controller/BaseControllers/NGNCartCapsuleViewController.h; sourceTree = "<group>"; };
+		40DCFC7C1F2D5DAF0047052F /* NGNCartCapsuleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NGNCartCapsuleViewController.m; path = Controller/BaseControllers/NGNCartCapsuleViewController.m; sourceTree = "<group>"; };
+		40DCFCC91F2E8C940047052F /* NGNGoodTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NGNGoodTableViewCell.h; path = View/TableCells/NGNGoodTableViewCell.h; sourceTree = "<group>"; };
+		40DCFCCA1F2E8C940047052F /* NGNGoodTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NGNGoodTableViewCell.m; path = View/TableCells/NGNGoodTableViewCell.m; sourceTree = "<group>"; };
+		40DCFCCC1F2EA4350047052F /* NGNFirstGoodTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NGNFirstGoodTableViewCell.h; path = View/TableCells/NGNFirstGoodTableViewCell.h; sourceTree = "<group>"; };
+		40DCFCCD1F2EA4350047052F /* NGNFirstGoodTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NGNFirstGoodTableViewCell.m; path = View/TableCells/NGNFirstGoodTableViewCell.m; sourceTree = "<group>"; };
+		40DCFCCF1F2EAAB50047052F /* NGNBasicController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NGNBasicController.h; path = Controller/BaseControllers/NGNBasicController.h; sourceTree = "<group>"; };
+		40DCFCD01F2EAAB50047052F /* NGNBasicController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NGNBasicController.m; path = Controller/BaseControllers/NGNBasicController.m; sourceTree = "<group>"; };
 		7AF396158AE15C14B79EAC98 /* Pods-ShoppingCart.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShoppingCart.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ShoppingCart/Pods-ShoppingCart.debug.xcconfig"; sourceTree = "<group>"; };
 		EF3480A91F1E8D5100733E86 /* ShoppingCart.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShoppingCart.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF3480AD1F1E8D5100733E86 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		EF3480AF1F1E8D5100733E86 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		EF3480B01F1E8D5100733E86 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		EF3480B61F1E8D5100733E86 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EF3480B91F1E8D5100733E86 /* ShoppingCart.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ShoppingCart.xcdatamodel; sourceTree = "<group>"; };
 		EF3480BB1F1E8D5100733E86 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EF3480BE1F1E8D5100733E86 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -153,6 +168,26 @@
 			name = Categories;
 			sourceTree = "<group>";
 		};
+		40DCFC741F2CEB670047052F /* MiddleLayer */ = {
+			isa = PBXGroup;
+			children = (
+				40DCFC751F2CEBE00047052F /* NGNServerDataLoader.h */,
+				40DCFC761F2CEBE00047052F /* NGNServerDataLoader.m */,
+			);
+			name = MiddleLayer;
+			sourceTree = "<group>";
+		};
+		40DCFCC61F2E29E30047052F /* TableCells */ = {
+			isa = PBXGroup;
+			children = (
+				40DCFCC91F2E8C940047052F /* NGNGoodTableViewCell.h */,
+				40DCFCCA1F2E8C940047052F /* NGNGoodTableViewCell.m */,
+				40DCFCCC1F2EA4350047052F /* NGNFirstGoodTableViewCell.h */,
+				40DCFCCD1F2EA4350047052F /* NGNFirstGoodTableViewCell.m */,
+			);
+			name = TableCells;
+			sourceTree = "<group>";
+		};
 		BBCA730B5FFA8F55993DB0BA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -198,7 +233,7 @@
 		EF3480AC1F1E8D5100733E86 /* SupportingFiles */ = {
 			isa = PBXGroup;
 			children = (
-				EF3480B51F1E8D5100733E86 /* Main.storyboard */,
+				40DCFC781F2CF9190047052F /* Main.storyboard */,
 				EF3480BB1F1E8D5100733E86 /* Assets.xcassets */,
 				EF3480BD1F1E8D5100733E86 /* LaunchScreen.storyboard */,
 				EF3480C01F1E8D5100733E86 /* Info.plist */,
@@ -213,6 +248,7 @@
 				40DCFC451F291FB30047052F /* Categories */,
 				EF3480CD1F1EC0FB00733E86 /* StorageLayer */,
 				EF3480CC1F1EC0F200733E86 /* ServerSideLayer */,
+				40DCFC741F2CEB670047052F /* MiddleLayer */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -220,6 +256,7 @@
 		EF3480C71F1EBF1100733E86 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				40DCFCC61F2E29E30047052F /* TableCells */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -314,6 +351,10 @@
 				EF3481131F1FA1D600733E86 /* NGNGoodsListViewController.m */,
 				EF3481151F1FA20700733E86 /* NGNCartViewController.h */,
 				EF3481161F1FA20700733E86 /* NGNCartViewController.m */,
+				40DCFC7B1F2D5DAF0047052F /* NGNCartCapsuleViewController.h */,
+				40DCFC7C1F2D5DAF0047052F /* NGNCartCapsuleViewController.m */,
+				40DCFCCF1F2EAAB50047052F /* NGNBasicController.h */,
+				40DCFCD01F2EAAB50047052F /* NGNBasicController.m */,
 			);
 			name = BaseControllers;
 			sourceTree = "<group>";
@@ -404,10 +445,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				EF3480BF1F1E8D5100733E86 /* LaunchScreen.storyboard in Resources */,
+				40DCFC7A1F2CF9190047052F /* Main.storyboard in Resources */,
 				EF34811A1F1FC44200733E86 /* avatar@2x.jpg in Resources */,
 				EF3480BC1F1E8D5100733E86 /* Assets.xcassets in Resources */,
 				25BF77831F27543A00FFCF42 /* db.json in Resources */,
-				EF3480B71F1E8D5100733E86 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -476,20 +517,25 @@
 				40DCFC601F2A57B20047052F /* NGNGoodsOrder+CoreDataProperties.m in Sources */,
 				40DCFC5F1F2A57B20047052F /* NGNGoodsOrder+CoreDataClass.m in Sources */,
 				EF3480AE1F1E8D5100733E86 /* main.m in Sources */,
+				40DCFCCB1F2E8C940047052F /* NGNGoodTableViewCell.m in Sources */,
 				40DCFC6C1F2BB31E0047052F /* NGNGoodsOrderService.m in Sources */,
 				EF3481171F1FA20700733E86 /* NGNCartViewController.m in Sources */,
 				EF3480D31F1F4BA300733E86 /* NGNDataBaseRuler.m in Sources */,
 				40DCFC5E1F2A57B20047052F /* NGNGood+CoreDataProperties.m in Sources */,
+				40DCFC7D1F2D5DAF0047052F /* NGNCartCapsuleViewController.m in Sources */,
 				EF3480BA1F1E8D5100733E86 /* ShoppingCart.xcdatamodeld in Sources */,
 				25BF77781F267AE900FFCF42 /* NGNCatalogService.m in Sources */,
 				25BF775D1F23BBF900FFCF42 /* NGNCoreDataEntitiesNames.m in Sources */,
+				40DCFC771F2CEBE00047052F /* NGNServerDataLoader.m in Sources */,
 				40DCFC721F2BB9480047052F /* NGNProfileService.m in Sources */,
 				40DCFC591F2A57B20047052F /* NGNOrder+CoreDataClass.m in Sources */,
 				25BF777B1F267CA300FFCF42 /* NGNBasicService.m in Sources */,
 				40DCFC5A1F2A57B20047052F /* NGNOrder+CoreDataProperties.m in Sources */,
+				40DCFCD11F2EAAB50047052F /* NGNBasicController.m in Sources */,
 				25BF777E1F26866F00FFCF42 /* NGNServerSideLayerConstants.m in Sources */,
 				25BF77811F27542700FFCF42 /* NGNOrderService.m in Sources */,
 				40DCFC481F291FFE0047052F /* NSDate+NGNformattedDate.m in Sources */,
+				40DCFCCE1F2EA4350047052F /* NGNFirstGoodTableViewCell.m in Sources */,
 				EF34810E1F1FA0D600733E86 /* NGNMenuViewController.m in Sources */,
 				25BF775B1F23BBB400FFCF42 /* NGNCommonConstants.m in Sources */,
 				40DCFC6F1F2BB5B00047052F /* NGNAbstractService.m in Sources */,
@@ -499,10 +545,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		EF3480B51F1E8D5100733E86 /* Main.storyboard */ = {
+		40DCFC781F2CF9190047052F /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				EF3480B61F1E8D5100733E86 /* Base */,
+				40DCFC791F2CF9190047052F /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";

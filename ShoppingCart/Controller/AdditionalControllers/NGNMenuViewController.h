@@ -10,4 +10,9 @@
 
 @interface NGNMenuViewController : UITableViewController
 
+@property (copy, nonatomic) NSString *nameLabelText;
+
+#pragma mark - helper methods
+- (void)setCornerRadiusForView:(UIView *)view cornersBitmask:(UIRectCorner)corners cornerRadii:(CGSize)size;
+
 @end

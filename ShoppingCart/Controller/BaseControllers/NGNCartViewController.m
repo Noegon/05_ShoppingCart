@@ -7,9 +7,11 @@
 //
 
 #import "NGNCartViewController.h"
+#import "REFrostedViewController.h"
 #import "NGNCommonConstants.h"
 
 @interface NGNCartViewController ()
+
 @property (strong, nonatomic) IBOutletCollection(UITableViewCell) NSArray *NotAvialableGoodsCells;
 
 @end
@@ -18,13 +20,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    UIBarButtonItem *backItem = [[UIBarButtonItem alloc] initWithTitle:@""
-                                                                 style:UIBarButtonItemStylePlain
-                                                                target:nil
-                                                                action:nil];
-    
-    [self.navigationItem setBackBarButtonItem:backItem];
     
     [self.NotAvialableGoodsCells enumerateObjectsUsingBlock:
      ^(id _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {

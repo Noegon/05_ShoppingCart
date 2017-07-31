@@ -8,15 +8,9 @@
 
 #import "AppDelegate.h"
 #import "NGNCommonConstants.h"
-#import "NGNCoreDataEntitiesNames.h"
 #import "NGNDataBaseRuler.h"
+#import "NGNServerDataLoader.h"
 #import "NGNCoreDataObjects.h"
-#import "NGNCatalogService.h"
-#import "NGNOrderService.h"
-#import "NGNProfileService.h"
-#import "NGNGoodsOrderService.h"
-
-#import <FastEasyMapping/FastEasyMapping.h>
 
 @interface AppDelegate ()
 
@@ -34,63 +28,23 @@
     [manager removeItemAtURL:storeURL error:nil];
 
     [NGNDataBaseRuler setupCoreDataStackWithStorageName:NGNModelAppName];
+    [NGNServerDataLoader loadDataFromServerWithContext:[NGNDataBaseRuler managedObjectContext]];
+    NSLog(@"%@", @"server data was loaded successfully");
     
-    NGNCatalogService *catalogService = [[NGNCatalogService alloc] init];
-    NGNOrderService *orderService = [[NGNOrderService alloc] init];
-    NGNGoodsOrderService *goodsOrderService = [[NGNGoodsOrderService alloc] init];
-    NGNProfileService *profileService = [[NGNProfileService alloc] init];
     
-    [orderService fetchOrders:^(NSArray *orders) {
-        [goodsOrderService fetchGoodsOrders:^(NSArray *goodsOrders) {
-            [catalogService fetchPhones:^(NSArray *phones) {
-                [profileService fetchUsers:^(NSArray *users) {
-                    
-                    FEMMapping *userMapping = [NGNUser defaultMapping];
-                    NSArray *usersResult = [FEMDeserializer collectionFromRepresentation:users
-                                                                                 mapping:userMapping
-                                                                                 context:[NGNDataBaseRuler managedObjectContext]];
-//                    NSLog(@"%@", usersResult);
-                    
-                    FEMMapping *phonesMapping = [NGNGood defaultMapping];
-                    NSArray *phonesResult = [FEMDeserializer collectionFromRepresentation:phones
-                                                                                  mapping:phonesMapping
-                                                                                  context:[NGNDataBaseRuler managedObjectContext]];
-                    
-//                    NSLog(@"%@", phonesResult);
-                    
-                    FEMMapping *goodsOrderMapping = [NGNGoodsOrder defaultMapping];
-                    NSArray *goodsOrdersResult = [FEMDeserializer collectionFromRepresentation:goodsOrders
-                                                                                       mapping:goodsOrderMapping
-                                                                                       context:[NGNDataBaseRuler managedObjectContext]];
-//                    NSLog(@"%@", goodsOrdersResult);
-                    
-                    FEMMapping *orderMapping = [NGNOrder defaultMapping];
-                    NSArray *ordersResult = [FEMDeserializer collectionFromRepresentation:orders
-                                                                                  mapping:orderMapping
-                                                                                  context:[NGNDataBaseRuler managedObjectContext]];
-                    
-                    NSLog(@"%@", [ordersResult[0] valueForKey:@"user"]);
-                    NSLog(@"%@", ordersResult[0]);
-                    
-//                    NSArray *usersTest = [[NGNDataBaseRuler managedObjectContext] executeFetchRequest:[NGNUser fetchRequest] error:nil];
-//                    NSLog(@"%@", usersTest);
-                    
-//                    NSArray *phonesTest = [[NGNDataBaseRuler managedObjectContext]
-//                                           executeFetchRequest:[NGNGood fetchRequest] error:nil];
-//                    NSLog(@"%@", phonesTest);
-                    
-//                    NSArray *ordersTest = [[NGNDataBaseRuler managedObjectContext]
-//                                           executeFetchRequest:[NGNOrder fetchRequest] error:nil];
-//                    NSLog(@"%@", ordersTest[1]);
-                    
-//                    NSArray *goodsOrdersTest = [[NGNDataBaseRuler managedObjectContext]
-//                                           executeFetchRequest:[NGNGoodsOrder fetchRequest] error:nil];
-//                    NSLog(@"%@", goodsOrdersTest);
-                }];
-            }];
-        }];
-    }];
-
+//    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+//        // No explicit autorelease pool needed here.
+//        // The code runs in background, not strangling
+//        // the main run loop.
+//        BOOL result = [NGNServerDataLoader loadDataFromServerWithContext:[NGNDataBaseRuler managedObjectContext]];
+//        if (result) {
+//            dispatch_sync(dispatch_get_main_queue(), ^{
+//                // This will be called on the main thread, so that
+//                // you can update the UI, for example.
+//                NSLog(@"%@%d", @"server data was loaded successfully: ", result);
+//            });
+//        }
+//    });
     
 //    [catalogService fetchPhones:^(NSArray *phones) {
 //        FEMMapping *phonesMapping = [NGNGood defaultMapping];
