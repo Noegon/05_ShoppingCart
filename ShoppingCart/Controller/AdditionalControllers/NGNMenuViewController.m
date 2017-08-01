@@ -119,7 +119,7 @@
     if (self.nameLabelText) {
         return @[self.nameLabelText];
     }
-    return @[@"(null)"];
+    return @[@"(noname)"];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
