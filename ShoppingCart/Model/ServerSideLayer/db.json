@@ -20,6 +20,20 @@
       "price": 1590,
       "discount": 0,
       "avialable": 1
+    },
+    {
+      "id": 4,
+      "name": "Samsung Galaxy S6 32GB",
+      "price": 1005,
+      "discount": 0,
+      "avialable": 1
+    },
+    {
+      "id": 5,
+      "name": "Samsung Galaxy S6 16GB",
+      "price": 758,
+      "discount": 0,
+      "avialable": 1
     }
   ],
     

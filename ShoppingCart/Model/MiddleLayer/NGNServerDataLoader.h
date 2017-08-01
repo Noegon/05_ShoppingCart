@@ -8,10 +8,22 @@
 
 #import <Foundation/Foundation.h>
 
+@class NGNReachability;
 @class NSManagedObjectContext;
 
 @interface NGNServerDataLoader : NSObject
 
+@property (strong, nonatomic) NGNReachability* internetReachable;
+@property (strong, nonatomic) NGNReachability* hostReachable;
+
 + (void)loadDataFromServerWithContext:(NSManagedObjectContext *)context;
+
+#pragma mark - networking
+
+/*Returns YES if it is avialable connection with current server, NO in other case**/
++ (BOOL)checkServerStatusWithHostName:(NSString *)hostName;
+
+/*Returns YES if it is avialable internet connection, NO in other case**/
++ (BOOL)checkInternetStatus;
 
 @end

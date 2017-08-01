@@ -30,52 +30,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-//    UIBarButtonItem *backItem = [[UIBarButtonItem alloc] initWithTitle:@""
-//                                                                 style:UIBarButtonItemStylePlain
-//                                                                target:nil
-//                                                                action:nil];
-//    
-//    [self.navigationItem setBackBarButtonItem:backItem];
-    
-//    self.TestShadowButton.layer.shadowOffset = CGSizeMake(5, 5);
-//    self.TestShadowButton.layer.shadowColor = [[UIColor blackColor] CGColor];
-//    self.TestShadowButton.layer.shadowOpacity = 0.5;
-    
-//    self.catalogService = [[NGNCatalogService alloc] init];
-//    self.orderService = [[NGNOrderService alloc] init];
-//    
-//    [self.catalogService fetchPhones:^(NSArray *phones){
-//        NSLog(@"%@", phones);
-//    }];
-//    [self.catalogService fetchPhoneById:@"1" completitionBlock:^(NSDictionary *phone) {
-//        NSLog(@"%@", phone);
-//    }];
-//    
-//    NSMutableDictionary *testOrder =
-//        [@{@"date": [NSDate ngn_formattedStringfiedDate:[NSDate date]],@"catalog": @[@{@"id": @2}], @"id": @2} mutableCopy];
-//    
-//    [self.orderService addOrder:testOrder completitionBlock:
-//     ^(NSDictionary *order){
-//        NSLog(@"%@", order);
-//    }];
-//    
-//    testOrder[@"date"] = @"29.07.2017";
-//
-//    [self.orderService updateOrder:testOrder completitionBlock:
-//     ^(NSDictionary *order){
-//        NSLog(@"%@", order);
-//    }];
-//    
-//    [self.orderService deleteOrder:testOrder completitionBlock:
-//     ^(NSDictionary *order){
-//        NSLog(@"%@", order);
-//    }];
-//    
-//    [self.orderService deleteOrderById:@"2" completitionBlock:
-//     ^(NSDictionary *order){
-////         NSLog(@"%@", order);
-//     }];
 
 }
 

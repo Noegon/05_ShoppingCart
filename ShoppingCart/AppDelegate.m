@@ -21,72 +21,14 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 #warning delete datasource for debug
-    NSURL *applicationDocumentsDirectory = [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory
-                                                                                   inDomains:NSUserDomainMask] lastObject];
-    NSFileManager *manager = [NSFileManager defaultManager];
-    NSURL *storeURL = [applicationDocumentsDirectory URLByAppendingPathComponent:@"ShoppingCart.sqlite"];
-    [manager removeItemAtURL:storeURL error:nil];
+//    NSURL *applicationDocumentsDirectory = [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory
+//                                                                                   inDomains:NSUserDomainMask] lastObject];
+//    NSFileManager *manager = [NSFileManager defaultManager];
+//    NSURL *storeURL = [applicationDocumentsDirectory URLByAppendingPathComponent:@"ShoppingCart.sqlite"];
+//    [manager removeItemAtURL:storeURL error:nil];
 
     [NGNDataBaseRuler setupCoreDataStackWithStorageName:NGNModelAppName];
     [NGNServerDataLoader loadDataFromServerWithContext:[NGNDataBaseRuler managedObjectContext]];
-    NSLog(@"%@", @"server data was loaded successfully");
-    
-    
-//    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-//        // No explicit autorelease pool needed here.
-//        // The code runs in background, not strangling
-//        // the main run loop.
-//        BOOL result = [NGNServerDataLoader loadDataFromServerWithContext:[NGNDataBaseRuler managedObjectContext]];
-//        if (result) {
-//            dispatch_sync(dispatch_get_main_queue(), ^{
-//                // This will be called on the main thread, so that
-//                // you can update the UI, for example.
-//                NSLog(@"%@%d", @"server data was loaded successfully: ", result);
-//            });
-//        }
-//    });
-    
-//    [catalogService fetchPhones:^(NSArray *phones) {
-//        FEMMapping *phonesMapping = [NGNGood defaultMapping];
-//        NSArray *phonesResult = [FEMDeserializer collectionFromRepresentation:phones
-//                                                                      mapping:phonesMapping
-//                                                                      context:[NGNDataBaseRuler managedObjectContext]];
-//        NSLog(@"%@", phonesResult);
-//    }];
-    
-
-    
-    
-    
-//    [orderService fetchOrders:^(NSArray *orders) {
-//        
-//        FEMMapping *orderMapping = [NGNOrder defaultMapping];
-//        NSArray *ordersResult = [FEMDeserializer collectionFromRepresentation:orders
-//                                                                      mapping:orderMapping
-//                                                                      context:[NGNDataBaseRuler managedObjectContext]];
-//        NSLog(@"%@", ordersResult[0]);
-//    }];
-
-//    NSManagedObjectContext *context = [NGNDataBaseRuler managedObjectContext];
-//    NGNUser *user1 = (NGNUser *)[NGNUser ngn_createEntityInManagedObjectContext:context];
-//    user1.name = @"Alex";
-//    [NGNDataBaseRuler saveContext];
-//    NSLog(@"%@", user1.name);
-//    NGNUser *user2 = (NGNUser *)[NGNUser ngn_createEntityInManagedObjectContext:context];
-//    user2.name = @"Tanya";
-//    [NGNDataBaseRuler saveContext];
-//    NSLog(@"%@", user2.name);
-//    NSArray *allUsers = [NGNUser ngn_allEntitiesInManagedObjectContext:context];
-//    NSLog(@"%@", ((NGNUser *)allUsers[0]).name);
-//    NSLog(@"%@", ((NGNUser *)allUsers[1]).name);
-//    NGNUser *testUser = ((NGNUser *)allUsers[0]);
-//    testUser.name = @"Beckket";
-//    [NGNDataBaseRuler saveContext];
-//    allUsers = [NGNUser ngn_allEntitiesInManagedObjectContext:context];
-//    NSLog(@"%@", ((NGNUser *)allUsers[0]).name);
-//    [NGNUser ngn_deleteEntityInManagedObjectContext:context managedObject:testUser];
-//    allUsers = [NGNUser ngn_allEntitiesInManagedObjectContext:context];
-//    NSLog(@"%ld", allUsers.count);
     return YES;
 }
 
@@ -105,6 +47,7 @@
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {
     // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
+    [NGNServerDataLoader loadDataFromServerWithContext:[NGNDataBaseRuler managedObjectContext]];
 }
 
 
@@ -116,53 +59,7 @@
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     // Saves changes in the application's managed object context before the application terminates.
-    [self saveContext];
-}
-
-
-#pragma mark - Core Data stack
-
-@synthesize persistentContainer = _persistentContainer;
-
-- (NSPersistentContainer *)persistentContainer {
-    // The persistent container for the application. This implementation creates and returns a container, having loaded the store for the application to it.
-    @synchronized (self) {
-        if (_persistentContainer == nil) {
-            _persistentContainer = [[NSPersistentContainer alloc] initWithName:@"ShoppingCart"];
-            [_persistentContainer loadPersistentStoresWithCompletionHandler:^(NSPersistentStoreDescription *storeDescription, NSError *error) {
-                if (error != nil) {
-                    // Replace this implementation with code to handle the error appropriately.
-                    // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-                    
-                    /*
-                     Typical reasons for an error here include:
-                     * The parent directory does not exist, cannot be created, or disallows writing.
-                     * The persistent store is not accessible, due to permissions or data protection when the device is locked.
-                     * The device is out of space.
-                     * The store could not be migrated to the current model version.
-                     Check the error message to determine what the actual problem was.
-                    */
-                    NSLog(@"Unresolved error %@, %@", error, error.userInfo);
-                    abort();
-                }
-            }];
-        }
-    }
-    
-    return _persistentContainer;
-}
-
-#pragma mark - Core Data Saving support
-
-- (void)saveContext {
-    NSManagedObjectContext *context = self.persistentContainer.viewContext;
-    NSError *error = nil;
-    if ([context hasChanges] && ![context save:&error]) {
-        // Replace this implementation with code to handle the error appropriately.
-        // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-        NSLog(@"Unresolved error %@, %@", error, error.userInfo);
-        abort();
-    }
+    [NGNDataBaseRuler saveContext];
 }
 
 @end

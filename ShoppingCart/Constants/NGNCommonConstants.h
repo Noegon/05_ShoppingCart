@@ -25,7 +25,10 @@ static NSString *const NGNControllerCartCapsuleController = @"cartCapsuleControl
 #pragma mark - notifications
 
 static NSString *const NGNControllerNotificationDataWasLoaded = @"dataWasLoaded";
-
+static NSString *const NGNControllerNotificationGoodsWasLoaded = @"goodsWasLoaded";
+static NSString *const NGNControllerNotificationUserWasLoaded = @"userWasLoaded";
+static NSString *const NGNControllerNotificationOrdersWasLoaded = @"ordersWasLoaded";
+static NSString *const NGNControllerNotificationGoodsOrdersWasLoaded = @"goodsOrdersWasLoaded";
 
 @interface NGNCommonConstants : NSObject
 

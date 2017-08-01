@@ -18,12 +18,23 @@
 
 @interface NGNMenuViewController ()
 
+@property (strong, nonatomic) id<NSObject> dataWasLoadedNotification;
+
 @end
 
 @implementation NGNMenuViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.dataWasLoadedNotification =
+        [[NSNotificationCenter defaultCenter] addObserverForName:NGNControllerNotificationDataWasLoaded
+                                                      object:nil
+                                                       queue:[NSOperationQueue mainQueue]
+                                                  usingBlock:^(NSNotification *notification) {
+                                                      self.nameLabelText = @"test";
+                                                      [self.tableView reloadData];
+                                                  }];
     
     self.tableView.separatorColor = [UIColor colorWithRed:150/255.0f green:161/255.0f blue:177/255.0f alpha:1.0f];
     self.tableView.delegate = self;
@@ -61,6 +72,10 @@
 //    self.frostedViewController.blurRadius = 20;
 }
 
+- (void)dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:_dataWasLoadedNotification];
+}
+
 #pragma mark - UITableView Delegate
 
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -92,8 +107,19 @@
     return 71;
 }
 
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 1;
+}
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)sectionIndex {
     return 5;
+}
+
+- (NSArray<NSString *> *)sectionIndexTitlesForTableView:(UITableView *)tableView {
+    if (self.nameLabelText) {
+        return @[self.nameLabelText];
+    }
+    return @[@"(null)"];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {

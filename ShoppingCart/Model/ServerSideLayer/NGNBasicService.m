@@ -114,8 +114,9 @@ typedef void (^BasicCompletitionHandler)(NSData *data, NSURLResponse *response, 
 - (void)basicEntitiesOperationWithRequest:(NSURLRequest *)request
                 entitiesCompletitionBlock:(void(^)(NSArray *entities))entitiesCompletitionBlock
                       completitionHandler:(void(^)(NSData *data, NSURLResponse *response, NSError *error))completitionHandler {
+    NSURLSession *session = [self createUrlSession];
     NSURLSessionDataTask *entitiesTask =
-        [[self createUrlSession] dataTaskWithRequest:request completionHandler:completitionHandler];
+        [session dataTaskWithRequest:request completionHandler:completitionHandler];
     [entitiesTask resume];
 }
 
@@ -138,7 +139,9 @@ typedef void (^BasicCompletitionHandler)(NSData *data, NSURLResponse *response, 
                         entityCompletitionBlock:completitionBlock
                             completitionHandler:
      ^(NSData *data, NSURLResponse *response, NSError *error) {
-         NSDictionary *entity = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&error];
+         NSDictionary *entity = [NSJSONSerialization JSONObjectWithData:data
+                                                                options:NSJSONReadingMutableContainers
+                                                                  error:&error];
          [self executeCompletitionBlock:completitionBlock object:entity];
      }];
 }
@@ -153,7 +156,8 @@ completitionBlock:(void(^)(NSDictionary *entity))completitionBlock {
                                                          HTTPBody:bodyData];
     [self basicSingleEntityOperationWithRequest:request
                         entityCompletitionBlock:completitionBlock
-                            completitionHandler:[self basicHandlerWithCompletitionBlock:completitionBlock entity:entity]];
+                            completitionHandler:[self basicHandlerWithCompletitionBlock:completitionBlock
+                                                                                 entity:entity]];
 }
 
 - (void)updateEntity:(NSDictionary *)entity
@@ -166,7 +170,8 @@ completitionBlock:(void(^)(NSDictionary *entity))completitionBlock {
                                                         HTTPBody:bodyData];
     [self basicSingleEntityOperationWithRequest:request
                         entityCompletitionBlock:completitionBlock
-                            completitionHandler:[self basicHandlerWithCompletitionBlock:completitionBlock entity:entity]];
+                            completitionHandler:[self basicHandlerWithCompletitionBlock:completitionBlock
+                                                                                 entity:entity]];
 }
 
 - (void)deleteEntity:(NSDictionary *)entity
@@ -175,7 +180,8 @@ completitionBlock:(void(^)(NSDictionary *entity))completitionBlock {
     NSURLRequest *request = [self makeDELETERequestWithPathElements:pathElements];
     [self basicSingleEntityOperationWithRequest:request
                         entityCompletitionBlock:completitionBlock
-                            completitionHandler:[self basicHandlerWithCompletitionBlock:completitionBlock entity:entity]];
+                            completitionHandler:[self basicHandlerWithCompletitionBlock:completitionBlock
+                                                                                 entity:entity]];
 }
 
 @end

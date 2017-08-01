@@ -7,6 +7,7 @@
 //
 
 #import "NGNCartCapsuleViewController.h"
+#import "UIViewController+NGNBasicViewController.h"
 #import <REFrostedViewController/REFrostedViewController.h>
 
 @interface NGNCartCapsuleViewController ()
@@ -27,6 +28,7 @@
     self.makeOrderButton.layer.shadowColor = [[UIColor blackColor] CGColor];
     self.makeOrderButton.layer.shadowOpacity = 0.5;
     
+    [self addFallingShadowFromNavigationBar];
 }
 
 /*

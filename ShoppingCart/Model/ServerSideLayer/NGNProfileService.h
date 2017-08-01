@@ -10,6 +10,9 @@
 
 @interface NGNProfileService : NGNAbstractService
 
+#warning concurrency Testing method!!!
+- (void)fetchUsersTest:(void(^)(NSArray *users))completitionBlock;
+
 - (void)fetchUsers:(void(^)(NSArray *users))completitionBlock;
 - (void)fetchUserById:(NSString *)userId completitionBlock:(void(^)(NSDictionary *user))completitionBlock;
 
