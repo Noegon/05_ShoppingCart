@@ -34,10 +34,14 @@
         dispatch_group_t group = dispatch_group_create();
         dispatch_queue_t myQueue = dispatch_queue_create("myQueue", DISPATCH_QUEUE_SERIAL);
         
+        //declare uniting async thread in global queue (will be automatically separated to different threads by system)
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
             
+            //1-st grouped thread
+            //increase counter of group
             dispatch_group_enter(group);
             [profileService fetchUserById:@"1" completitionBlock:^(NSDictionary *user) {
+                //starting this block in different thread
                 dispatch_group_async(group, myQueue, ^{
                     FEMMapping *userMapping = [NGNUser defaultMapping];
                     NSDictionary *usersResult = [FEMDeserializer objectFromRepresentation:user
@@ -48,12 +52,14 @@
                     } else {
                         NSLog(@"%@", @"user was loaded successfully");
                     }
+                    // no one of this group threads will start before counter will redused to 0
                     dispatch_group_leave(group);
                 });
             }];
-            
+            //waiting for reducing group counter to 0
             dispatch_wait(group, DISPATCH_TIME_FOREVER);
             
+            //2-nd grouped thread
             dispatch_group_enter(group);
             [catalogService fetchPhones:^(NSArray *phones) {
                 dispatch_group_async(group, myQueue, ^{
@@ -70,9 +76,9 @@
                 });
             }];
             
-            
             dispatch_wait(group, DISPATCH_TIME_FOREVER);
             
+            //3-rd grouped thread
             dispatch_group_enter(group);
             [goodsOrderService fetchGoodsOrders:^(NSArray *goodsOrders) {
                 dispatch_group_async(group, myQueue, ^{
@@ -89,6 +95,7 @@
                 });
             }];
             
+            //4-th grouped thread
             dispatch_group_enter(group);
             [orderService fetchOrders:^(NSArray *orders) {
                 dispatch_group_async(group, myQueue, ^{
@@ -104,6 +111,7 @@
                     dispatch_group_leave(group);
                 });
             }];
+            //end of concurrent grouped threads
             [NGNDataBaseRuler saveContext];
             
             NSNotification *notification =

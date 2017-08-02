@@ -14,7 +14,7 @@
 #import "NSDate+NGNformattedDate.h"
 #import "NGNDataBaseRuler.h"
 #import "NGNGoodTableViewCell.h"
-#import "NGNFirstGoodTableViewCell.h"
+#import "UIColor+NGNAdditionalColors.h"
 
 @interface NGNGoodsListViewController ()
 
@@ -33,21 +33,12 @@
 
 }
 
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (indexPath.section == 0 && indexPath.row == 0) {
-        return 170;
-    }
-    return 160;
-}
-
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-//    NSInteger numOfSections = [[self.fetchedResultsController sections] count];
-//    return numOfSections;
-    return 1;
+    NSInteger numOfSections = [[self.fetchedResultsController sections] count];
+    return numOfSections;
 }
-
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     id <NSFetchedResultsSectionInfo> sectionInfo = [self.fetchedResultsController sections][section];
@@ -55,23 +46,14 @@
     return numOfRows;
 }
 
-
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = nil;
     NGNGood *good = [self.fetchedResultsController objectAtIndexPath:indexPath];
-    if (indexPath.section == 0 && indexPath.row == 0) {
-        cell = [tableView dequeueReusableCellWithIdentifier:@"GoodsInFirstListCell"
-                                               forIndexPath:indexPath];
-        ((NGNFirstGoodTableViewCell *)cell).nameLabel.text = good.name;
-        ((NGNFirstGoodTableViewCell *)cell).codeLabel.text = good.goodId.stringValue;
-        ((NGNFirstGoodTableViewCell *)cell).priceLabel.text = good.price.stringValue;
-    } else {
-        cell = [tableView dequeueReusableCellWithIdentifier:@"GoodsInListCell"
-                                               forIndexPath:indexPath];
-        ((NGNGoodTableViewCell *)cell).nameLabel.text = good.name;
-        ((NGNGoodTableViewCell *)cell).codeLabel.text = good.goodId.stringValue;
-        ((NGNGoodTableViewCell *)cell).priceLabel.text = good.price.stringValue;
-    }
+    cell = [tableView dequeueReusableCellWithIdentifier:NGNControllerGoodsInListCell
+                                           forIndexPath:indexPath];
+    ((NGNGoodTableViewCell *)cell).nameLabel.text = good.name;
+    ((NGNGoodTableViewCell *)cell).codeLabel.text = good.goodId.stringValue;
+    ((NGNGoodTableViewCell *)cell).priceLabel.text = good.price.stringValue;
 #warning make transformable object for image!!!
 //    cell.imageView.image = good.image;
     return cell;
@@ -174,19 +156,6 @@
     willShowMenuViewController:(UIViewController *)menuViewController {
     // This will be called on the main thread, so that
     // you can update the UI, for example.
-//    NGNMenuViewController *testController = ((NGNMenuViewController *)menuViewController);
-//    testController.nameLabelText = @"test";
-//    testController.view.backgroundColor = [UIColor grayColor];
-//    testController.view.layer.cornerRadius = 0;
-////    [testController setCornerRadiusForView:testController.view
-////                            cornersBitmask:(UIRectCornerTopRight | UIRectCornerBottomRight)
-////                               cornerRadii:CGSizeMake(50, 50)];
-//    NSArray *subviews = testController.view.subviews[2].subviews;
-//    UILabel *label = subviews[1];
-//    label.text = @"test";
-//    NSLog(@"%@", label.text);
-//    
-//    testController.view.layer.shadowOffset = CGSizeMake(5, 5);
 }
 
 #pragma mark - additional handling methods

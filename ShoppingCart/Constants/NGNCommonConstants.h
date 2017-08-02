@@ -30,6 +30,12 @@ static NSString *const NGNControllerNotificationUserWasLoaded = @"userWasLoaded"
 static NSString *const NGNControllerNotificationOrdersWasLoaded = @"ordersWasLoaded";
 static NSString *const NGNControllerNotificationGoodsOrdersWasLoaded = @"goodsOrdersWasLoaded";
 
+#pragma mark - table cells
+
+static NSString *const NGNControllerGoodsInListCell = @"GoodsInListCell";
+static NSString *const NGNControllerAvialableGoodsInCartCell = @"AvialableGoodsInCartCell";
+static NSString *const NGNControllerNotAvialableGoodsInCartCell = @"NotAvialableGoodsInCartCell";
+
 @interface NGNCommonConstants : NSObject
 
 @end

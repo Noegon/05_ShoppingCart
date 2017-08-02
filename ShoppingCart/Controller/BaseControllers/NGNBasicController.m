@@ -35,4 +35,10 @@
     [[NSNotificationCenter defaultCenter] removeObserver:_dataWasLoadedNotification];
 }
 
+#pragma mark - Table view delegate methods
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 160;
+}
+
 @end

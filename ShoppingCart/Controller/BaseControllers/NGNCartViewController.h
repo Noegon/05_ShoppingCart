@@ -10,11 +10,11 @@
 #import <REFrostedViewController/REFrostedViewController.h>
 #import <CoreData/CoreData.h>
 #import "NGNGood+CoreDataProperties.h"
+#import "NGNGoodsOrder+CoreDataProperties.h"
 #import "NGNBasicController.h"
 
-@interface NGNCartViewController : NGNBasicController <REFrostedViewControllerDelegate,
-                                                       NSFetchedResultsControllerDelegate>
+@interface NGNCartViewController : NGNBasicController
 
-@property (strong, nonatomic) NSFetchedResultsController<NGNGood *> *fetchedResultsController;
+@property (strong, nonatomic) NSFetchedResultsController<NGNGoodsOrder *> *fetchedResultsController;
 
 @end

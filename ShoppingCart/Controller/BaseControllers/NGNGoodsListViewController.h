@@ -12,8 +12,7 @@
 #import "NGNGood+CoreDataProperties.h"
 #import "NGNBasicController.h"
 
-@interface NGNGoodsListViewController : NGNBasicController <REFrostedViewControllerDelegate,
-                                                            NSFetchedResultsControllerDelegate>
+@interface NGNGoodsListViewController : NGNBasicController
 
 @property (strong, nonatomic) NSFetchedResultsController<NGNGood *> *fetchedResultsController;
 

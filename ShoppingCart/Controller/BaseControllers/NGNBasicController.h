@@ -12,7 +12,8 @@
 #import "NGNGood+CoreDataProperties.h"
 
 @interface NGNBasicController : UITableViewController <REFrostedViewControllerDelegate,
-                                                       NSFetchedResultsControllerDelegate>
+                                                       NSFetchedResultsControllerDelegate,
+                                                       UITableViewDelegate>
 
 @property (strong, nonatomic) id<NSObject> dataWasLoadedNotification;
 

@@ -9,6 +9,9 @@
 #import "NGNCartViewController.h"
 #import "REFrostedViewController.h"
 #import "NGNCommonConstants.h"
+#import "NGNDataBaseRuler.h"
+#import "NGNCartTableViewCellAvialable.h"
+#import "NGNCartTableViewCellNotAvialable.h"
 
 @interface NGNCartViewController ()
 
@@ -20,14 +23,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    [self.NotAvialableGoodsCells enumerateObjectsUsingBlock:
-     ^(id _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-         UIView *rotatedView = ((UIView *)obj).subviews[0].subviews[1];
-         double rads = DEGREES_TO_RADIANS(5);
-         CGAffineTransform transform = CGAffineTransformRotate(CGAffineTransformIdentity, rads);
-         rotatedView.transform = transform;
-     }];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -38,24 +33,39 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Incomplete implementation, return the number of sections
-    return 1;
+    NSInteger numOfSections = [[self.fetchedResultsController sections] count];
+    return numOfSections;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of rows
-    return 3;
+    id <NSFetchedResultsSectionInfo> sectionInfo = [self.fetchedResultsController sections][section];
+    NSInteger numOfRows = [sectionInfo numberOfObjects];
+    return numOfRows;
 }
 
-/*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
-    
-    // Configure the cell...
-    
+    UITableViewCell *cell = nil;
+    NGNGoodsOrder *goodsOrder = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    NSLog(@"%@", goodsOrder.good);
+    if (goodsOrder.good.avialable.boolValue) {
+        cell = [tableView dequeueReusableCellWithIdentifier:NGNControllerAvialableGoodsInCartCell
+                                               forIndexPath:indexPath];
+        ((NGNCartTableViewCellAvialable *)cell).nameLabel.text = goodsOrder.good.name;
+        ((NGNCartTableViewCellAvialable *)cell).codeLabel.text = goodsOrder.good.goodId.stringValue;
+        ((NGNCartTableViewCellAvialable *)cell).priceLabel.text = goodsOrder.good.price.stringValue;
+#warning make transformable object for image!!!
+        //    cell.imageView.image = good.image;
+    } else {
+        cell = [tableView dequeueReusableCellWithIdentifier:NGNControllerNotAvialableGoodsInCartCell
+                                               forIndexPath:indexPath];
+        ((NGNCartTableViewCellAvialable *)cell).nameLabel.text = goodsOrder.good.name;
+        ((NGNCartTableViewCellAvialable *)cell).codeLabel.text = goodsOrder.good.goodId.stringValue;
+#warning make transformable object for image!!!
+        //    cell.imageView.image = good.image;
+    }
+
     return cell;
 }
-*/
 
 /*
 // Override to support conditional editing of the table view.
@@ -100,5 +110,47 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+#pragma mark - Fetched results controller
+
+- (NSFetchedResultsController<NGNGoodsOrder *> *)fetchedResultsController {
+    //    if (_fetchedResultsController != nil) {
+    //        return _fetchedResultsController;
+    //    }
+    NSFetchRequest<NGNGoodsOrder *> *fetchRequest = [NGNGoodsOrder fetchRequest];
+    
+    // Set the batch size to a suitable number.
+    //    [fetchRequest setFetchBatchSize:20];
+    
+    // Edit the sort key as appropriate.
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"good.name" ascending:YES];
+    
+    [fetchRequest setSortDescriptors:@[sortDescriptor]];
+    
+    //    NSArray *goods = [[NGNDataBaseRuler managedObjectContext] executeFetchRequest:fetchRequest error:nil];
+    
+    // Edit the section name key path and cache name if appropriate.
+    // nil for section name key path means "no sections".
+    NSFetchedResultsController<NGNGoodsOrder *> *aFetchedResultsController =
+    [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest
+                                        managedObjectContext:[NGNDataBaseRuler managedObjectContext]
+                                          sectionNameKeyPath:nil
+                                                   cacheName:nil];
+    aFetchedResultsController.delegate = self;
+    
+    NSError *error = nil;
+    if (![aFetchedResultsController performFetch:&error]) {
+        // Replace this implementation with code to handle the error appropriately.
+        // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+        NSLog(@"Unresolved error %@, %@", error, error.userInfo);
+#warning do not use abort() in release!!! For debug only!!! Handle this error!!!
+        abort();
+    }
+    
+    _fetchedResultsController = aFetchedResultsController;
+    return _fetchedResultsController;
+}
+
+#pragma mark - Fetched results controller delegate methods
 
 @end
