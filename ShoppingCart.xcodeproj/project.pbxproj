@@ -14,6 +14,7 @@
 		25BF777E1F26866F00FFCF42 /* NGNServerSideLayerConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 25BF777D1F26866F00FFCF42 /* NGNServerSideLayerConstants.m */; };
 		25BF77811F27542700FFCF42 /* NGNOrderService.m in Sources */ = {isa = PBXBuildFile; fileRef = 25BF77801F27542700FFCF42 /* NGNOrderService.m */; };
 		25BF77831F27543A00FFCF42 /* db.json in Resources */ = {isa = PBXBuildFile; fileRef = 25BF77821F27543A00FFCF42 /* db.json */; };
+		25CF12241F31F89500035D6C /* NGNMenuCapsuleController.m in Sources */ = {isa = PBXBuildFile; fileRef = 25CF12231F31F89500035D6C /* NGNMenuCapsuleController.m */; };
 		25DDE1C81F308F0400731B75 /* FastEasyMapping.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25DDE1C71F308F0400731B75 /* FastEasyMapping.framework */; };
 		25DDE1CA1F308F0C00731B75 /* REFrostedViewController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25DDE1C91F308F0C00731B75 /* REFrostedViewController.framework */; };
 		40DCFC591F2A57B20047052F /* NGNOrder+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 40DCFC4A1F2A57B20047052F /* NGNOrder+CoreDataClass.m */; };
@@ -69,6 +70,8 @@
 		25BF777F1F27542700FFCF42 /* NGNOrderService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NGNOrderService.h; path = Model/ServerSideLayer/NGNOrderService.h; sourceTree = "<group>"; };
 		25BF77801F27542700FFCF42 /* NGNOrderService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NGNOrderService.m; path = Model/ServerSideLayer/NGNOrderService.m; sourceTree = "<group>"; };
 		25BF77821F27543A00FFCF42 /* db.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = db.json; path = Model/ServerSideLayer/db.json; sourceTree = "<group>"; };
+		25CF12221F31F89500035D6C /* NGNMenuCapsuleController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NGNMenuCapsuleController.h; path = Controller/AdditionalControllers/NGNMenuCapsuleController.h; sourceTree = "<group>"; };
+		25CF12231F31F89500035D6C /* NGNMenuCapsuleController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NGNMenuCapsuleController.m; path = Controller/AdditionalControllers/NGNMenuCapsuleController.m; sourceTree = "<group>"; };
 		25DDE1C71F308F0400731B75 /* FastEasyMapping.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FastEasyMapping.framework; path = "Pods/../build/Debug-iphoneos/FastEasyMapping/FastEasyMapping.framework"; sourceTree = "<group>"; };
 		25DDE1C91F308F0C00731B75 /* REFrostedViewController.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = REFrostedViewController.framework; path = "Pods/../build/Debug-iphoneos/REFrostedViewController/REFrostedViewController.framework"; sourceTree = "<group>"; };
 		40DCFC491F2A57B20047052F /* NGNOrder+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NGNOrder+CoreDataClass.h"; path = "Model/StorageLayer/Model/NGNOrder+CoreDataClass.h"; sourceTree = "<group>"; };
@@ -424,6 +427,8 @@
 				EF34810D1F1FA0D600733E86 /* NGNMenuViewController.m */,
 				EF34810F1F1FA10E00733E86 /* NGNContentNavigationController.h */,
 				EF3481101F1FA10E00733E86 /* NGNContentNavigationController.m */,
+				25CF12221F31F89500035D6C /* NGNMenuCapsuleController.h */,
+				25CF12231F31F89500035D6C /* NGNMenuCapsuleController.m */,
 			);
 			name = AdditionalControllers;
 			sourceTree = "<group>";
@@ -578,6 +583,7 @@
 				EF3481171F1FA20700733E86 /* NGNCartViewController.m in Sources */,
 				EF3480D31F1F4BA300733E86 /* NGNDataBaseRuler.m in Sources */,
 				40DCFC5E1F2A57B20047052F /* NGNGood+CoreDataProperties.m in Sources */,
+				25CF12241F31F89500035D6C /* NGNMenuCapsuleController.m in Sources */,
 				40DCFC7D1F2D5DAF0047052F /* NGNCartCapsuleViewController.m in Sources */,
 				EF3480BA1F1E8D5100733E86 /* ShoppingCart.xcdatamodeld in Sources */,
 				25BF77781F267AE900FFCF42 /* NGNCatalogService.m in Sources */,

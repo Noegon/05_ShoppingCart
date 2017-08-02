@@ -15,6 +15,7 @@
 #import "NGNDataBaseRuler.h"
 #import "NGNProfileService.h"
 #import "NGNCommonConstants.h"
+#import <REFrostedViewController/REFrostedViewController.h>
 
 @interface NGNMenuViewController ()
 
@@ -32,44 +33,35 @@
                                                       object:nil
                                                        queue:[NSOperationQueue mainQueue]
                                                   usingBlock:^(NSNotification *notification) {
-                                                      self.nameLabelText = @"test";
+                                                      NGNUser *user = [NGNUser ngn_allEntitiesInManagedObjectContext:[NGNDataBaseRuler managedObjectContext]][0];
+                                                      if (user) {
+                                                            self.nameLabelText = user.name;
+                                                      }
                                                       [self.tableView reloadData];
                                                   }];
     
-    self.tableView.separatorColor = [UIColor colorWithRed:150/255.0f green:161/255.0f blue:177/255.0f alpha:1.0f];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     self.tableView.opaque = NO;
     self.tableView.backgroundColor = [UIColor clearColor];
     self.tableView.tableHeaderView = ({
-        UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 0, 284.0f)];
+        UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 0, 260.0f)];
         UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 40, 200, 200)];
         imageView.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin;
         imageView.image = [UIImage imageNamed:@"avatar.jpg"];
         imageView.layer.masksToBounds = YES;
         imageView.layer.cornerRadius = 100.0;
         imageView.layer.borderColor = [UIColor whiteColor].CGColor;
-        imageView.layer.borderWidth = 20.0f;
+        imageView.layer.borderWidth = 10.0f;
         imageView.layer.rasterizationScale = [UIScreen mainScreen].scale;
         imageView.layer.shouldRasterize = YES;
         imageView.clipsToBounds = YES;
         
-        UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 250, 0, 24)];
-        label.text = self.nameLabelText;
-        label.font = [UIFont fontWithName:@"HelveticaNeue" size:21];
-        label.backgroundColor = [UIColor clearColor];
-        label.textColor = [UIColor colorWithRed:62/255.0f green:68/255.0f blue:75/255.0f alpha:1.0f];
-        [label sizeToFit];
-        label.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin;
-        
         [view addSubview:imageView];
-        [view addSubview:label];
         view;
     });
-//    self.frostedViewController.menuViewController.view.layer.cornerRadius = 20;
-//    self.frostedViewController.menuViewController.view.layer.shadowOffset = CGSizeMake(5, 5);
-//    self.frostedViewController.menuViewController.view.layer.shadowColor = [UIColor greenColor].CGColor;
-//    self.frostedViewController.blurRadius = 20;
+    
+    self.tableView.layer.cornerRadius = 0;
 }
 
 - (void)dealloc {
@@ -83,6 +75,24 @@
     cell.textLabel.textColor = [UIColor colorWithRed:62/255.0f green:68/255.0f blue:75/255.0f alpha:1.0f];
     cell.textLabel.font = [UIFont fontWithName:@"HelveticaNeue" size:25];
 }
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)sectionIndex {
+    
+    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 30)];
+    label.textAlignment = NSTextAlignmentCenter;
+    label.font = [UIFont systemFontOfSize:15];
+    label.textColor = [UIColor colorWithRed:62/255.0f green:68/255.0f blue:75/255.0f alpha:1.0f];
+    label.font = [UIFont fontWithName:@"HelveticaNeue" size:25];
+    if (self.nameLabelText) {
+        label.text = self.nameLabelText;
+    } else {
+        label.text = @"(none)";
+    }
+    [label setBackgroundColor:[UIColor clearColor]];
+    
+    return label;
+}
+
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
@@ -107,6 +117,10 @@
     return 71;
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)sectionIndex {
+    return 34;
+}
+
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;
 }
@@ -115,12 +129,12 @@
     return 5;
 }
 
-- (NSArray<NSString *> *)sectionIndexTitlesForTableView:(UITableView *)tableView {
-    if (self.nameLabelText) {
-        return @[self.nameLabelText];
-    }
-    return @[@"(null)"];
-}
+//- (NSArray<NSString *> *)sectionIndexTitlesForTableView:(UITableView *)tableView {
+//    if (self.nameLabelText) {
+//        return @[self.nameLabelText];
+//    }
+//    return @[@"(null)"];
+//}
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *cellIdentifier = @"Cell";

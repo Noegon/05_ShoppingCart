@@ -18,6 +18,12 @@
     //    [super awakeFromNib];
     self.contentViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"contentController"];
     self.menuViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"menuController"];
+    self.blurRadius = 0;
+    self.blurSaturationDeltaFactor = 0;
+    self.liveBlur = NO;
+    self.view.backgroundColor = [UIColor clearColor];
+    self.blurTintColor = [UIColor clearColor];
+    self.backgroundFadeAmount = 0;
 }
 
 @end

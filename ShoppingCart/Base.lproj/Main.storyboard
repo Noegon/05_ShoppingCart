@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -26,7 +26,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="32" y="38"/>
+            <point key="canvasLocation" x="45" y="395"/>
         </scene>
         <!--Content Navigation Controller-->
         <scene sceneID="9NT-UC-nUW">
@@ -229,7 +229,7 @@
                         <color key="sectionIndexBackgroundColor" red="0.4431372549" green="0.65098039220000004" blue="0.85098039219999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="NotAvialableGoodsInCartCell" rowHeight="160" id="RSA-eu-yaZ" customClass="NGNCartTableViewCellNotAvialable">
-                                <rect key="frame" x="0.0" y="56" width="414" height="160"/>
+                                <rect key="frame" x="0.0" y="55" width="414" height="160"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="RSA-eu-yaZ" id="mWK-k3-3j3">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="159"/>
@@ -326,10 +326,10 @@
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="AvialableGoodsInCartCell" rowHeight="160" id="b1f-Vc-6SK" customClass="NGNCartTableViewCellAvialable">
-                                <rect key="frame" x="0.0" y="216" width="414" height="160"/>
+                                <rect key="frame" x="0.0" y="215" width="414" height="160"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="b1f-Vc-6SK" id="FwC-tn-b9g">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="160"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="159"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cell_background_normal" translatesAutoresizingMaskIntoConstraints="NO" id="L71-BS-jdg">
@@ -525,11 +525,33 @@
         <!--Menu View Controller-->
         <scene sceneID="dCg-5A-PqI">
             <objects>
-                <tableViewController restorationIdentifier="menuController" storyboardIdentifier="menuController" id="Enb-pc-Xd3" customClass="NGNMenuViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="ofw-KQ-D6n">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                <tableViewController id="Enb-pc-Xd3" customClass="NGNMenuViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="ofw-KQ-D6n">
+                        <rect key="frame" x="0.0" y="0.0" width="379" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.4366127642" green="0.59543187539999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="separatorColor" red="0.4366127642" green="0.59543187539999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="sectionIndexBackgroundColor" red="0.4366127642" green="0.59543187539999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="ASq-Ai-6YU" rowHeight="71" style="IBUITableViewCellStyleDefault" id="WiQ-Id-Ov0">
+                                <rect key="frame" x="0.0" y="55.333333333333336" width="379" height="71"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="WiQ-Id-Ov0" id="jG8-Yd-9AA">
+                                    <rect key="frame" x="0.0" y="0.0" width="379" height="71"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ASq-Ai-6YU">
+                                            <rect key="frame" x="15" y="0.0" width="349" height="71"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <color key="backgroundColor" red="0.43661276417789963" green="0.59543187537008113" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </tableViewCell>
+                        </prototypes>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                 <integer key="value" value="25"/>
@@ -543,7 +565,54 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9ej-Rf-oQY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="33" y="780"/>
+            <point key="canvasLocation" x="81" y="1108"/>
+        </scene>
+        <!--Menu Capsule Controller-->
+        <scene sceneID="vTy-zx-84Q">
+            <objects>
+                <viewController restorationIdentifier="menuController" storyboardIdentifier="menuController" id="NJM-eJ-wNL" customClass="NGNMenuCapsuleController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="far-Tl-P6V"/>
+                        <viewControllerLayoutGuide type="bottom" id="PP3-oK-FcH"/>
+                    </layoutGuides>
+                    <view key="view" alpha="0.0" contentMode="scaleToFill" id="N1k-G5-wye">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4bH-UF-18L">
+                                <rect key="frame" x="0.0" y="0.0" width="379" height="736"/>
+                                <subviews>
+                                    <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wu7-Gw-dNl">
+                                        <rect key="frame" x="0.0" y="0.0" width="379" height="736"/>
+                                        <connections>
+                                            <segue destination="Enb-pc-Xd3" kind="embed" id="ohI-ib-sgL"/>
+                                        </connections>
+                                    </containerView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="wu7-Gw-dNl" firstAttribute="leading" secondItem="4bH-UF-18L" secondAttribute="leading" id="1v3-Po-RTt"/>
+                                    <constraint firstAttribute="bottom" secondItem="wu7-Gw-dNl" secondAttribute="bottom" id="O6N-uF-hsV"/>
+                                    <constraint firstItem="wu7-Gw-dNl" firstAttribute="top" secondItem="4bH-UF-18L" secondAttribute="top" id="cVO-bF-TSg"/>
+                                    <constraint firstAttribute="trailing" secondItem="wu7-Gw-dNl" secondAttribute="trailing" id="zP6-0u-ZiY"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="4bH-UF-18L" secondAttribute="trailing" constant="35" id="ARy-LH-3tW"/>
+                            <constraint firstItem="4bH-UF-18L" firstAttribute="leading" secondItem="N1k-G5-wye" secondAttribute="leading" id="BSI-8A-ScN"/>
+                            <constraint firstItem="PP3-oK-FcH" firstAttribute="top" secondItem="4bH-UF-18L" secondAttribute="bottom" id="LCe-aG-Vdy"/>
+                            <constraint firstItem="4bH-UF-18L" firstAttribute="top" secondItem="N1k-G5-wye" secondAttribute="top" id="eSU-gd-05Z"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="backgroundView" destination="4bH-UF-18L" id="bAq-0n-Miy"/>
+                        <outlet property="menuContainerView" destination="wu7-Gw-dNl" id="hx5-rw-0q3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8w2-ch-L2g" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="869.56521739130437" y="1107.8804347826087"/>
         </scene>
     </scenes>
     <resources>
@@ -554,6 +623,6 @@
         <image name="iconmonstr-arrow-63-32" width="20" height="27"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="eiI-mm-mWG"/>
+        <segue reference="9ew-Rs-QXt"/>
     </inferredMetricsTieBreakers>
 </document>
