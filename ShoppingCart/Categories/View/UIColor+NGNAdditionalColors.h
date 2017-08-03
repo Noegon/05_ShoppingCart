@@ -10,8 +10,11 @@
 
 @interface UIColor (NGNAdditionalColors)
 
-+ (UIColor *)ngn_backgroungColorGoods;
-+ (UIColor *)ngn_backgroungColorCart;
-+ (UIColor *)ngn_backgroungColorOrders;
++ (UIColor *)ngn_backgroungGoodsColor;
++ (UIColor *)ngn_backgroungCartColor;
++ (UIColor *)ngn_backgroungOrdersColor;
++ (UIColor *)ngn_menuGradientCentralColor;
++ (UIColor *)ngn_menuGradientEdgeColor;
++ (UIColor *)ngn_menuTextColor;
 
 @end

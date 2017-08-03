@@ -14,7 +14,6 @@
 @property (strong, nonatomic) IBOutlet UILabel *nameLabel;
 @property (strong, nonatomic) IBOutlet UILabel *codeLabel;
 @property (strong, nonatomic) IBOutlet UILabel *notAvialableLabel;
-@property (strong, nonatomic) IBOutlet UIImageView *arrowImageView;
 @property (strong, nonatomic) IBOutletCollection(UIView) NSArray *rotatableViews;
 
 @end

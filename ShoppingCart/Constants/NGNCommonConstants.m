@@ -10,4 +10,12 @@
 
 @implementation NGNCommonConstants
 
++ (NSArray *)menuIcons {
+    return @[@"menu_home", @"menu_order", @"menu_cart", @"menu_settings", @"menu_signOut"];
+}
+
++ (NSArray *)menuCellTitles {
+    return @[@"Home", @"Orders", @"Cart", @"Settings", @"Sign out"];
+}
+
 @end

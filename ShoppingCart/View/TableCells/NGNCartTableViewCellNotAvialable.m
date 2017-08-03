@@ -23,14 +23,6 @@
         ((UIView *)obj).transform = CGAffineTransformMakeRotation(DEGREES_TO_RADIANS(2)); //rotation in radians
     }];
     
-//    [self.NotAvialableGoodsCells enumerateObjectsUsingBlock:
-//     ^(id _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-//         UIView *rotatedView = ((UIView *)obj).subviews[0].subviews[1];
-//         double rads = DEGREES_TO_RADIANS(5);
-//         CGAffineTransform transform = CGAffineTransformRotate(CGAffineTransformIdentity, rads);
-//         rotatedView.transform = transform;
-//     }];
-    
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

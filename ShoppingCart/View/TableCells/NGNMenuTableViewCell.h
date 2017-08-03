@@ -10,4 +10,7 @@
 
 @interface NGNMenuTableViewCell : UITableViewCell
 
+@property (strong, nonatomic) IBOutlet UIImageView *menuImageView;
+@property (strong, nonatomic) IBOutlet UILabel *menuTextLabel;
+
 @end

@@ -53,6 +53,19 @@
         ((NGNCartTableViewCellAvialable *)cell).nameLabel.text = goodsOrder.good.name;
         ((NGNCartTableViewCellAvialable *)cell).codeLabel.text = goodsOrder.good.goodId.stringValue;
         ((NGNCartTableViewCellAvialable *)cell).priceLabel.text = goodsOrder.good.price.stringValue;
+        if (goodsOrder.good.discount.floatValue > 0) {
+            ((NGNCartTableViewCellAvialable *)cell).priceWithDiscountLabel.text =
+                [NSString stringWithFormat:@"%6.1f",
+                 (goodsOrder.good.price.floatValue * ((goodsOrder.good.discount.floatValue * 0.01) + 1))];
+            NSMutableAttributedString *attributeString =
+                [[NSMutableAttributedString alloc] initWithString:goodsOrder.good.price.stringValue];
+            [attributeString addAttribute:NSStrikethroughStyleAttributeName
+                                    value:@2
+                                    range:NSMakeRange(0, [attributeString length])];
+            ((NGNCartTableViewCellAvialable *)cell).priceLabel.attributedText = attributeString;
+        } else {
+            ((NGNCartTableViewCellAvialable *)cell).priceWithDiscountLabel.text = @"";
+        }
 #warning make transformable object for image!!!
         //    cell.imageView.image = good.image;
     } else {

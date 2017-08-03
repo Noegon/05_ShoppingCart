@@ -40,6 +40,7 @@
 		40DCFCEE1F3132460047052F /* NSDate+NGNformattedDate.m in Sources */ = {isa = PBXBuildFile; fileRef = 40DCFCED1F3132460047052F /* NSDate+NGNformattedDate.m */; };
 		40DCFCF11F3143830047052F /* NGNCartTableViewCellAvialable.m in Sources */ = {isa = PBXBuildFile; fileRef = 40DCFCF01F3143830047052F /* NGNCartTableViewCellAvialable.m */; };
 		40E862A01F31495900F6A22B /* NGNCartTableViewCellNotAvialable.m in Sources */ = {isa = PBXBuildFile; fileRef = 40E8629F1F31495900F6A22B /* NGNCartTableViewCellNotAvialable.m */; };
+		40E862A31F32903F00F6A22B /* NGNMenuTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 40E862A21F32903F00F6A22B /* NGNMenuTableViewCell.m */; };
 		EF3480AE1F1E8D5100733E86 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EF3480AD1F1E8D5100733E86 /* main.m */; };
 		EF3480B11F1E8D5100733E86 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EF3480B01F1E8D5100733E86 /* AppDelegate.m */; };
 		EF3480BA1F1E8D5100733E86 /* ShoppingCart.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EF3480B81F1E8D5100733E86 /* ShoppingCart.xcdatamodeld */; };
@@ -122,6 +123,8 @@
 		40DCFCF01F3143830047052F /* NGNCartTableViewCellAvialable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NGNCartTableViewCellAvialable.m; path = View/TableCells/NGNCartTableViewCellAvialable.m; sourceTree = "<group>"; };
 		40E8629E1F31495900F6A22B /* NGNCartTableViewCellNotAvialable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NGNCartTableViewCellNotAvialable.h; path = View/TableCells/NGNCartTableViewCellNotAvialable.h; sourceTree = "<group>"; };
 		40E8629F1F31495900F6A22B /* NGNCartTableViewCellNotAvialable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NGNCartTableViewCellNotAvialable.m; path = View/TableCells/NGNCartTableViewCellNotAvialable.m; sourceTree = "<group>"; };
+		40E862A11F32903F00F6A22B /* NGNMenuTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NGNMenuTableViewCell.h; path = View/TableCells/NGNMenuTableViewCell.h; sourceTree = "<group>"; };
+		40E862A21F32903F00F6A22B /* NGNMenuTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NGNMenuTableViewCell.m; path = View/TableCells/NGNMenuTableViewCell.m; sourceTree = "<group>"; };
 		7AF396158AE15C14B79EAC98 /* Pods-ShoppingCart.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShoppingCart.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ShoppingCart/Pods-ShoppingCart.debug.xcconfig"; sourceTree = "<group>"; };
 		EF3480A91F1E8D5100733E86 /* ShoppingCart.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShoppingCart.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF3480AD1F1E8D5100733E86 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -203,6 +206,8 @@
 				40DCFCF01F3143830047052F /* NGNCartTableViewCellAvialable.m */,
 				40E8629E1F31495900F6A22B /* NGNCartTableViewCellNotAvialable.h */,
 				40E8629F1F31495900F6A22B /* NGNCartTableViewCellNotAvialable.m */,
+				40E862A11F32903F00F6A22B /* NGNMenuTableViewCell.h */,
+				40E862A21F32903F00F6A22B /* NGNMenuTableViewCell.m */,
 			);
 			name = TableCells;
 			sourceTree = "<group>";
@@ -586,6 +591,7 @@
 				25CF12241F31F89500035D6C /* NGNMenuCapsuleController.m in Sources */,
 				40DCFC7D1F2D5DAF0047052F /* NGNCartCapsuleViewController.m in Sources */,
 				EF3480BA1F1E8D5100733E86 /* ShoppingCart.xcdatamodeld in Sources */,
+				40E862A31F32903F00F6A22B /* NGNMenuTableViewCell.m in Sources */,
 				25BF77781F267AE900FFCF42 /* NGNCatalogService.m in Sources */,
 				25BF775D1F23BBF900FFCF42 /* NGNCoreDataEntitiesNames.m in Sources */,
 				40DCFCEE1F3132460047052F /* NSDate+NGNformattedDate.m in Sources */,

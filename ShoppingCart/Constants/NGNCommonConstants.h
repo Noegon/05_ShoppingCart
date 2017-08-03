@@ -32,10 +32,18 @@ static NSString *const NGNControllerNotificationGoodsOrdersWasLoaded = @"goodsOr
 
 #pragma mark - table cells
 
+static NSString *const NGNControllerMenuCell = @"MenuCell";
 static NSString *const NGNControllerGoodsInListCell = @"GoodsInListCell";
 static NSString *const NGNControllerAvialableGoodsInCartCell = @"AvialableGoodsInCartCell";
 static NSString *const NGNControllerNotAvialableGoodsInCartCell = @"NotAvialableGoodsInCartCell";
 
+#pragma mark - fonts parameters
+static NSString *const NGNControllerHelveticaLightFont = @"Helvetica-Light";
+static NSInteger const NGNControllerMenuFontHeight = 30;
+
 @interface NGNCommonConstants : NSObject
+
++ (NSArray *)menuIcons;
++ (NSArray *)menuCellTitles;
 
 @end
