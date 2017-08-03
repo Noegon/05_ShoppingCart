@@ -10,11 +10,14 @@
 #import "NGNCommonConstants.h"
 #import "NGNCatalogService.h"
 #import "NGNOrderService.h"
+#import "NGNGoodsOrderService.h"
 #import "NGNMenuViewController.h"
 #import "NSDate+NGNformattedDate.h"
 #import "NGNDataBaseRuler.h"
 #import "NGNGoodTableViewCell.h"
 #import "UIColor+NGNAdditionalColors.h"
+#import "NGNServerDataLoader.h"
+#import "NGNCoreDataObjects.h"
 
 @interface NGNGoodsListViewController ()
 
@@ -23,6 +26,7 @@
 
 #pragma mark - additional handling methods
 - (IBAction)profileBarButtonTapped:(UIBarButtonItem *)sender;
+- (IBAction)orderButtonTapped:(UIButton *)sender;
 
 @end
 
@@ -30,7 +34,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
 }
 
 #pragma mark - Table view data source
@@ -52,10 +55,18 @@
     cell = [tableView dequeueReusableCellWithIdentifier:NGNControllerGoodsInListCell
                                            forIndexPath:indexPath];
     ((NGNGoodTableViewCell *)cell).nameLabel.text = good.name;
-    ((NGNGoodTableViewCell *)cell).codeLabel.text = good.goodId.stringValue;
+    ((NGNGoodTableViewCell *)cell).codeLabel.text = good.entityId.stringValue;
     ((NGNGoodTableViewCell *)cell).priceLabel.text = good.price.stringValue;
-#warning make transformable object for image!!!
-//    cell.imageView.image = good.image;
+
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^(){
+        NSURL *imageURL = [NSURL URLWithString:good.image];
+        NSData *imageData = [NSData dataWithContentsOfURL:imageURL];
+        dispatch_async(dispatch_get_main_queue(), ^(){
+            ((NGNGoodTableViewCell *)cell).goodImageView.image = [UIImage imageWithData:imageData];
+            ((NGNGoodTableViewCell *)cell).goodImageView.contentMode = UIViewContentModeScaleAspectFit;
+            [cell setNeedsLayout];
+        });
+    });
     return cell;
 }
 
@@ -108,9 +119,6 @@
 #pragma mark - Fetched results controller
 
 - (NSFetchedResultsController<NGNGood *> *)fetchedResultsController {
-//    if (_fetchedResultsController != nil) {
-//        return _fetchedResultsController;
-//    }
     
     NSFetchRequest<NGNGood *> *fetchRequest = [NGNGood fetchRequest];
     
@@ -121,8 +129,6 @@
     NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"name" ascending:YES];
     
     [fetchRequest setSortDescriptors:@[sortDescriptor]];
-    
-//    NSArray *goods = [[NGNDataBaseRuler managedObjectContext] executeFetchRequest:fetchRequest error:nil];
     
     // Edit the section name key path and cache name if appropriate.
     // nil for section name key path means "no sections".
@@ -162,13 +168,34 @@
 
 - (IBAction)profileBarButtonTapped:(UIBarButtonItem *)sender {
     // Dismiss keyboard (optional)
-    //
     [self.view endEditing:YES];
     [self.frostedViewController.view endEditing:YES];
     
     // Present the view controller
-    //
     [self.frostedViewController presentMenuViewController];
+}
+
+- (IBAction)orderButtonTapped:(UIButton *)sender {
+    NSManagedObjectContext *context = [NGNDataBaseRuler managedObjectContext];
+    NGNGoodTableViewCell *cell = (NGNGoodTableViewCell *)sender.superview.superview;
+//    NGNGood *currentGood = (NGNGood *)[NGNGood ngn_entityById:@(cell.codeLabel.text.integerValue)
+//                                       inManagedObjectContext:context];
+    
+    NGNGood *currentGood = [self.fetchedResultsController objectAtIndexPath:[self.tableView indexPathForCell:cell]];
+    
+    [NGNGoodsOrder ngn_createEntityInManagedObjectContext:context
+                                  fieldsCompletitionBlock:
+     ^(NSManagedObject *object) {
+         NGNOrder *cart = (NGNOrder *)[NGNOrder ngn_entityById:[self cartId]
+                                        inManagedObjectContext:context];
+         ((NGNGoodsOrder *)object).entityId = @foo4random();
+         ((NGNGoodsOrder *)object).good = currentGood;
+         ((NGNGoodsOrder *)object).order = cart;
+         NGNGoodsOrderService *service = [[NGNGoodsOrderService alloc] init];
+         FEMMapping *orderMapping = [NGNGoodsOrder defaultMapping];
+         NSDictionary *entityAsDictionary = [FEMSerializer serializeObject:((NGNGoodsOrder *)object) usingMapping:orderMapping];
+         [service addGoodsOrder:entityAsDictionary completitionBlock:^(NSDictionary *order){}];
+     }];
 }
 
 @end

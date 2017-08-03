@@ -16,7 +16,7 @@
 	return [[NSFetchRequest alloc] initWithEntityName:@"NGNOrder"];
 }
 
-@dynamic orderId;
+@dynamic entityId;
 @dynamic orderingDate;
 @dynamic state;
 @dynamic goodsOrders;
@@ -28,13 +28,13 @@
 
 + (FEMMapping *)defaultMapping {
     FEMMapping *mapping = [[FEMMapping alloc] initWithEntityName:[self entity].name];
-    mapping.primaryKey = @"orderId";
+    mapping.primaryKey = @"entityId";
     [mapping addAttributesFromArray:@[@"state"]];
-    [mapping addAttributesFromDictionary:@{@"orderId": @"id"}];
+    [mapping addAttributesFromDictionary:@{@"entityId": @"id"}];
     
     FEMMapping *userMapping = [[FEMMapping alloc] initWithEntityName:[NGNUser entity].name];
-    userMapping.primaryKey = @"userId";
-    [userMapping addAttributesFromDictionary:@{@"userId": @"user"}];
+    userMapping.primaryKey = @"entityId";
+    [userMapping addAttributesFromDictionary:@{@"entityId": @"user"}];
     
     [mapping addRelationshipMapping:userMapping forProperty:@"user" keyPath:nil];
     

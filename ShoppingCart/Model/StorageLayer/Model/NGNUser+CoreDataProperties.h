@@ -15,7 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (NSFetchRequest<NGNUser *> *)fetchRequest;
 
-@property (nullable, nonatomic, copy) NSNumber *userId;
+@property (nullable, nonatomic, copy) NSNumber *entityId;
 @property (nullable, nonatomic, copy) NSString *address;
 @property (nullable, nonatomic, copy) NSString *name;
 @property (nullable, nonatomic, copy) NSNumber *phone;

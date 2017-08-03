@@ -11,9 +11,6 @@
 
 @interface NGNCatalogService : NGNAbstractService
 
-#warning concurrency Testing method!!!
-- (void)fetchPhonesTest:(void(^)(NSArray *phones))completitionBlock;
-
 - (void)fetchPhones:(void(^)(NSArray *phones))completitionBlock;
 - (void)fetchPhoneById:(NSString *)phoneId completitionBlock:(void(^)(NSDictionary *phone))completitionBlock;
 

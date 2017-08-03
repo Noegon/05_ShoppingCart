@@ -138,4 +138,17 @@
     return resultArray;
 }
 
++ (NSManagedObject *)ngn_entityById:(NSNumber *)entityId inManagedObjectContext:(NSManagedObjectContext *)context {
+    NSArray* entities = [self ngn_allEntitiesInManagedObjectContext:context];
+    NSIndexSet *indexSet = [entities indexesOfObjectsPassingTest:^BOOL(id obj, NSUInteger idx, BOOL *stop) {
+        NSNumber *currentEntityId = [obj valueForKey:@"entityId"];
+        return currentEntityId.integerValue == entityId.integerValue;
+    }];
+    if (indexSet.count != 0) {
+        NSManagedObject *resultObject = entities[indexSet.firstIndex];
+        return resultObject;
+    }
+    return nil;
+}
+
 @end

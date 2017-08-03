@@ -18,8 +18,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nullable, nonatomic, copy) NSNumber *avialable;
 @property (nullable, nonatomic, copy) NSNumber *discount;
-@property (nullable, nonatomic, copy) NSNumber *goodId;
-@property (nullable, nonatomic, retain) NSObject *image;
+@property (nullable, nonatomic, copy) NSNumber *entityId;
+@property (nullable, nonatomic, retain) NSString *image;
 @property (nullable, nonatomic, copy) NSString *name;
 @property (nullable, nonatomic, copy) NSNumber *price;
 @property (nullable, nonatomic, retain) NSSet<NGNGoodsOrder *> *goodsOrders;

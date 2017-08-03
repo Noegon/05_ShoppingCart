@@ -6,15 +6,14 @@
 //  Copyright © 2017 Alex. All rights reserved.
 //
 
+#import "NGNCoreDataObjects.h"
+#import "NGNBasicController.h"
+#import "NGNOrderDetailTableViewController.h"
+
 #import <UIKit/UIKit.h>
 #import <REFrostedViewController/REFrostedViewController.h>
 #import <CoreData/CoreData.h>
-#import "NGNGood+CoreDataProperties.h"
-#import "NGNGoodsOrder+CoreDataProperties.h"
-#import "NGNBasicController.h"
 
-@interface NGNCartViewController : NGNBasicController
-
-@property (strong, nonatomic) NSFetchedResultsController<NGNGoodsOrder *> *fetchedResultsController;
+@interface NGNCartViewController : NGNOrderDetailTableViewController
 
 @end

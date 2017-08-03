@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		25425CB21F332CD300468143 /* NGNOrderDetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 25425CB11F332CD300468143 /* NGNOrderDetailTableViewController.m */; };
+		25425CB51F336ED600468143 /* NGNOrdersTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 25425CB41F336ED600468143 /* NGNOrdersTableViewController.m */; };
+		25425CB81F3374DB00468143 /* NGNOrderTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 25425CB71F3374DB00468143 /* NGNOrderTableViewCell.m */; };
 		25BF775B1F23BBB400FFCF42 /* NGNCommonConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 25BF775A1F23BBB400FFCF42 /* NGNCommonConstants.m */; };
 		25BF775D1F23BBF900FFCF42 /* NGNCoreDataEntitiesNames.m in Sources */ = {isa = PBXBuildFile; fileRef = 25BF775C1F23BBF900FFCF42 /* NGNCoreDataEntitiesNames.m */; };
 		25BF77781F267AE900FFCF42 /* NGNCatalogService.m in Sources */ = {isa = PBXBuildFile; fileRef = 25BF77771F267AE900FFCF42 /* NGNCatalogService.m */; };
@@ -57,6 +60,12 @@
 
 /* Begin PBXFileReference section */
 		198F57675726B8D120206506 /* Pods-ShoppingCart.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShoppingCart.release.xcconfig"; path = "Pods/Target Support Files/Pods-ShoppingCart/Pods-ShoppingCart.release.xcconfig"; sourceTree = "<group>"; };
+		25425CB01F332CD300468143 /* NGNOrderDetailTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NGNOrderDetailTableViewController.h; path = Controller/BaseControllers/NGNOrderDetailTableViewController.h; sourceTree = "<group>"; };
+		25425CB11F332CD300468143 /* NGNOrderDetailTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NGNOrderDetailTableViewController.m; path = Controller/BaseControllers/NGNOrderDetailTableViewController.m; sourceTree = "<group>"; };
+		25425CB31F336ED600468143 /* NGNOrdersTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NGNOrdersTableViewController.h; path = Controller/BaseControllers/NGNOrdersTableViewController.h; sourceTree = "<group>"; };
+		25425CB41F336ED600468143 /* NGNOrdersTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NGNOrdersTableViewController.m; path = Controller/BaseControllers/NGNOrdersTableViewController.m; sourceTree = "<group>"; };
+		25425CB61F3374DB00468143 /* NGNOrderTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NGNOrderTableViewCell.h; path = View/TableCells/NGNOrderTableViewCell.h; sourceTree = "<group>"; };
+		25425CB71F3374DB00468143 /* NGNOrderTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NGNOrderTableViewCell.m; path = View/TableCells/NGNOrderTableViewCell.m; sourceTree = "<group>"; };
 		25BF77501F226A5000FFCF42 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		25BF77531F22803B00FFCF42 /* NGNCommonConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NGNCommonConstants.h; path = Constants/NGNCommonConstants.h; sourceTree = "<group>"; };
 		25BF77591F23BB0B00FFCF42 /* NGNCoreDataEntitiesNames.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = NGNCoreDataEntitiesNames.h; path = Constants/NGNCoreDataEntitiesNames.h; sourceTree = "<group>"; };
@@ -208,6 +217,8 @@
 				40E8629F1F31495900F6A22B /* NGNCartTableViewCellNotAvialable.m */,
 				40E862A11F32903F00F6A22B /* NGNMenuTableViewCell.h */,
 				40E862A21F32903F00F6A22B /* NGNMenuTableViewCell.m */,
+				25425CB61F3374DB00468143 /* NGNOrderTableViewCell.h */,
+				25425CB71F3374DB00468143 /* NGNOrderTableViewCell.m */,
 			);
 			name = TableCells;
 			sourceTree = "<group>";
@@ -411,10 +422,14 @@
 		EF3481071F1F77F900733E86 /* BaseControllers */ = {
 			isa = PBXGroup;
 			children = (
+				25425CB31F336ED600468143 /* NGNOrdersTableViewController.h */,
+				25425CB41F336ED600468143 /* NGNOrdersTableViewController.m */,
 				EF3481121F1FA1D600733E86 /* NGNGoodsListViewController.h */,
 				EF3481131F1FA1D600733E86 /* NGNGoodsListViewController.m */,
 				EF3481151F1FA20700733E86 /* NGNCartViewController.h */,
 				EF3481161F1FA20700733E86 /* NGNCartViewController.m */,
+				25425CB01F332CD300468143 /* NGNOrderDetailTableViewController.h */,
+				25425CB11F332CD300468143 /* NGNOrderDetailTableViewController.m */,
 				40DCFC7B1F2D5DAF0047052F /* NGNCartCapsuleViewController.h */,
 				40DCFC7C1F2D5DAF0047052F /* NGNCartCapsuleViewController.m */,
 				40DCFCCF1F2EAAB50047052F /* NGNBasicController.h */,
@@ -589,6 +604,7 @@
 				EF3480D31F1F4BA300733E86 /* NGNDataBaseRuler.m in Sources */,
 				40DCFC5E1F2A57B20047052F /* NGNGood+CoreDataProperties.m in Sources */,
 				25CF12241F31F89500035D6C /* NGNMenuCapsuleController.m in Sources */,
+				25425CB81F3374DB00468143 /* NGNOrderTableViewCell.m in Sources */,
 				40DCFC7D1F2D5DAF0047052F /* NGNCartCapsuleViewController.m in Sources */,
 				EF3480BA1F1E8D5100733E86 /* ShoppingCart.xcdatamodeld in Sources */,
 				40E862A31F32903F00F6A22B /* NGNMenuTableViewCell.m in Sources */,
@@ -604,8 +620,10 @@
 				40DCFCD11F2EAAB50047052F /* NGNBasicController.m in Sources */,
 				40DCFCD41F2F3A040047052F /* NGNReachability.m in Sources */,
 				40DCFCF11F3143830047052F /* NGNCartTableViewCellAvialable.m in Sources */,
+				25425CB21F332CD300468143 /* NGNOrderDetailTableViewController.m in Sources */,
 				25BF777E1F26866F00FFCF42 /* NGNServerSideLayerConstants.m in Sources */,
 				40DCFCEB1F3132380047052F /* UIColor+NGNAdditionalColors.m in Sources */,
+				25425CB51F336ED600468143 /* NGNOrdersTableViewController.m in Sources */,
 				40E862A01F31495900F6A22B /* NGNCartTableViewCellNotAvialable.m in Sources */,
 				25BF77811F27542700FFCF42 /* NGNOrderService.m in Sources */,
 				EF34810E1F1FA0D600733E86 /* NGNMenuViewController.m in Sources */,

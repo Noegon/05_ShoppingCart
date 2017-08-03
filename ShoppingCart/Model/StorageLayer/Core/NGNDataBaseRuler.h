@@ -24,5 +24,6 @@
 + (void)ngn_deleteEntityInManagedObjectContext:(NSManagedObjectContext *)context
                                  managedObject:(NSManagedObject *)object;
 + (NSArray *)ngn_allEntitiesInManagedObjectContext:(NSManagedObjectContext *)context;
++ (NSManagedObject *)ngn_entityById:(NSNumber *)entityId inManagedObjectContext:(NSManagedObjectContext *)context;
 
 @end

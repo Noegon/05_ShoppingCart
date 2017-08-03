@@ -106,6 +106,7 @@
                     if (!ordersResult) {
                         NSLog(@"%@", @"ordersResult wasn't loaded");
                     } else {
+                        [self checkCartExistingInManagedObjectContext:context];
                         NSLog(@"%@", @"orders was loaded successfully");
                     }
                     dispatch_group_leave(group);
@@ -114,12 +115,36 @@
             //end of concurrent grouped threads
             [NGNDataBaseRuler saveContext];
             
+            
             NSNotification *notification =
             [NSNotification notificationWithName:NGNControllerNotificationDataWasLoaded
                                           object:nil];
             [[NSNotificationCenter defaultCenter] postNotification:notification];
             NSLog(@"%@", @"server data was loaded successfully");
         });
+    }
+}
+
++ (void)checkCartExistingInManagedObjectContext:(NSManagedObjectContext *)context {
+    NGNOrderService *orderService = [[NGNOrderService alloc] init];
+    NSArray<NGNOrder *> *orders = [context executeFetchRequest:[NGNOrder fetchRequest] error:nil];
+    if (orders) {
+        NSIndexSet *cartIndexes = [orders indexesOfObjectsPassingTest:^BOOL(NGNOrder *obj, NSUInteger idx, BOOL *stop) {
+            return obj.state.integerValue == NGNOrderInCart;
+        }];
+        if (cartIndexes.count == 0) {
+            NGNOrder *cart = [NGNOrder ngn_createEntityInManagedObjectContext:context
+                                                      fieldsCompletitionBlock:^(NSManagedObject* order){
+                                                          ((NGNOrder *)order).entityId = @foo4random();
+                                                          ((NGNOrder *)order).state = @(NGNOrderInCart);
+                                                          ((NGNOrder *)order).user =
+                                                          [NGNUser ngn_allEntitiesInManagedObjectContext:context].firstObject;
+                                                          ((NGNOrder *)order).orderingDate = [NSDate date];
+                                                      }];
+            FEMMapping *orderMapping = [NGNOrder defaultMapping];
+            NSDictionary *entityAsDictionary = [FEMSerializer serializeObject:cart usingMapping:orderMapping];
+            [orderService addOrder:entityAsDictionary completitionBlock:^(NSDictionary *order){}];
+        }
     }
 }
 

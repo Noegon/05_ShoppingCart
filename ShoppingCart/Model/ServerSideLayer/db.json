@@ -5,38 +5,42 @@
       "name": "Xiaomi Redmi 4X 16GB Black",
       "price": 246,
       "discount": 0,
-      "avialable": 0
+      "avialable": 0,
+      "image": "https://content2.onliner.by/catalog/device/header/242b30b89b7a5fa1928431df242cae1b.jpeg"
     },
     {
       "id": 2,
       "name": "Apple iPhone 7 32GB Black",
       "price": 1400,
       "discount": 10,
-      "avialable": 1
+      "avialable": 1,
+      "image": "https://content2.onliner.by/catalog/device/header/f8d7fac0fe59ead77f5199454a6e8c4a.jpeg"
     },
     {
       "id": 3,
       "name": "Samsung Galaxy S8 Dual SIM 64GB",
       "price": 1590,
       "discount": 0,
-      "avialable": 1
+      "avialable": 1,
+      "image": "https://content2.onliner.by/catalog/device/header/9e451098ecf194f0d3998eab6015f954.jpeg"
     },
     {
       "id": 4,
       "name": "Samsung Galaxy S6 32GB",
       "price": 1005,
       "discount": 0,
-      "avialable": 1
+      "avialable": 1,
+      "image": "https://content2.onliner.by/catalog/device/header/c8c21d4d6d2139554fee107e3d6d8a54.jpg"
     },
     {
       "id": 5,
       "name": "Samsung Galaxy S6 16GB",
       "price": 758,
       "discount": 0,
-      "avialable": 1
+      "avialable": 1,
+      "image": "https://content2.onliner.by/catalog/device/header/c8ad1c575429cbf59298348ae4ca42cc.jpg"
     }
   ],
-    
   "profile": [
     {
       "id": 1,
@@ -46,30 +50,40 @@
       "phone": 375257515436
     }
   ],
-    
   "order": [
     {
-        "id": 1,
-        "orderingDate": "21.07.2017",
-        "state": 0,
-        "user": 1
+      "id": 1,
+      "orderingDate": "21.07.2017",
+      "state": 3,
+      "user": 1
     },
     {
-        "id": 2,
-        "orderingDate": "29.07.2017",
-        "state": 1,
-        "user": 1
+      "id": 2,
+      "orderingDate": "29.07.2017",
+      "state": 1,
+      "user": 1
+    },
+    {
+      "id": 305469361,
+      "state": 1,
+      "orderingDate": "03.08.2017",
+      "user": 1
+    },
+    {
+      "id": 220889922,
+      "state": 0,
+      "orderingDate": "03.08.2017",
+      "user": 1
     }
   ],
-    
   "goodsOrder": [
     {
-      "id": 1,
+      "id": 5,
       "good": 1,
       "order": 1
     },
     {
-      "id": 2,
+      "id": 1,
       "good": 2,
       "order": 2
     },
@@ -77,6 +91,31 @@
       "id": 3,
       "good": 2,
       "order": 2
+    },
+    {
+      "id": 2051941462,
+      "good": 2,
+      "order": 305469361
+    },
+    {
+      "id": 196879143,
+      "good": 1,
+      "order": 305469361
+    },
+    {
+      "id": 326366937,
+      "good": 2,
+      "order": 220889922
+    },
+    {
+      "id": 278046479,
+      "good": 4,
+      "order": 220889922
+    },
+    {
+      "id": 1623385577,
+      "good": 1,
+      "order": 220889922
     }
   ]
 }

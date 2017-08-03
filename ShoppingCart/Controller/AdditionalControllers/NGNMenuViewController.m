@@ -115,17 +115,23 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     NGNContentNavigationController *navigationController =
         [self.storyboard instantiateViewControllerWithIdentifier:NGNControllerContentController];
-    
-    if (indexPath.section == 0 && indexPath.row == 0) {
-        NGNGoodsListViewController *goodsListViewController = [self.storyboard instantiateViewControllerWithIdentifier:NGNControllerGoodsController];
-        navigationController.viewControllers = @[goodsListViewController];
-    } else if (indexPath.section == 0 && indexPath.row == 2) {
-        NGNCartCapsuleViewController *cartCapsuleViewController = [self.storyboard instantiateViewControllerWithIdentifier:NGNControllerCartCapsuleController];
-        navigationController.viewControllers = @[cartCapsuleViewController];
+    if (indexPath.row != 4) {
+        if (indexPath.row == 0) {
+            NGNGoodsListViewController *goodsListViewController = [self.storyboard instantiateViewControllerWithIdentifier:NGNControllerGoodsController];
+            navigationController.viewControllers = @[goodsListViewController];
+        } else if (indexPath.row == 1) {
+            NSLog(@"There is orders controller segue stub");
+        } else if (indexPath.row == 2) {
+            NGNCartCapsuleViewController *cartCapsuleViewController = [self.storyboard instantiateViewControllerWithIdentifier:NGNControllerCartCapsuleController];
+            navigationController.viewControllers = @[cartCapsuleViewController];
+        } else if (indexPath.row == 3) {
+            NSLog(@"%@", @"There is settings segue stub");
+        }
+        self.frostedViewController.contentViewController = navigationController;
+        [self.frostedViewController hideMenuViewController];
+    } else {
+        NSLog(@"%@", @"There is no way to sign out!)");
     }
-    
-    self.frostedViewController.contentViewController = navigationController;
-    [self.frostedViewController hideMenuViewController];
 }
 
 #pragma mark UITableView Datasource
@@ -150,10 +156,6 @@
     NSString *cellIdentifier = NGNControllerMenuCell;
     
     NGNMenuTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
-    
-//    if (cell == nil) {
-//        cell = [[NGNMenuTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
-//    }
     cell.menuTextLabel.text = [NGNCommonConstants menuCellTitles][indexPath.row];
     cell.menuImageView.image = [UIImage imageNamed:[NGNCommonConstants menuIcons][indexPath.row]];
     

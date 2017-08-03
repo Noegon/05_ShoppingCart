@@ -16,7 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (NSFetchRequest<NGNGoodsOrder *> *)fetchRequest;
 
-@property (nullable, nonatomic, copy) NSNumber *goodsOrderId;
+@property (nullable, nonatomic, copy) NSNumber *entityId;
 @property (nullable, nonatomic, retain) NGNGood *good;
 @property (nullable, nonatomic, retain) NGNOrder *order;
 

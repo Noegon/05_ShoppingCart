@@ -17,4 +17,6 @@
 
 @property (strong, nonatomic) id<NSObject> dataWasLoadedNotification;
 
+- (NSNumber *)cartId;
+
 @end

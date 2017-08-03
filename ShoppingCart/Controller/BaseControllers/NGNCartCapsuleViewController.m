@@ -7,7 +7,14 @@
 //
 
 #import "NGNCartCapsuleViewController.h"
+#import "NGNCartViewController.h"
 #import "UIViewController+NGNBasicViewController.h"
+#import "NGNServerDataLoader.h"
+#import "NGNDataBaseRuler.h"
+#import "NGNCoreDataObjects.h"
+#import "NGNCommonConstants.h"
+#import "NGNOrderService.h"
+
 #import <REFrostedViewController/REFrostedViewController.h>
 
 @interface NGNCartCapsuleViewController ()
@@ -54,6 +61,17 @@
 
 - (IBAction)makeOrderButtonTapped:(UIButton *)sender {
 #warning debug message!!! Handle making order!
+    NGNCartViewController *cartController = self.childViewControllers[0];
+    NGNOrder *cart = (NGNOrder *)[NGNOrder ngn_entityById:cartController.oderId inManagedObjectContext:[NGNDataBaseRuler managedObjectContext]];
+    cart.state = @(NGNOrderAccepted);
+    NGNOrderService *service = [[NGNOrderService alloc] init];
+    FEMMapping *cartMapping = [NGNOrder defaultMapping];
+    NSDictionary *entityAsDictionary = [FEMSerializer serializeObject:cart usingMapping:cartMapping];
+    [service updateOrder:entityAsDictionary completitionBlock:^(NSDictionary *order){}];
+    
+    [NGNDataBaseRuler saveContext];
+    
+    [NGNServerDataLoader checkCartExistingInManagedObjectContext:[NGNDataBaseRuler managedObjectContext]];
     NSLog(@"%@", @"order was made");
 }
 @end

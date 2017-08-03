@@ -10,38 +10,6 @@
 
 @implementation NGNOrderService
 
-#warning concurrency Testing method!!!
-- (void)fetchOrdersTest:(void(^)(NSArray *orders))completitionBlock {
-    
-    NSMutableString *finalPath = [[NSString stringWithFormat:@"%@", NGNServerURL] mutableCopy];
-    NSArray *resourcePathElements = @[NGNOrderEndpoint];
-    for (id element in resourcePathElements) {
-        NSString *stringfiedElement = nil;
-        stringfiedElement = ![element isKindOfClass:NSString.class] ? [element stringValue] : element;
-        [finalPath appendString:stringfiedElement];
-        if (![stringfiedElement containsString:@"/"]) {
-            [finalPath appendString:@"/"];
-        }
-    }
-    NSURL *url = [NSURL URLWithString:finalPath];
-    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
-
-    request.HTTPMethod = NGNHTTPMethodGET;
-    
-    NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
-    NSURLSessionDataTask *entitiesTask =
-        [session dataTaskWithRequest:request completionHandler:
-         ^(NSData *data, NSURLResponse *response, NSError *error) {
-            NSArray *entities = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&error];
-             dispatch_async(dispatch_get_main_queue(), ^{
-                 if (completitionBlock) {
-                     completitionBlock(entities);
-                 }
-             });
-         }];
-    [entitiesTask resume];
-}
-
 - (void)fetchOrders:(void(^)(NSArray *orders))completitionBlock {
     [self.basicService fetchEntitiesWithEntityPathElements:@[NGNOrderEndpoint]
                                          completitionBlock:completitionBlock];

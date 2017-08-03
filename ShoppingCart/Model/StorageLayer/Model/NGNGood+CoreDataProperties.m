@@ -16,7 +16,7 @@
 
 @dynamic avialable;
 @dynamic discount;
-@dynamic goodId;
+@dynamic entityId;
 @dynamic image;
 @dynamic name;
 @dynamic price;
@@ -28,9 +28,9 @@
 
 + (FEMMapping *)defaultMapping {
     FEMMapping *mapping = [[FEMMapping alloc] initWithEntityName:[self entity].name];
-    [mapping addAttributesFromArray:@[@"avialable", @"price", @"discount", @"name"]];
-    [mapping addAttributesFromDictionary:@{@"goodId": @"id"}];
-    mapping.primaryKey = @"goodId";
+    [mapping addAttributesFromArray:@[@"avialable", @"price", @"discount", @"name", @"image"]];
+    [mapping addAttributesFromDictionary:@{@"entityId": @"id"}];
+    mapping.primaryKey = @"entityId";
     
     return mapping;
 }

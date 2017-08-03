@@ -11,9 +11,6 @@
 
 @interface NGNOrderService : NGNAbstractService
 
-#warning concurrency Testing method!!!
-- (void)fetchOrdersTest:(void(^)(NSArray *orders))completitionBlock;
-
 - (void)fetchOrders:(void(^)(NSArray *orders))completitionBlock;
 - (void)fetchOrderById:(NSString *)orderId
      completitionBlock:(void(^)(NSDictionary *order))completitionBlock;

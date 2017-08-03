@@ -15,7 +15,7 @@
 	return [[NSFetchRequest alloc] initWithEntityName:@"NGNUser"];
 }
 
-@dynamic userId;
+@dynamic entityId;
 @dynamic address;
 @dynamic name;
 @dynamic phone;
@@ -28,8 +28,8 @@
 + (FEMMapping *)defaultMapping {
     FEMMapping *mapping = [[FEMMapping alloc] initWithEntityName:[self entity].name];
     [mapping addAttributesFromArray:@[@"name", @"phone", @"address"]];
-    [mapping addAttributesFromDictionary:@{@"userId": @"id"}];
-    mapping.primaryKey = @"userId";
+    [mapping addAttributesFromDictionary:@{@"entityId": @"id"}];
+    mapping.primaryKey = @"entityId";
     
     return mapping;
 }

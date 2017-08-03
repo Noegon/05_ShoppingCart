@@ -11,6 +11,13 @@
 #define DEGREES_TO_RADIANS(angle) ((angle) / 180.0 * M_PI)
 #define foo4random() (arc4random() % ((unsigned)RAND_MAX + 1))
 
+typedef enum: NSUInteger {
+    NGNOrderInCart = 0,
+    NGNOrderAccepted,
+    NGNOrderReceived,
+    NGNOrderDeclined
+} NGNOrderStatus;
+
 static NSString *const NGNModelAppName = @"ShoppingCart";
 static NSString *const NGNModelDateFormat = @"dd.MM.yyyy";
 
@@ -32,6 +39,8 @@ static NSString *const NGNControllerNotificationGoodsOrdersWasLoaded = @"goodsOr
 
 #pragma mark - table cells
 
+
+static NSString *const NGNControllerOrderCell = @"OrderCell";
 static NSString *const NGNControllerMenuCell = @"MenuCell";
 static NSString *const NGNControllerGoodsInListCell = @"GoodsInListCell";
 static NSString *const NGNControllerAvialableGoodsInCartCell = @"AvialableGoodsInCartCell";

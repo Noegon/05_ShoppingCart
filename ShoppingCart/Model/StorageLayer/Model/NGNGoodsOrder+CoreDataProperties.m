@@ -16,7 +16,7 @@
 	return [[NSFetchRequest alloc] initWithEntityName:@"NGNGoodsOrder"];
 }
 
-@dynamic goodsOrderId;
+@dynamic entityId;
 @dynamic good;
 @dynamic order;
 
@@ -26,18 +26,18 @@
 
 + (FEMMapping *)defaultMapping {
     FEMMapping *mapping = [[FEMMapping alloc] initWithEntityName:[self entity].name];
-    [mapping addAttributesFromDictionary:@{@"goodsOrderId": @"id"}];
-    mapping.primaryKey = @"goodsOrderId";
+    [mapping addAttributesFromDictionary:@{@"entityId": @"id"}];
+    mapping.primaryKey = @"entityId";
     
     FEMMapping *goodMapping = [[FEMMapping alloc] initWithEntityName:[NGNGood entity].name];
-    goodMapping.primaryKey = @"goodId";
-    [goodMapping addAttributesFromDictionary:@{@"goodId": @"good"}];
+    goodMapping.primaryKey = @"entityId";
+    [goodMapping addAttributesFromDictionary:@{@"entityId": @"good"}];
     
     [mapping addRelationshipMapping:goodMapping forProperty:@"good" keyPath:nil];
     
     FEMMapping *orderMapping = [[FEMMapping alloc] initWithEntityName:[NGNOrder entity].name];
-    orderMapping.primaryKey = @"orderId";
-    [orderMapping addAttributesFromDictionary:@{@"orderId": @"order"}];
+    orderMapping.primaryKey = @"entityId";
+    [orderMapping addAttributesFromDictionary:@{@"entityId": @"order"}];
     
     [mapping addRelationshipMapping:orderMapping forProperty:@"order" keyPath:nil];
     

@@ -26,4 +26,9 @@
 /*Returns YES if it is avialable internet connection, NO in other case**/
 + (BOOL)checkInternetStatus;
 
+#pragma mark - additional helper methods
+
++ (void)checkCartExistingInManagedObjectContext:(NSManagedObjectContext *)context;
+
+
 @end

@@ -1,8 +1,8 @@
 //
-//  NGNGoodsListViewController.h
+//  NGNOrdersTableViewController.h
 //  ShoppingCart
 //
-//  Created by Alex on 19.07.17.
+//  Created by Stafeyev Alexei on 03/08/2017.
 //  Copyright © 2017 Alex. All rights reserved.
 //
 
@@ -13,8 +13,6 @@
 #import <REFrostedViewController/REFrostedViewController.h>
 #import <CoreData/CoreData.h>
 
-@interface NGNGoodsListViewController : NGNBasicController
-
-@property (strong, nonatomic) NSFetchedResultsController<NGNGood *> *fetchedResultsController;
+@interface NGNOrdersTableViewController : NGNBasicController
 
 @end
