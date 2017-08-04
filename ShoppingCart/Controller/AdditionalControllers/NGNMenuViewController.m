@@ -11,10 +11,13 @@
 #import "REFrostedViewController.h"
 #import "NGNGoodsListViewController.h"
 #import "NGNCartCapsuleViewController.h"
+#import "NGNOrdersTableViewController.h"
+
 #import "NGNUser+CoreDataProperties.h"
 #import "NGNDataBaseRuler.h"
 #import "NGNProfileService.h"
 #import "NGNCommonConstants.h"
+
 #import "UIColor+NGNAdditionalColors.h"
 #import "NGNMenuTableViewCell.h"
 
@@ -115,22 +118,24 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     NGNContentNavigationController *navigationController =
         [self.storyboard instantiateViewControllerWithIdentifier:NGNControllerContentController];
-    if (indexPath.row != 4) {
+    if (indexPath.row != 3) {
         if (indexPath.row == 0) {
             NGNGoodsListViewController *goodsListViewController = [self.storyboard instantiateViewControllerWithIdentifier:NGNControllerGoodsController];
             navigationController.viewControllers = @[goodsListViewController];
         } else if (indexPath.row == 1) {
-            NSLog(@"There is orders controller segue stub");
+            NGNOrdersTableViewController *ordersViewController = [self.storyboard instantiateViewControllerWithIdentifier:NGNControllerOrdersController];
+            navigationController.viewControllers = @[ordersViewController];
         } else if (indexPath.row == 2) {
             NGNCartCapsuleViewController *cartCapsuleViewController = [self.storyboard instantiateViewControllerWithIdentifier:NGNControllerCartCapsuleController];
             navigationController.viewControllers = @[cartCapsuleViewController];
-        } else if (indexPath.row == 3) {
-            NSLog(@"%@", @"There is settings segue stub");
+        } else if (indexPath.row == 4) {
+            NSLog(@"%@", @"Exit");
+            exit(0);
         }
         self.frostedViewController.contentViewController = navigationController;
         [self.frostedViewController hideMenuViewController];
     } else {
-        NSLog(@"%@", @"There is no way to sign out!)");
+        NSLog(@"%@", @"Functionality was not realized");
     }
 }
 

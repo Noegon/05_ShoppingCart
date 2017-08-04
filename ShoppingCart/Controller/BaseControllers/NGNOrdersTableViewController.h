@@ -15,4 +15,6 @@
 
 @interface NGNOrdersTableViewController : NGNBasicController
 
+@property (strong, nonatomic) NSFetchedResultsController<NGNOrder *> *fetchedResultsController;
+
 @end

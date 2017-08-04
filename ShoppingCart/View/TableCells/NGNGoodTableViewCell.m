@@ -12,6 +12,7 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
+    
     _orderButton.layer.shadowOffset = CGSizeMake(0, 5);
     _orderButton.layer.shadowColor = [UIColor blackColor].CGColor;
     _orderButton.layer.shadowOpacity = 0.5;

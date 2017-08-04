@@ -30,6 +30,8 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)addGoodsOrders:(NSSet<NGNGoodsOrder *> *)values;
 - (void)removeGoodsOrders:(NSSet<NGNGoodsOrder *> *)values;
 
+- (NSNumber *)totalOrderCost;
+
 @end
 
 @interface NGNOrder (Mapping)

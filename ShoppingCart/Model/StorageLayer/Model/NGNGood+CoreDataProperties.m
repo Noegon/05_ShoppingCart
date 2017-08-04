@@ -35,4 +35,11 @@
     return mapping;
 }
 
+- (NSNumber *)discountedCost {
+    if (self.avialable.boolValue) {
+        return self.discount.floatValue == 0 ? self.price : @((self.price.floatValue - (self.price.floatValue * 0.01 * self.discount.floatValue)));
+    }
+    return @(0);
+}
+
 @end

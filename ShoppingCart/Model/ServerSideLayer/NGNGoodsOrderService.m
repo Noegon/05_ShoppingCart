@@ -31,14 +31,14 @@
 - (void)updateGoodsOrder:(NSDictionary *)goodsOrder
        completitionBlock:(void(^)(NSDictionary *goodsOrder))completitionBlock {
     [self.basicService updateEntity:goodsOrder
-                       pathElements:@[NGNOrderEndpoint, [goodsOrder[@"id"] stringValue]]
+                       pathElements:@[NGNGoodsOrderEndpoint, [goodsOrder[@"id"] stringValue]]
                   completitionBlock:completitionBlock];
 }
 
 - (void)deleteGoodsOrder:(NSDictionary *)goodsOrder
        completitionBlock:(void(^)(NSDictionary *goodsOrder))completitionBlock {
     [self.basicService deleteEntity:goodsOrder
-                       pathElements:@[NGNOrderEndpoint, [goodsOrder[@"id"] stringValue]]
+                       pathElements:@[NGNGoodsOrderEndpoint, [goodsOrder[@"id"] stringValue]]
                   completitionBlock:completitionBlock];
 }
 

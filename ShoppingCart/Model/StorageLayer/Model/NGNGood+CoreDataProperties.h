@@ -39,6 +39,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (FEMMapping *)defaultMapping;
 
+- (NSNumber *)discountedCost;
+
 @end
 
 NS_ASSUME_NONNULL_END

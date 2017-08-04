@@ -8,6 +8,7 @@
 
 #import "NGNMenuCapsuleController.h"
 #import "NGNCommonConstants.h"
+#import "UIColor+NGNAdditionalColors.h"
 
 #import <CoreGraphics/CoreGraphics.h>
 #import <CoreImage/CoreImage.h>
@@ -22,7 +23,7 @@ static NSInteger const NGNFrostedControllerOffset = 50;
     self.view.backgroundColor = [UIColor clearColor];
     self.view.alpha = 1;
     
-    self.backgroundView.layer.shadowColor = [[UIColor colorWithRed:0.31 green:0.84 blue:0.92 alpha:1.0] CGColor];
+    self.backgroundView.layer.shadowColor = [[UIColor ngn_menuShadowColor] CGColor];
     self.backgroundView.layer.shadowOffset = CGSizeMake(20, 0);
     self.backgroundView.layer.shadowRadius = 10;
     self.backgroundView.layer.shadowOpacity = 0.6;

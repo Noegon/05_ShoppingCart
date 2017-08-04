@@ -8,6 +8,8 @@
 
 #import "NGNOrder+CoreDataProperties.h"
 #import "NGNUser+CoreDataProperties.h"
+#import "NGNGood+CoreDataProperties.h"
+#import "NGNGoodsOrder+CoreDataProperties.h"
 #import "NGNCommonConstants.h"
 
 @implementation NGNOrder (CoreDataProperties)
@@ -55,6 +57,15 @@
     [mapping addAttribute:orderingDate];
     
     return mapping;
+}
+
+- (NSNumber *)totalOrderCost {
+    double cost = 0;
+    for (NGNGoodsOrder *goodOrder in self.goodsOrders) {
+        NGNGood *currentGood = goodOrder.good;
+        cost += [currentGood discountedCost].floatValue;
+    }
+    return @(cost);
 }
 
 @end

@@ -7,8 +7,23 @@
 //
 
 #import "NGNOrdersTableViewController.h"
+#import "NGNCommonConstants.h"
+#import "NGNCatalogService.h"
+#import "NGNOrderService.h"
+#import "NGNGoodsOrderService.h"
+#import "NGNCoreDataObjects.h"
+#import "NSDate+NGNformattedDate.h"
+#import "NGNDataBaseRuler.h"
+#import "NGNServerDataLoader.h"
+
+#import "NGNOrderDetailTableViewController.h"
+#import "NGNMenuViewController.h"
+#import "NGNOrderTableViewCell.h"
+#import "UIColor+NGNAdditionalColors.h"
 
 @interface NGNOrdersTableViewController ()
+
+- (IBAction)profileBarButtonTapped:(UIBarButtonItem *)sender;
 
 @end
 
@@ -16,83 +31,98 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Incomplete implementation, return the number of sections
-    return 0;
+    NSInteger numOfSections = [[self.fetchedResultsController sections] count];
+    return numOfSections;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of rows
-    return 0;
+    id <NSFetchedResultsSectionInfo> sectionInfo = [self.fetchedResultsController sections][section];
+    NSInteger numOfRows = [sectionInfo numberOfObjects];
+    return numOfRows;
 }
 
-/*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
-    
-    // Configure the cell...
-    
+    NGNOrder *order = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    NGNOrderTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:NGNControllerOrderCell
+                                                                  forIndexPath:indexPath];
+    cell.orderNumberLabel.text = [NSString stringWithFormat:@"№%@", order.entityId.stringValue];
+    cell.orderStatusLabel.text = [self orderStatusFromEnum:order.state.integerValue];
+    cell.orderDateLabel.text = [NSDate ngn_formattedStringfiedDate:order.orderingDate];
+    cell.orderCostLabel.text = [NSString stringWithFormat:@"%@ Rub", order.totalOrderCost.stringValue];
     return cell;
 }
-*/
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
+ #pragma mark - Navigation
+ 
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+     NGNOrderDetailTableViewController *orderDetailController = [segue destinationViewController];
+     NGNOrderTableViewCell *cell = sender;
+     NGNOrder *currentOrder = [self.fetchedResultsController objectAtIndexPath:[self.tableView indexPathForCell:cell]];
+     orderDetailController.oderId = currentOrder.entityId;
+     orderDetailController.navigationItem.title = cell.orderNumberLabel.text;
+ }
+
+
+
+#pragma mark - Fetched results controller
+
+- (NSFetchedResultsController<NGNOrder *> *)fetchedResultsController {
+    
+    NSFetchRequest<NGNOrder *> *fetchRequest = [NGNOrder fetchRequest];
+    
+    fetchRequest.predicate = [NSPredicate predicateWithFormat:@"state != 0"];
+    
+    // Edit the sort key as appropriate.
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"orderingDate" ascending:YES];
+    
+    [fetchRequest setSortDescriptors:@[sortDescriptor]];
+    
+    // Edit the section name key path and cache name if appropriate.
+    // nil for section name key path means "no sections".
+    NSFetchedResultsController<NGNOrder *> *aFetchedResultsController =
+    [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest
+                                        managedObjectContext:[NGNDataBaseRuler managedObjectContext]
+                                          sectionNameKeyPath:nil
+                                                   cacheName:nil];
+    aFetchedResultsController.delegate = self;
+    
+    NSError *error = nil;
+    if (![aFetchedResultsController performFetch:&error]) {
+        NSLog(@"Unresolved error %@, %@", error, error.userInfo);
+#warning do not use abort() in release!!! For debug only!!! Handle this error!!!
+        abort();
+    }
+    
+    _fetchedResultsController = aFetchedResultsController;
+    return _fetchedResultsController;
 }
-*/
 
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
+#pragma mark - additional handling methods
+
+- (IBAction)profileBarButtonTapped:(UIBarButtonItem *)sender {
+    // Dismiss keyboard (optional)
+    [self.view endEditing:YES];
+    [self.frostedViewController.view endEditing:YES];
+    
+    // Present the view controller
+    [self.frostedViewController presentMenuViewController];
 }
-*/
 
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
+- (NSString *)orderStatusFromEnum:(NSInteger)orderStatus {
+    switch (orderStatus) {
+        case NGNOrderAccepted:
+            return @"Accepted";
+        case NGNOrderReceived:
+            return @"Received";
+        case NGNOrderDeclined:
+            return @"Declined";
+    }
+    return @"";
 }
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

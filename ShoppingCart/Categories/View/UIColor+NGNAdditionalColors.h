@@ -16,5 +16,7 @@
 + (UIColor *)ngn_menuGradientCentralColor;
 + (UIColor *)ngn_menuGradientEdgeColor;
 + (UIColor *)ngn_menuTextColor;
++ (UIColor *)ngn_menuShadowColor;
++ (UIColor *)ngn_navigationBarTintColor;
 
 @end

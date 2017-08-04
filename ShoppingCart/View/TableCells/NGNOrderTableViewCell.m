@@ -8,17 +8,27 @@
 
 #import "NGNOrderTableViewCell.h"
 
+@interface NGNOrderTableViewCell ()
+
+@property (strong, nonatomic) IBOutlet UIView *containerView;
+
+@end
+
 @implementation NGNOrderTableViewCell
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    // Initialization code
+
+    _containerView.layer.shadowOffset = CGSizeMake(0, 5);
+    _containerView.layer.shadowColor = [UIColor blackColor].CGColor;
+    _containerView.layer.shadowOpacity = 0.5;
+    _containerView.layer.masksToBounds = NO;
+    _containerView.layer.shadowRadius = 5;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
 }
+
 
 @end

@@ -28,6 +28,7 @@ static NSString *const NGNControllerMenuController = @"menuController";
 static NSString *const NGNControllerContentController = @"contentController";
 static NSString *const NGNControllerGoodsController = @"goodsController";
 static NSString *const NGNControllerCartCapsuleController = @"cartCapsuleController";
+static NSString *const NGNControllerOrdersController = @"ordersController";
 
 #pragma mark - notifications
 

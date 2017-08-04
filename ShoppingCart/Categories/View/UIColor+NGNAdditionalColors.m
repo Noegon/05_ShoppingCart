@@ -34,4 +34,12 @@
     return [UIColor colorWithRed:0.87 green:0.87 blue:0.87 alpha:1.0f];
 }
 
++ (UIColor *)ngn_menuShadowColor {
+    return [UIColor colorWithRed:0.31 green:0.84 blue:0.92 alpha:1.0];
+}
+
++ (UIColor *)ngn_navigationBarTintColor {
+    return [UIColor colorWithRed:0.41 green:0.41 blue:0.41 alpha:1.0];
+}
+
 @end

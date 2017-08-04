@@ -15,7 +15,7 @@
 @implementation NGNRootViewController
 
 - (void)awakeFromNib {
-    //    [super awakeFromNib];
+    [super awakeFromNib];
     self.contentViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"contentController"];
     self.menuViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"menuController"];
     self.blurRadius = 0;

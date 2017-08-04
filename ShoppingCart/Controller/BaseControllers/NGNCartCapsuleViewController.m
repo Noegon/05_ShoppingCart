@@ -38,40 +38,36 @@
     [self addFallingShadowFromNavigationBar];
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
 - (IBAction)profileBarButtonTapped:(UIBarButtonItem *)sender {
     // Dismiss keyboard (optional)
-    //
     [self.view endEditing:YES];
     [self.frostedViewController.view endEditing:YES];
     
     // Present the view controller
-    //
     [self.frostedViewController presentMenuViewController];
 }
 
 - (IBAction)makeOrderButtonTapped:(UIButton *)sender {
-#warning debug message!!! Handle making order!
-    NGNCartViewController *cartController = self.childViewControllers[0];
-    NGNOrder *cart = (NGNOrder *)[NGNOrder ngn_entityById:cartController.oderId inManagedObjectContext:[NGNDataBaseRuler managedObjectContext]];
-    cart.state = @(NGNOrderAccepted);
-    NGNOrderService *service = [[NGNOrderService alloc] init];
-    FEMMapping *cartMapping = [NGNOrder defaultMapping];
-    NSDictionary *entityAsDictionary = [FEMSerializer serializeObject:cart usingMapping:cartMapping];
-    [service updateOrder:entityAsDictionary completitionBlock:^(NSDictionary *order){}];
-    
-    [NGNDataBaseRuler saveContext];
-    
-    [NGNServerDataLoader checkCartExistingInManagedObjectContext:[NGNDataBaseRuler managedObjectContext]];
-    NSLog(@"%@", @"order was made");
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        NGNCartViewController *cartController = self.childViewControllers[0];
+        NGNOrder *cart = (NGNOrder *)[NGNOrder ngn_entityById:cartController.oderId inManagedObjectContext:[NGNDataBaseRuler managedObjectContext]];
+        cart.state = @(NGNOrderAccepted);
+        NGNOrderService *service = [[NGNOrderService alloc] init];
+        FEMMapping *cartMapping = [NGNOrder defaultMapping];
+        NSDictionary *entityAsDictionary = [FEMSerializer serializeObject:cart usingMapping:cartMapping];
+        [service updateOrder:entityAsDictionary completitionBlock:^(NSDictionary *order){}];
+        
+        [NGNServerDataLoader checkCartExistingInManagedObjectContext:[NGNDataBaseRuler managedObjectContext]];
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            NSString * storyboardName = @"Main";
+            UIStoryboard *storyboard = [UIStoryboard storyboardWithName:storyboardName bundle:nil];
+            UIViewController * vc = [storyboard instantiateViewControllerWithIdentifier:NGNControllerRootController];
+            [self presentViewController:vc animated:YES completion:nil];
+            [[NSNotificationCenter defaultCenter]postNotificationName:NGNControllerNotificationDataWasLoaded object:nil];
+            NSLog(@"%@", @"order was made");
+        });
+        [NGNDataBaseRuler saveContext];
+    });
 }
 @end
