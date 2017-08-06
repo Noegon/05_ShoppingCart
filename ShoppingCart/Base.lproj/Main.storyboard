@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="cip-J9-GFo">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="cip-J9-GFo">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -124,7 +123,7 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconmonstr-arrow-63-32" highlightedImage="iconmonstr-arrow-63-32" translatesAutoresizingMaskIntoConstraints="NO" id="rYE-9j-n00">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconmonstr-arrow-right-shadow" highlightedImage="iconmonstr-arrow-right-shadow" translatesAutoresizingMaskIntoConstraints="NO" id="rYE-9j-n00">
                                             <rect key="frame" x="376" y="18" width="20" height="27"/>
                                             <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
                                             <constraints>
@@ -312,7 +311,7 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconmonstr-arrow-63-32" translatesAutoresizingMaskIntoConstraints="NO" id="wyc-PE-ydX">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconmonstr-arrow-right-shadow" translatesAutoresizingMaskIntoConstraints="NO" id="wyc-PE-ydX">
                                                     <rect key="frame" x="384" y="44" width="20" height="27"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="27" id="fEB-yL-NGT"/>
@@ -432,7 +431,7 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconmonstr-arrow-63-32" highlightedImage="iconmonstr-arrow-63-32" translatesAutoresizingMaskIntoConstraints="NO" id="yTU-Ox-uJy">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconmonstr-arrow-right-shadow" highlightedImage="iconmonstr-arrow-right-shadow" translatesAutoresizingMaskIntoConstraints="NO" id="yTU-Ox-uJy">
                                             <rect key="frame" x="376" y="42" width="20" height="27"/>
                                             <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
                                             <constraints>
@@ -542,7 +541,7 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconmonstr-arrow-63-32" highlightedImage="iconmonstr-arrow-63-32" translatesAutoresizingMaskIntoConstraints="NO" id="1un-ll-3iu">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconmonstr-arrow-right-shadow" highlightedImage="iconmonstr-arrow-right-shadow" translatesAutoresizingMaskIntoConstraints="NO" id="1un-ll-3iu">
                                             <rect key="frame" x="376" y="46.666666666666671" width="20" height="27.000000000000014"/>
                                             <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
                                             <constraints>
@@ -834,7 +833,7 @@
         <image name="cell_background_removed" width="320" height="117"/>
         <image name="icon_cart" width="21" height="25"/>
         <image name="icon_menu" width="26" height="20"/>
-        <image name="iconmonstr-arrow-63-32" width="20" height="27"/>
+        <image name="iconmonstr-arrow-right-shadow" width="20" height="27"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="AVX-bu-llN"/>

@@ -82,6 +82,8 @@
     
     [fetchRequest setSortDescriptors:@[sortDescriptor]];
     
+    fetchRequest.fetchBatchSize = 6;
+    
     // Edit the section name key path and cache name if appropriate.
     // nil for section name key path means "no sections".
     NSFetchedResultsController<NGNOrder *> *aFetchedResultsController =

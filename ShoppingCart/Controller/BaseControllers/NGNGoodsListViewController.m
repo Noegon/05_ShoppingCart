@@ -17,6 +17,7 @@
 #import "NGNServerDataLoader.h"
 
 #import "NGNMenuViewController.h"
+#import "NGNCartCapsuleViewController.h"
 #import "NGNGoodTableViewCell.h"
 #import "UIColor+NGNAdditionalColors.h"
 
@@ -71,6 +72,24 @@
     return cell;
 }
 
+#pragma mark - navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    UIViewController *toController = [segue destinationViewController];
+    NSLog(@"%@", [toController class]);
+    if ([toController isKindOfClass:[NGNCartCapsuleViewController class]]) {
+        UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"iconmonstr-arrow-left"]
+                                                                    style:UIBarButtonItemStylePlain
+                                                                      target:self
+                                                                      action:@selector(backButtonTapped:)];
+        toController.navigationItem.leftBarButtonItem = backButton;
+        backButton.tintColor = [UIColor ngn_navigationBarTintColor];
+    }
+}
+
+- (void)backButtonTapped:(id)sender {
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
 
 #pragma mark - Fetched results controller
 
@@ -82,6 +101,8 @@
     NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"name" ascending:YES];
     
     [fetchRequest setSortDescriptors:@[sortDescriptor]];
+    
+    fetchRequest.fetchBatchSize = 6;
     
     // Edit the section name key path and cache name if appropriate.
     // nil for section name key path means "no sections".
@@ -102,10 +123,6 @@
     _fetchedResultsController = aFetchedResultsController;
     return _fetchedResultsController;
 }
-
-#pragma mark - Fetched results controller delegate methods
-
-
 
 #pragma mark - additional handling methods
 
