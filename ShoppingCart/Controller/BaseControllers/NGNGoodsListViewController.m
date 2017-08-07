@@ -26,6 +26,7 @@
 
 @property (strong, nonatomic) NGNCatalogService *catalogService;
 @property (strong, nonatomic) NGNOrderService *orderService;
+@property (strong, nonatomic) NSOperationQueue *queue;
 
 #pragma mark - additional handling methods
 - (IBAction)profileBarButtonTapped:(UIBarButtonItem *)sender;
@@ -34,6 +35,15 @@
 @end
 
 @implementation NGNGoodsListViewController
+
+- (NSOperationQueue *)queue {
+    if (_queue) {
+        return _queue;
+    }
+    NSOperationQueue *queue = [[NSOperationQueue alloc] init];
+    queue.maxConcurrentOperationCount = 6;
+    return queue;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -59,16 +69,55 @@
     cell.nameLabel.text = good.name;
     cell.codeLabel.text = [NSString stringWithFormat:@"Code: %@", good.entityId.stringValue];
     cell.priceLabel.text = [NSString stringWithFormat:@"%@ Rub", good.price.stringValue];
+    
+    NSURL *imageURL = [NSURL URLWithString:good.image];
+    
+    NSDictionary* params = @{@"url": imageURL, @"cell":cell};
 
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^(){
-        NSURL *imageURL = [NSURL URLWithString:good.image];
-        NSData *imageData = [NSData dataWithContentsOfURL:imageURL];
-        dispatch_async(dispatch_get_main_queue(), ^(){
-            cell.goodImageView.image = [UIImage imageWithData:imageData];
-            cell.goodImageView.contentMode = UIViewContentModeScaleAspectFit;
+#warning experiment with different ways of concurrency organization
+#warning performing method in background - the easyest way of concurrency
+//    [self performSelectorInBackground:@selector(loadImageWithParams:) withObject:params];
+    
+#warning NSOperationQueue - the most flexible manner of concurrency organization
+#warning invocation operation - we still needs some additional methods and also we needs to create the queue
+//    NSInvocationOperation *invocationOperation = [[NSInvocationOperation alloc] initWithTarget:self
+//                                                                                      selector:@selector(loadImageWithParams:)
+//                                                                                        object:params];
+//    
+//    [self.queue addOperation:invocationOperation];
+    
+#warning block operation - we don't need to write additional methods: all code is in one place (very comfortable)
+    NSBlockOperation *blockOperation = [NSBlockOperation blockOperationWithBlock:^{
+        NSURL* url = [NSURL URLWithString:good.image];
+        UIImage* thumb = [UIImage imageWithData:[NSData dataWithContentsOfURL:url]];
+        [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+            cell.goodImageView.image = thumb;
+            cell.goodImageView.hidden = NO;
             [cell setNeedsLayout];
-        });
-    });
+        }];
+    }];
+    [self.queue addOperation:blockOperation];
+    
+#warning GCD - latest and most powerful instrument. But not so flexible as NSOperationQueue: we cannot cancel operation while it performs in queue
+//    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+//        NSURL* url = [NSURL URLWithString:good.image];
+//        UIImage* thumb = [UIImage imageWithData:[NSData dataWithContentsOfURL:url]];
+//        dispatch_async(dispatch_get_main_queue(), ^{
+//            cell.goodImageView.image = thumb;
+//            cell.goodImageView.hidden = NO;
+//            [cell setNeedsLayout];
+//        });
+//    });
+    
+#warning deadlock test - never call 'dispatch_sync(dispatch_get_main_queue()' from current queue!!!
+//    dispatch_sync(dispatch_get_main_queue(), ^{
+//        NSURL* url = [NSURL URLWithString:good.image];
+//        UIImage* thumb = [UIImage imageWithData:[NSData dataWithContentsOfURL:url]];
+//        cell.goodImageView.image = thumb;
+//        cell.goodImageView.hidden = NO;
+//        [cell setNeedsLayout];
+//    });
+    
     return cell;
 }
 
@@ -154,6 +203,24 @@
          NSDictionary *entityAsDictionary = [FEMSerializer serializeObject:((NGNGoodsOrder *)object) usingMapping:orderMapping];
          [service addGoodsOrder:entityAsDictionary completitionBlock:^(NSDictionary *order){}];
      }];
+}
+
+#warning methods for invocation operation or for background operations
+
+- (void)loadImageWithParams:(NSDictionary *)params {
+    NSURL* url = [params objectForKey:@"url"];
+    UITableViewCell* cell = [params objectForKey:@"cell"];
+    UIImage* thumb = [UIImage imageWithData:[NSData dataWithContentsOfURL:url]];
+    NSDictionary* backParams = @{@"cell":cell, @"thumb":thumb};
+    [self performSelectorOnMainThread:@selector(setImage:) withObject:backParams waitUntilDone:YES];
+}
+
+-(void)setImage:(NSDictionary*)params{
+    UITableViewCell* cell = [params objectForKey:@"cell"];
+    UIImage* thumb = [params objectForKey:@"thumb"];
+    ((NGNGoodTableViewCell *)cell).goodImageView.image = thumb;
+    ((NGNGoodTableViewCell *)cell).goodImageView.hidden = NO;
+    [cell setNeedsLayout];
 }
 
 @end

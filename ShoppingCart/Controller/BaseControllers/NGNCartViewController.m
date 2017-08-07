@@ -46,18 +46,16 @@
                                                                           handler:
                                           ^(UITableViewRowAction *action, NSIndexPath *indexPath) {
 
-                                              dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-                                                  NGNGoodsOrder *goodsOrder = [self.fetchedResultsController objectAtIndexPath:indexPath];
-                                                  
-                                                  NGNGoodsOrderService *service = [[NGNGoodsOrderService alloc] init];
-                                                  FEMMapping *goodsOrderMapping = [NGNGoodsOrder defaultMapping];
-                                                  NSDictionary *goodsOrderAsDictionary = [FEMSerializer serializeObject:goodsOrder usingMapping:goodsOrderMapping];
-                                                  [service deleteGoodsOrder:goodsOrderAsDictionary completitionBlock:^(NSDictionary *goodsOrder) {}];
-                                                  
-                                                  [NGNGoodsOrder ngn_deleteEntityInManagedObjectContext:[NGNDataBaseRuler managedObjectContext]
-                                                                                          managedObject:goodsOrder];
-                                                  [NGNDataBaseRuler saveContext];
-                                              });
+                                              NGNGoodsOrder *goodsOrder = [self.fetchedResultsController objectAtIndexPath:indexPath];
+                                              
+                                              NGNGoodsOrderService *service = [[NGNGoodsOrderService alloc] init];
+                                              FEMMapping *goodsOrderMapping = [NGNGoodsOrder defaultMapping];
+                                              NSDictionary *goodsOrderAsDictionary = [FEMSerializer serializeObject:goodsOrder usingMapping:goodsOrderMapping];
+                                              [service deleteGoodsOrder:goodsOrderAsDictionary completitionBlock:^(NSDictionary *goodsOrder) {}];
+                                              
+                                              [NGNGoodsOrder ngn_deleteEntityInManagedObjectContext:[NGNDataBaseRuler managedObjectContext]
+                                                                                      managedObject:goodsOrder];
+                                              [NGNDataBaseRuler saveContext];
                                           }];
     deleteAction.backgroundColor = [UIColor redColor];
     return @[deleteAction];
