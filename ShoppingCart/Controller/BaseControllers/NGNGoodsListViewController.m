@@ -87,27 +87,30 @@
 //    [self.queue addOperation:invocationOperation];
     
 #warning block operation - we don't need to write additional methods: all code is in one place (very comfortable)
-    NSBlockOperation *blockOperation = [NSBlockOperation blockOperationWithBlock:^{
-        NSURL* url = [NSURL URLWithString:good.image];
-        UIImage* thumb = [UIImage imageWithData:[NSData dataWithContentsOfURL:url]];
-        [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-            cell.goodImageView.image = thumb;
-            cell.goodImageView.hidden = NO;
-            [cell setNeedsLayout];
-        }];
-    }];
-    [self.queue addOperation:blockOperation];
-    
-#warning GCD - latest and most powerful instrument. But not so flexible as NSOperationQueue: we cannot cancel operation while it performs in queue
-//    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+//    NSBlockOperation *blockOperation = [NSBlockOperation blockOperationWithBlock:^{
 //        NSURL* url = [NSURL URLWithString:good.image];
 //        UIImage* thumb = [UIImage imageWithData:[NSData dataWithContentsOfURL:url]];
-//        dispatch_async(dispatch_get_main_queue(), ^{
+//        [[NSOperationQueue mainQueue] addOperationWithBlock:^{
 //            cell.goodImageView.image = thumb;
 //            cell.goodImageView.hidden = NO;
 //            [cell setNeedsLayout];
-//        });
-//    });
+//        }];
+//    }];
+//    [self.queue addOperation:blockOperation];
+    
+#warning GCD - latest and most powerful instrument. But not so flexible as NSOperationQueue: we cannot cancel operation while it performs in queue
+    dispatch_queue_attr_t attribute = dispatch_queue_attr_make_with_qos_class(DISPATCH_QUEUE_CONCURRENT, QOS_CLASS_USER_INTERACTIVE, 0);
+    dispatch_queue_t myQueue = dispatch_queue_create("myQueue", attribute);
+//    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+    dispatch_async(myQueue, ^{
+        NSURL* url = [NSURL URLWithString:good.image];
+        UIImage* thumb = [UIImage imageWithData:[NSData dataWithContentsOfURL:url]];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            cell.goodImageView.image = thumb;
+            cell.goodImageView.hidden = NO;
+            [cell setNeedsLayout];
+        });
+    });
     
 #warning deadlock test - never call 'dispatch_sync(dispatch_get_main_queue()' from current queue!!!
 //    dispatch_sync(dispatch_get_main_queue(), ^{
