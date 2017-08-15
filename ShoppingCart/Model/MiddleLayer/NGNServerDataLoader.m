@@ -31,87 +31,79 @@
    
     if ([self checkInternetStatus] && [self checkServerStatusWithHostName:NGNServerURL]) {
         
-        dispatch_group_t group = dispatch_group_create();
-        dispatch_queue_t myQueue = dispatch_queue_create("myQueue", DISPATCH_QUEUE_SERIAL);
+        dispatch_semaphore_t mySemaphore = dispatch_semaphore_create(4);
         
-        //declare uniting async thread in global queue (will be automatically separated to different threads by system)
-        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        dispatch_queue_attr_t myAttribute = dispatch_queue_attr_make_with_qos_class(nil, QOS_CLASS_USER_INITIATED, DISPATCH_QUEUE_PRIORITY_DEFAULT);
+        dispatch_queue_t myQueue = dispatch_queue_create("myQueue", myAttribute);
+        
+        //declare uniting async thread in user concurrent queue
+        dispatch_async(myQueue, ^{
             
-            //1-st grouped thread
-            //increase counter of group
-            dispatch_group_enter(group);
             [profileService fetchUserById:@"1" completitionBlock:^(NSDictionary *user) {
-                //starting this block in different thread
-                dispatch_group_async(group, myQueue, ^{
-                    FEMMapping *userMapping = [NGNUser defaultMapping];
-                    NSDictionary *usersResult = [FEMDeserializer objectFromRepresentation:user
-                                                                                  mapping:userMapping
-                                                                                  context:context];
-                    if (!usersResult) {
-                        NSLog(@"%@", @"user wasn't loaded");
-                    } else {
-                        NSLog(@"%@", @"user was loaded successfully");
-                    }
-                    // no one of this group threads will start before counter will redused to 0
-                    dispatch_group_leave(group);
-                });
+                FEMMapping *userMapping = [NGNUser defaultMapping];
+                NSDictionary *usersResult = [FEMDeserializer objectFromRepresentation:user
+                                                                              mapping:userMapping
+                                                                              context:context];
+                if (!usersResult) {
+                    NSLog(@"%@", @"user wasn't loaded");
+                } else {
+                    NSLog(@"%@", @"user was loaded successfully");
+                }
+                
+                dispatch_semaphore_signal(mySemaphore);
             }];
-            //waiting for reducing group counter to 0
-            dispatch_wait(group, DISPATCH_TIME_FOREVER);
+            //waiting for semaphore releasing forever
+            dispatch_semaphore_wait(mySemaphore, DISPATCH_TIME_FOREVER);
             
-            //2-nd grouped thread
-            dispatch_group_enter(group);
             [catalogService fetchPhones:^(NSArray *phones) {
-                dispatch_group_async(group, myQueue, ^{
-                    FEMMapping *phonesMapping = [NGNGood defaultMapping];
-                    NSArray *phonesResult = [FEMDeserializer collectionFromRepresentation:phones
-                                                                                  mapping:phonesMapping
-                                                                                  context:context];
-                    if (!phonesResult) {
-                        NSLog(@"%@", @"goods catalog wasn't loaded");
-                    } else {
-                        NSLog(@"%@", @"goods was loaded successfully");
-                    }
-                    dispatch_group_leave(group);
-                });
+
+                FEMMapping *phonesMapping = [NGNGood defaultMapping];
+                NSArray *phonesResult = [FEMDeserializer collectionFromRepresentation:phones
+                                                                              mapping:phonesMapping
+                                                                              context:context];
+                if (!phonesResult) {
+                    NSLog(@"%@", @"goods catalog wasn't loaded");
+                } else {
+                    NSLog(@"%@", @"goods was loaded successfully");
+                }
+                dispatch_semaphore_signal(mySemaphore);
             }];
             
-            dispatch_wait(group, DISPATCH_TIME_FOREVER);
+            //waiting for semaphore releasing forever
+            dispatch_semaphore_wait(mySemaphore, DISPATCH_TIME_FOREVER);
             
-            //3-rd grouped thread
-            dispatch_group_enter(group);
             [goodsOrderService fetchGoodsOrders:^(NSArray *goodsOrders) {
-                dispatch_group_async(group, myQueue, ^{
-                    FEMMapping *goodsOrderMapping = [NGNGoodsOrder defaultMapping];
-                    NSArray *goodsOrdersResult = [FEMDeserializer collectionFromRepresentation:goodsOrders
-                                                                                       mapping:goodsOrderMapping
-                                                                                       context:context];
-                    if (!goodsOrdersResult) {
-                        NSLog(@"%@", @"goodsOrders wasn't loaded");
-                    } else {
-                        NSLog(@"%@", @"goodsOrders was loaded successfully");
-                    }
-                    dispatch_group_leave(group);
-                });
+
+                FEMMapping *goodsOrderMapping = [NGNGoodsOrder defaultMapping];
+                NSArray *goodsOrdersResult = [FEMDeserializer collectionFromRepresentation:goodsOrders
+                                                                                   mapping:goodsOrderMapping
+                                                                                   context:context];
+                if (!goodsOrdersResult) {
+                    NSLog(@"%@", @"goodsOrders wasn't loaded");
+                } else {
+                    NSLog(@"%@", @"goodsOrders was loaded successfully");
+                }
+                dispatch_semaphore_signal(mySemaphore);
             }];
             
-            //4-th grouped thread
-            dispatch_group_enter(group);
+            //waiting for semaphore releasing forever
+            dispatch_semaphore_wait(mySemaphore, DISPATCH_TIME_FOREVER);
+            
             [orderService fetchOrders:^(NSArray *orders) {
-                dispatch_group_async(group, myQueue, ^{
-                    FEMMapping *orderMapping = [NGNOrder defaultMapping];
-                    NSArray *ordersResult = [FEMDeserializer collectionFromRepresentation:orders
-                                                                                  mapping:orderMapping
-                                                                                  context:context];
-                    if (!ordersResult) {
-                        NSLog(@"%@", @"ordersResult wasn't loaded");
-                    } else {
-                        [self checkCartExistingInManagedObjectContext:context];
-                        NSLog(@"%@", @"orders was loaded successfully");
-                    }
-                    dispatch_group_leave(group);
-                });
+                
+                FEMMapping *orderMapping = [NGNOrder defaultMapping];
+                NSArray *ordersResult = [FEMDeserializer collectionFromRepresentation:orders
+                                                                              mapping:orderMapping
+                                                                              context:context];
+                if (!ordersResult) {
+                    NSLog(@"%@", @"ordersResult wasn't loaded");
+                } else {
+                    [self checkCartExistingInManagedObjectContext:context];
+                    NSLog(@"%@", @"orders was loaded successfully");
+                }
+                dispatch_semaphore_signal(mySemaphore);
             }];
+            
             //end of concurrent grouped threads
             [NGNDataBaseRuler saveContext];
             
