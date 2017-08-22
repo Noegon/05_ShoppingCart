@@ -19,16 +19,11 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
 
-    _containerView.layer.shadowOffset = CGSizeMake(0, 5);
-    _containerView.layer.shadowColor = [UIColor blackColor].CGColor;
-    _containerView.layer.shadowOpacity = 0.5;
-    _containerView.layer.masksToBounds = NO;
-    _containerView.layer.shadowRadius = 5;
+    self.containerView.layer.shadowOffset = CGSizeMake(0, 5);
+    self.containerView.layer.shadowColor = [UIColor blackColor].CGColor;
+    self.containerView.layer.shadowOpacity = 0.5;
+    self.containerView.layer.masksToBounds = NO;
+    self.containerView.layer.shadowRadius = 5;
 }
-
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-    [super setSelected:selected animated:animated];
-}
-
 
 @end

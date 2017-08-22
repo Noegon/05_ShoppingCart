@@ -13,15 +13,11 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
     
-    _orderButton.layer.shadowOffset = CGSizeMake(0, 5);
-    _orderButton.layer.shadowColor = [UIColor blackColor].CGColor;
-    _orderButton.layer.shadowOpacity = 0.5;
-    _orderButton.layer.masksToBounds = NO;
-    _orderButton.layer.shadowRadius = 5;
-}
-
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-    [super setSelected:selected animated:animated];
+    self.orderButton.layer.shadowOffset = CGSizeMake(0, 5);
+    self.orderButton.layer.shadowColor = [UIColor blackColor].CGColor;
+    self.orderButton.layer.shadowOpacity = 0.5;
+    self.orderButton.layer.masksToBounds = NO;
+    self.orderButton.layer.shadowRadius = 5;
 }
 
 @end

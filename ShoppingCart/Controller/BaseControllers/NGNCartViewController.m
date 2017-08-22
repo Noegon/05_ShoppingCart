@@ -24,7 +24,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    if (!self.oderId) {
+    if (self.oderId == nil) {
         self.oderId = [self cartId];
     }
 }

@@ -36,7 +36,7 @@
         dispatch_queue_attr_t myAttribute = dispatch_queue_attr_make_with_qos_class(nil, QOS_CLASS_USER_INITIATED, DISPATCH_QUEUE_PRIORITY_DEFAULT);
         dispatch_queue_t myQueue = dispatch_queue_create("myQueue", myAttribute);
         
-        //declare uniting async thread in user concurrent queue
+
         dispatch_async(myQueue, ^{
             
             [profileService fetchUserById:@"1" completitionBlock:^(NSDictionary *user) {
@@ -52,11 +52,10 @@
                 
                 dispatch_semaphore_signal(mySemaphore);
             }];
-            //waiting for semaphore releasing forever
+
             dispatch_semaphore_wait(mySemaphore, DISPATCH_TIME_FOREVER);
             
             [catalogService fetchPhones:^(NSArray *phones) {
-
                 FEMMapping *phonesMapping = [NGNGood defaultMapping];
                 NSArray *phonesResult = [FEMDeserializer collectionFromRepresentation:phones
                                                                               mapping:phonesMapping
@@ -69,11 +68,9 @@
                 dispatch_semaphore_signal(mySemaphore);
             }];
             
-            //waiting for semaphore releasing forever
             dispatch_semaphore_wait(mySemaphore, DISPATCH_TIME_FOREVER);
             
             [goodsOrderService fetchGoodsOrders:^(NSArray *goodsOrders) {
-
                 FEMMapping *goodsOrderMapping = [NGNGoodsOrder defaultMapping];
                 NSArray *goodsOrdersResult = [FEMDeserializer collectionFromRepresentation:goodsOrders
                                                                                    mapping:goodsOrderMapping
@@ -86,11 +83,9 @@
                 dispatch_semaphore_signal(mySemaphore);
             }];
             
-            //waiting for semaphore releasing forever
             dispatch_semaphore_wait(mySemaphore, DISPATCH_TIME_FOREVER);
             
             [orderService fetchOrders:^(NSArray *orders) {
-                
                 FEMMapping *orderMapping = [NGNOrder defaultMapping];
                 NSArray *ordersResult = [FEMDeserializer collectionFromRepresentation:orders
                                                                               mapping:orderMapping
@@ -104,7 +99,6 @@
                 dispatch_semaphore_signal(mySemaphore);
             }];
             
-            //end of concurrent grouped threads
             [NGNDataBaseRuler saveContext];
             
             

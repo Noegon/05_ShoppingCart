@@ -20,13 +20,6 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-#warning delete datasource for debug
-//    NSURL *applicationDocumentsDirectory = [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory
-//                                                                                   inDomains:NSUserDomainMask] lastObject];
-//    NSFileManager *manager = [NSFileManager defaultManager];
-//    NSURL *storeURL = [applicationDocumentsDirectory URLByAppendingPathComponent:@"ShoppingCart.sqlite"];
-//    [manager removeItemAtURL:storeURL error:nil];
-
     [NGNDataBaseRuler setupCoreDataStackWithStorageName:NGNModelAppName];
     [NGNServerDataLoader loadDataFromServerWithContext:[NGNDataBaseRuler managedObjectContext]];
     return YES;

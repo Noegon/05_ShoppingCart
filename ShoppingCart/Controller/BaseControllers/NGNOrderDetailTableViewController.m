@@ -28,11 +28,6 @@
     self.navigationController.navigationBar.tintColor = [UIColor ngn_navigationBarTintColor];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -105,18 +100,15 @@
     // Edit the section name key path and cache name if appropriate.
     // nil for section name key path means "no sections".
     NSFetchedResultsController<NGNGoodsOrder *> *aFetchedResultsController =
-    [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest
-                                        managedObjectContext:[NGNDataBaseRuler managedObjectContext]
-                                          sectionNameKeyPath:nil
-                                                   cacheName:nil];
+        [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest
+                                            managedObjectContext:[NGNDataBaseRuler managedObjectContext]
+                                              sectionNameKeyPath:nil
+                                                       cacheName:nil];
     aFetchedResultsController.delegate = self;
     
     NSError *error = nil;
     if (![aFetchedResultsController performFetch:&error]) {
-        // Replace this implementation with code to handle the error appropriately.
-        // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
         NSLog(@"Unresolved error %@, %@", error, error.userInfo);
-#warning do not use abort() in release!!! For debug only!!! Handle this error!!!
         abort();
     }
     

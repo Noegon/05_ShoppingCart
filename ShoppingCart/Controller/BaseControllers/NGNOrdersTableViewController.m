@@ -29,10 +29,6 @@
 
 @implementation NGNOrdersTableViewController
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-}
-
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -96,7 +92,6 @@
     NSError *error = nil;
     if (![aFetchedResultsController performFetch:&error]) {
         NSLog(@"Unresolved error %@, %@", error, error.userInfo);
-#warning do not use abort() in release!!! For debug only!!! Handle this error!!!
         abort();
     }
     

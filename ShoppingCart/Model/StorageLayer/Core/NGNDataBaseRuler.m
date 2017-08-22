@@ -52,7 +52,6 @@
     if([managedObjectContext hasChanges] &&
        ![managedObjectContext save:&error]){
         NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-#warning do not use abort() in release!!! For debug only!!! Handle this error!!!
         abort();
     } else {
         [managedObjectContext refreshAllObjects];
@@ -71,8 +70,8 @@
 }
 
 - (NSPersistentStoreCoordinator *)persistentStoreCoordinatorWithStorageName:(NSString *)storageName {
-    if(_persistentStoreCoordinator != nil) {
-        return _persistentStoreCoordinator;
+    if(self.persistentStoreCoordinator) {
+        return self.persistentStoreCoordinator;
     }
     if (!storageName) {
         storageName = NGNModelAppName;
@@ -80,18 +79,17 @@
     NSString *fullStorageName = [NSString stringWithFormat:@"%@.sqlite", storageName];
     NSURL *storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:fullStorageName];
     NSError *error = nil;
-    _persistentStoreCoordinator =
+    self.persistentStoreCoordinator =
         [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:self.managedObjectModel];
-    if(![_persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType
+    if(![self.persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType
                                                   configuration:nil
                                                             URL:storeURL
                                                         options:nil
                                                           error:&error]) {
         NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-#warning do not use abort() in release!!! For debug only!!! Handle this error!!!
         abort();
     }
-    return _persistentStoreCoordinator;
+    return self.persistentStoreCoordinator;
 }
 
 #pragma mark - additional helper methods
@@ -109,7 +107,6 @@
                                     fieldsCompletitionBlock:(void(^)(NSManagedObject *object))fieldsCompletitionBlock {
     NSManagedObject *object = [NSEntityDescription insertNewObjectForEntityForName:[self entity].name
                                                             inManagedObjectContext:context];
-//    [context insertObject:object];
     if (fieldsCompletitionBlock) {
         fieldsCompletitionBlock(object);
     }
@@ -132,7 +129,6 @@
     NSArray *resultArray = [context executeFetchRequest:request error:&error];
     if (!resultArray) {
         NSLog(@"Unresolved error %@, %@", error, error.userInfo);
-#warning do not use abort() in release!!! For debug only!!! Handle this error!!!
         abort();
     }
     return resultArray;

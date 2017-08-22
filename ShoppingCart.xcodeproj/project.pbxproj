@@ -497,7 +497,7 @@
 				TargetAttributes = {
 					EF3480A81F1E8D5100733E86 = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = 9M22BH66EU;
+						DevelopmentTeam = 463GH4QV9T;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -749,7 +749,8 @@
 			baseConfigurationReference = 7AF396158AE15C14B79EAC98 /* Pods-ShoppingCart.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 9M22BH66EU;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 463GH4QV9T;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/build/Debug-iphoneos/FastEasyMapping",
@@ -760,6 +761,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.noegon.ShoppingCart;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Debug;
 		};
@@ -768,7 +770,8 @@
 			baseConfigurationReference = 198F57675726B8D120206506 /* Pods-ShoppingCart.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 9M22BH66EU;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 463GH4QV9T;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/build/Debug-iphoneos/FastEasyMapping",
@@ -779,6 +782,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.noegon.ShoppingCart;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Release;
 		};

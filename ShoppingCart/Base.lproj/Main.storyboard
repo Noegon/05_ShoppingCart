@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="cip-J9-GFo">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="cip-J9-GFo">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -412,7 +412,7 @@
                         <color key="sectionIndexBackgroundColor" red="0.4431372549" green="0.65098039220000004" blue="0.85098039219999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="AvialableGoodsInCartCell" rowHeight="120" id="mTL-95-fh1" customClass="NGNCartTableViewCellAvialable">
-                                <rect key="frame" x="0.0" y="55" width="414" height="120"/>
+                                <rect key="frame" x="0.0" y="55.333333333333336" width="414" height="120"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mTL-95-fh1" id="hGb-WK-heQ">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="120"/>
@@ -522,7 +522,7 @@
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="NotAvialableGoodsInCartCell" rowHeight="120" id="Tsz-LK-VSk" customClass="NGNCartTableViewCellNotAvialable">
-                                <rect key="frame" x="0.0" y="175" width="414" height="120"/>
+                                <rect key="frame" x="0.0" y="175.33333333333334" width="414" height="120"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Tsz-LK-VSk" id="Ra5-qC-wvo">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="120"/>
@@ -836,7 +836,7 @@
         <image name="iconmonstr-arrow-right-shadow" width="20" height="27"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="XO6-aw-VUB"/>
         <segue reference="AVX-bu-llN"/>
-        <segue reference="Qf8-ZR-bB3"/>
     </inferredMetricsTieBreakers>
 </document>
