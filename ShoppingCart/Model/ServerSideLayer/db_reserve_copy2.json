@@ -1,0 +1,123 @@
+{
+  "catalog": [
+    {
+      "id": 1,
+      "name": "Xiaomi Redmi 4X 16GB Black",
+      "price": 246,
+      "discount": 0,
+      "avialable": 0
+    },
+    {
+      "id": 2,
+      "name": "Apple iPhone 7 32GB Black",
+      "price": 1400,
+      "discount": 0,
+      "avialable": 1
+    },
+    {
+      "id": 3,
+      "name": "Samsung Galaxy S8 Dual SIM 64GB",
+      "price": 1590,
+      "discount": 0,
+      "avialable": 1
+    }
+  ],
+  "profile": [
+    {
+      "id": 1,
+      "name": "Noegon",
+      "password": "grendell",
+      "phone": 375257515436
+    }
+  ],
+  "order": [
+    {
+      "id": 1,
+      "orderingDate": "21.07.2017",
+      "state": 0,
+      "user": {
+        "id": 1,
+        "name": "Noegon",
+        "password": "grendell",
+        "phone": 375257515436
+      },
+      "goodsOrders": [
+        {
+          "id": 1,
+          "good": {
+            "id": 1,
+            "name": "Xiaomi Redmi 4X 16GB Black",
+            "price": 246,
+            "discount": 0,
+            "avialable": 0
+          }
+        },
+        {
+          "id": 2,
+          "good": {
+            "id": 2,
+            "title": "Apple iPhone 7 32GB Black",
+            "price": 1400,
+            "discount": 0,
+            "avialable": 1
+          }
+        }
+      ]
+    },
+    {
+        "id": 2,
+        "orderingDate": "29.07.2017",
+        "state": 1,
+        "user": {
+            "id": 1,
+            "name": "Noegon",
+            "password": "grendell",
+            "phone": 375257515436
+        },
+        "goodsOrders": [
+            {
+                "id": 3,
+                "good": {
+                    "id": 2,
+                    "title": "Apple iPhone 7 32GB Black",
+                    "price": 1400,
+                    "discount": 0,
+                    "avialable": 1
+                }
+            }
+        ]
+    }
+  ],
+  "goodsOrder": [
+    {
+      "id": 1,
+      "good": {
+        "id": 1,
+        "name": "Xiaomi Redmi 4X 16GB Black",
+        "price": 246,
+        "discount": 0,
+        "avialable": 0
+      }
+    },
+    {
+      "id": 2,
+      "good": {
+        "id": 2,
+        "title": "Apple iPhone 7 32GB Black",
+        "price": 1400,
+        "discount": 0,
+        "avialable": 1
+      }
+    },
+    {
+      "id": 3,
+      "good": {
+        "id": 2,
+        "title": "Apple iPhone 7 32GB Black",
+        "price": 1400,
+        "discount": 0,
+        "avialable": 1
+      }
+    }
+  ]
+}
